@@ -1,0 +1,8 @@
+{
+  "name": "Diforb Mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "a40b5c4c"
+}
