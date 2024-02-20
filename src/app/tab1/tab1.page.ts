@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AudioProvider} from "../../providers/audio/audio";
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,6 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(public readonly audio: AudioProvider) {}
 
 }
