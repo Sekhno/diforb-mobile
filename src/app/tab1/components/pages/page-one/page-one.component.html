@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Базові уроки</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <ion-list>
+      <ion-item>
+
+        <ion-label>
+          <ion-nav-link router-direction="forward" [component]="oneLessonComponent">
+            Урок №1
+            <ion-text>
+              <p class="ion-padding-top">Глагол  <i>to be</i>. Дія у процесі. і так далі...</p>
+            </ion-text>
+          </ion-nav-link>
+        </ion-label>
+
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-nav-link router-direction="forward" [component]="twoLessonComponent">
+            Урок №2
+            <ion-text>
+              <p class="ion-padding-top">Бла бла бла, бла бла</p>
+            </ion-text>
+          </ion-nav-link>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-nav-link router-direction="forward" [component]="threeLessonComponent">
+            Урок №3
+            <ion-text>
+              <p class="ion-padding-top">Бля бля бля, бля бля</p>
+            </ion-text>
+          </ion-nav-link>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+
+  <!--  <h1>Page One</h1>-->
+
+</ion-content>

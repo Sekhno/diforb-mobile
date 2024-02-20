@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {PageOneComponent} from "../tab1/components/pages/page-one/page-one.component";
 
 @Component({
   selector: 'app-tabs',
@@ -9,4 +10,5 @@ export class TabsPage {
 
   constructor() {}
 
+  protected readonly component = PageOneComponent;
 }
