@@ -12,8 +12,8 @@ const iosOrAndroid = isPlatform('hybrid');
 console.log('domain', domain);
 console.log('clientId', clientId);
 
-console.log('iosOrAndroid', iosOrAndroid)
+console.log('iosOrAndroid', window.location.origin)
 
 export const callbackUri = iosOrAndroid
   ? `${appId}://${auth0Domain}/capacitor/${appId}/callback`
-  : 'http://localhost:4200';
+  : window.location.origin;
