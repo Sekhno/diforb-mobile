@@ -1,6 +1,9 @@
 import { Component, NgZone } from '@angular/core';
-import { Router } from '@angular/router';
-import { App, URLOpenListenerEvent } from '@capacitor/app';
+import { AuthService } from '@auth0/auth0-angular';
+import { mergeMap } from 'rxjs/operators';
+import { App } from '@capacitor/app';
+import { Browser } from '@capacitor/browser';
+import { callbackUri } from './auth.config';
 
 @Component({
   selector: 'app-root',
@@ -8,24 +11,28 @@ import { App, URLOpenListenerEvent } from '@capacitor/app';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private router: Router, private zone: NgZone) {
+  constructor(public auth: AuthService, private ngZone: NgZone) {
     this.initializeApp();
   }
 
   initializeApp() {
-    App.addListener('appUrlOpen', (event: URLOpenListenerEvent) => {
-      this.zone.run(() => {
-        // Example url: https://beerswift.app/tabs/tab2
-        // slug = /tabs/tab2
-        const slug = event.url.split(".app").pop();
-
-        console.log('event', event);
-        console.log('slug', slug);
-        // if (slug) {
-        //   this.router.navigateByUrl(slug);
-        // }
-        // If no match, do nothing - let regular routing
-        // logic take over
+    App.addListener('appUrlOpen', ({ url }) => {
+      // Must run inside an NgZone for Angular to pick up the changes
+      // https://capacitorjs.com/docs/guides/angular
+      this.ngZone.run(() => {
+        if (url?.startsWith(callbackUri)) {
+          if (
+            url.includes('state=') &&
+            (url.includes('error=') || url.includes('code='))
+          ) {
+            this.auth
+              .handleRedirectCallback(url)
+              .pipe(mergeMap(() => Browser.close()))
+              .subscribe();
+          } else {
+            Browser.close().then();
+          }
+        }
       });
     });
   }
