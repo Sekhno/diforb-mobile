@@ -17,6 +17,8 @@ export class PageOneComponent {
 
   component = PageTwoComponent;
 
-  constructor() { }
+  constructor() {
+    console.log('PageOneComponent constructor()')
+  }
 
 }
