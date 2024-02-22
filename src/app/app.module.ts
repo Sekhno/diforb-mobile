@@ -15,6 +15,7 @@ import {environment} from "../environments/environment";
 import config from '../../capacitor.config';
 import {LoginButtonComponent} from "./components/login-button.component";
 import { domain, clientId, callbackUri } from './auth.config';
+import {TrainerProgressService} from "./services/trainer-progress.service";
 
 const app = initializeApp(environment.firebaseConfig);
 
@@ -39,6 +40,7 @@ const app = initializeApp(environment.firebaseConfig);
   ],
   providers: [
     AudioProvider,
+    TrainerProgressService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],

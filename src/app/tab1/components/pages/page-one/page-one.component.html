@@ -35,7 +35,7 @@
         <ion-label>
           <ion-nav-link router-direction="forward" [component]="twoLessonComponent">
             <ion-checkbox labelPlacement="end" justify="start"
-                          [disabled]="true">Урок №2</ion-checkbox>
+                          [disabled]="isLessonNotComplete(1)">Урок №2</ion-checkbox>
             <ion-text>
               <p class="ion-padding-top">Бла бла бла, бла бла</p>
             </ion-text>
@@ -46,7 +46,7 @@
         <ion-label>
           <ion-nav-link router-direction="forward" [component]="threeLessonComponent">
             <ion-checkbox labelPlacement="end" justify="start"
-                          [disabled]="true">Урок №3</ion-checkbox>
+                          [disabled]="isLessonNotComplete(2)">Урок №3</ion-checkbox>
             <ion-text>
               <p class="ion-padding-top">Бля бля бля, бля бля</p>
             </ion-text>

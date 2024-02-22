@@ -4,11 +4,12 @@ import {TrainerComponent} from "./trainer/trainer.component";
 import {TrainerRoutingModule} from "./trainer-routing.module";
 import {IonicModule} from "@ionic/angular";
 import {RouterLink} from "@angular/router";
+import {WordsReorderComponent} from "./componetns/words-reorder/words-reorder.component";
 
 
 
 @NgModule({
-  declarations: [TrainerComponent],
+  declarations: [TrainerComponent, WordsReorderComponent],
   imports: [
     CommonModule,
     TrainerRoutingModule,
