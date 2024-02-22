@@ -21,7 +21,9 @@
       <ion-item>
         <ion-label>
           <ion-nav-link router-direction="forward" [component]="oneLessonComponent">
-            Урок №1
+            <ion-checkbox labelPlacement="end" justify="start"
+                          [disabled]="false">Урок №1</ion-checkbox>
+
             <ion-text>
               <p class="ion-padding-top">Глагол  <i>to be</i>. Дія у процесі. і так далі...</p>
             </ion-text>
@@ -32,7 +34,8 @@
       <ion-item>
         <ion-label>
           <ion-nav-link router-direction="forward" [component]="twoLessonComponent">
-            Урок №2
+            <ion-checkbox labelPlacement="end" justify="start"
+                          [disabled]="true">Урок №2</ion-checkbox>
             <ion-text>
               <p class="ion-padding-top">Бла бла бла, бла бла</p>
             </ion-text>
@@ -42,7 +45,8 @@
       <ion-item>
         <ion-label>
           <ion-nav-link router-direction="forward" [component]="threeLessonComponent">
-            Урок №3
+            <ion-checkbox labelPlacement="end" justify="start"
+                          [disabled]="true">Урок №3</ion-checkbox>
             <ion-text>
               <p class="ion-padding-top">Бля бля бля, бля бля</p>
             </ion-text>
