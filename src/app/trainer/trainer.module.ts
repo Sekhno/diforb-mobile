@@ -6,19 +6,28 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {RouterLink} from "@angular/router";
 import {WordsReorderComponent} from "./componetns/words-reorder/words-reorder.component";
 import {NgForOf, NgIf} from "@angular/common";
+import {WordsWriterComponent} from "./componetns/words-writer/words-writer.component";
+import {MatListModule} from "@angular/material/list";
 
 
-
+const MaterialModules = [
+  MatStepperModule,
+  MatListModule
+]
 
 @NgModule({
-  declarations: [TrainerComponent, WordsReorderComponent],
+  declarations: [
+    TrainerComponent,
+    WordsReorderComponent,
+    WordsWriterComponent
+  ],
   imports: [
     TrainerRoutingModule,
     IonicModule,
-    MatStepperModule,
     RouterLink,
     NgForOf,
     NgIf,
+    ...MaterialModules
 
   ]
 })
