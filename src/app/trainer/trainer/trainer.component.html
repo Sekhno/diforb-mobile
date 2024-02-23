@@ -9,6 +9,25 @@
 
 <ion-content class="ion-padding">
 <!--  <ion-button (click)="onComplete()">Completed</ion-button>-->
+  <mat-vertical-stepper [linear]="false" #stepper [animationDuration]="'400'">
+    <mat-step>
+      <div class="ion-padding-top">
+        <app-words-reorder></app-words-reorder>
+      </div>
+    </mat-step>
+    <mat-step>
+      Step 2
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+<!--        <button mat-button matStepperPrevious>Back</button>-->
+<!--        <button mat-button (click)="stepper.reset()">Reset</button>-->
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
 
-  <app-words-reorder></app-words-reorder>
+
+
 </ion-content>

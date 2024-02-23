@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {TrainerProgressService} from "../../services/trainer-progress.service";
-import {ItemReorderEventDetail} from "@ionic/angular";
 
 @Component({
   selector: 'app-trainer',
@@ -17,6 +16,10 @@ export class TrainerComponent  implements OnInit {
 
   onComplete() {
     this.trainerProgressService.addProgress(1, true);
+  }
+
+  selectChange(e: any) {
+    console.log(e);
   }
 
 

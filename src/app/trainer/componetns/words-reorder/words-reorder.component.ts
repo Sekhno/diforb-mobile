@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ItemReorderEventDetail} from "@ionic/angular";
 
 @Component({
@@ -7,6 +7,10 @@ import {ItemReorderEventDetail} from "@ionic/angular";
   styleUrls: ['./words-reorder.component.scss'],
 })
 export class WordsReorderComponent {
+  @Input() words: string[] = ['is', 'This', 'grace', 'amazing'];
+  @Input() rightOrder: string = 'This is amazing grace';
+
+  rightAnswer = false
 
   constructor() { }
 
@@ -15,10 +19,28 @@ export class WordsReorderComponent {
     // when the drag started and ended, respectively
     console.log('Dragged from index', ev.detail.from, 'to', ev.detail.to);
 
+    console.log((ev.target as HTMLElement).childNodes);
+    console.log(this.words);
+
     // Finish the reorder and position the item in the DOM based on
     // where the gesture ended. This method can also be called directly
     // by the reorder group
     ev.detail.complete();
+
+    setTimeout(() => {
+      let sentence = '';
+      const childNodes = (ev.target as HTMLElement).childNodes;
+
+      for (let i = 0; i < childNodes.length; i++) {
+        const word = (childNodes[i] as HTMLElement).innerText;
+
+        if (word) {
+          sentence += word + ' ';
+        }
+      }
+
+      this.rightAnswer = sentence.trim() === this.rightOrder;
+    })
   }
 
 
