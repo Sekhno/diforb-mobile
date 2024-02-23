@@ -1,0 +1,15 @@
+
+<ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+  <div *ngFor="let item of words" class="ion-text-center item">
+    <div>
+      <span>{{item}}</span>
+    </div>
+    <div>
+      <ion-reorder></ion-reorder>
+    </div>
+  </div>
+</ion-reorder-group>
+
+<div class="ion-text-center" *ngIf="rightAnswer">
+  <ion-chip color="success">Вірно!</ion-chip>
+</div>

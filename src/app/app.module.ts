@@ -15,13 +15,19 @@ import {environment} from "../environments/environment";
 import config from '../../capacitor.config';
 import {LoginButtonComponent} from "./components/login-button.component";
 import { domain, clientId, callbackUri } from './auth.config';
+import {TrainerProgressService} from "./services/trainer-progress.service";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {CommonModule} from "@angular/common";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 const app = initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [AppComponent, LoginButtonComponent],
   imports: [
+    CommonModule,
     BrowserModule,
+    BrowserAnimationsModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
@@ -39,7 +45,9 @@ const app = initializeApp(environment.firebaseConfig);
   ],
   providers: [
     AudioProvider,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    TrainerProgressService,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent],
 })
