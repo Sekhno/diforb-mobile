@@ -19,6 +19,8 @@ export class WordsWriterComponent  implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('WordsWriterComponent -> ngOnInit')
+  }
 
 }
