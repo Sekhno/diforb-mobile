@@ -1,30 +1,29 @@
 <ol>
-  <li *ngFor="let sentence of sentences">
-    <ng-container *ngFor="let word of sentence.split(' '); let i = index">
+  <li *ngFor="let sentence of sentences; let i = index">
 
+    @if (checked) {
+      @if (inputs[i] === rightAnswers[i]) {
+        <ion-icon class="ion-padding-end" name="chevron-down-circle-outline" color="success"></ion-icon>
+      }
+      @else {
+        <ion-icon class="ion-padding-end" name="close-circle-outline" color="danger"></ion-icon>
+      }
+    }
+
+    <ng-container *ngFor="let word of sentence.split(' '); let n = index">
       @if (word === '{{input}}') {
-        <ion-input class="input"></ion-input>
+        <ion-input class="input" [(ngModel)]="inputs[i]"></ion-input>
       }
       @else {
         <span>{{word}}</span>
       }
-      <span *ngIf="i !== sentence.split(' ').length - 1">&nbsp;</span>
+
+      <span *ngIf="n !== sentence.split(' ').length - 1">&nbsp;</span>
     </ng-container>
   </li>
-
-<!--  <li>The weather <ion-input class="input"></ion-input> nice today.</li>-->
-<!--  <li>I <ion-input class="input"></ion-input> not rich.</li>-->
-<!--  <li>This bag <ion-input class="input"></ion-input> heavy.</li>-->
-<!--  <li>These bags <ion-input class="input"></ion-input> heavy.</li>-->
-<!--  <li>Look! There <ion-input class="input"></ion-input> Helen.</li>-->
-<!--  <li>My brother and I <ion-input class="input"></ion-input> good tennis players.</li>-->
-<!--  <li>-->
-<!--    Emily <ion-input class="input"></ion-input> at home.-->
-<!--    Her children <ion-input class="input"></ion-input> at school.-->
-<!--  </li>-->
-<!--  <li>-->
-<!--    I <ion-input class="input"></ion-input> a taxi driver.-->
-<!--    My sister <ion-input class="input"></ion-input> a nurse.-->
-<!--  </li>-->
 </ol>
+
+<div class="ion-text-center">
+  <ion-button (click)="check()">Перевірити...</ion-button>
+</div>
 
