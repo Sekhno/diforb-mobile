@@ -40,4 +40,8 @@ export class ImagesComparisonComponent  implements OnInit {
     }
   }
 
+  load() {
+    console.log('ImagesComparisonComponent: load() called.')
+  }
+
 }
