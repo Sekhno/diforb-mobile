@@ -2,7 +2,6 @@
   <li *ngFor="let sentence of sentences; let i = index">
 
     @if (checked) {
-
       @if (inputs[i] === rightAnswers[i]) {
         <ion-icon class="ion-padding-end" name="chevron-down-circle-outline" color="success"></ion-icon>
       }
@@ -12,7 +11,6 @@
     }
 
     <ng-container *ngFor="let word of sentence.split(' '); let n = index">
-
       @if (word === '{{input}}') {
         <ion-input class="input" [(ngModel)]="inputs[i]"></ion-input>
       }
