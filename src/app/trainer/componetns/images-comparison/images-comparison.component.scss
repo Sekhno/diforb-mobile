@@ -1,8 +1,13 @@
 .image {
   width: 100px;
-
+  position: relative;
   border-radius: 4px;
   overflow: hidden;
+
+  ion-img {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
 }
 
 .list {
@@ -10,12 +15,14 @@
   height: calc(6 * 100px);
 
   .list-item {
+    position: relative;
     height: 100px;
     width: 100px;
     border-radius: 4px;
     box-shadow: 0 0 2px inset var(--mdc-fab-container-shadow-color);
     text-align: center;
     line-height: 100px;
+
   }
 }
 
@@ -37,4 +44,36 @@ table {
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
   0 8px 10px 1px rgba(0, 0, 0, 0.14),
   0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.skeleton-box {
+
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+        90deg,
+        rgba(#fff, 0) 0,
+        rgba(#fff, 0.1) 20%,
+        rgba(#fff, 0.3) 60%,
+        rgba(#fff, 0)
+    );
+    animation: shimmer 2s infinite;
+    content: '';
+    z-index: -2;
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
 }
