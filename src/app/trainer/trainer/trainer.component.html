@@ -9,21 +9,26 @@
 
 <ion-content class="ion-padding">
 <!--  <ion-button (click)="onComplete()">Completed</ion-button>-->
-  <mat-vertical-stepper [linear]="false" #stepper [animationDuration]="'400'">
-    <mat-step>
+  <mat-vertical-stepper [linear]="true" #stepper [animationDuration]="'400'">
+    <mat-step [editable]="false">
+      <ng-template matStepLabel> Приведіть в порядок речення </ng-template>
       <div class="ion-padding-top">
-        <app-words-reorder></app-words-reorder>
+        <app-words-reorder (_onComplete)="stepper.next()"></app-words-reorder>
+      </div>
+    </mat-step>
+    <mat-step [editable]="false">
+      <ng-template matStepLabel> Вставте пропущені слова </ng-template>
+      <div>
+        <app-words-writer (_onComplete)="stepper.next(); onComplete()"></app-words-writer>
       </div>
     </mat-step>
     <mat-step>
-      <app-words-writer></app-words-writer>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      You are now done.
+      <ng-template matStepLabel>Сюрприз</ng-template>
+      <ion-text>
+        <p>Тепер Ви можете перейти до наступного уроку</p>
+      </ion-text>
       <div>
-<!--        <button mat-button matStepperPrevious>Back</button>-->
-<!--        <button mat-button (click)="stepper.reset()">Reset</button>-->
+        <ion-button routerLink="/tabs/tab1">Повернутися</ion-button>
       </div>
     </mat-step>
   </mat-vertical-stepper>

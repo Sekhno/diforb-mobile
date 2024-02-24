@@ -8,7 +8,7 @@ import {WordsReorderComponent} from "./componetns/words-reorder/words-reorder.co
 import {NgForOf, NgIf} from "@angular/common";
 import {WordsWriterComponent} from "./componetns/words-writer/words-writer.component";
 import {MatListModule} from "@angular/material/list";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 const MaterialModules = [
@@ -29,7 +29,8 @@ const MaterialModules = [
     NgForOf,
     NgIf,
     ...MaterialModules,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ]
 })

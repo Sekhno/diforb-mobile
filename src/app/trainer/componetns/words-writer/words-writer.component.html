@@ -12,7 +12,7 @@
 
     <ng-container *ngFor="let word of sentence.split(' '); let n = index">
       @if (word === '{{input}}') {
-        <ion-input class="input" [(ngModel)]="inputs[i]"></ion-input>
+        <ion-input class="input" [(ngModel)]="inputs[i]" (ngModelChange)="change()"></ion-input>
       }
       @else {
         <span>{{word}}</span>

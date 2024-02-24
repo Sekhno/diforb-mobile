@@ -18,3 +18,8 @@ html {
   --mat-stepper-header-error-state-icon-foreground-color: #f44336;
   --mat-stepper-header-error-state-icon-background-color: transparent;
 }
+
+
+.mat-step-header {
+  pointer-events: none;
+}
