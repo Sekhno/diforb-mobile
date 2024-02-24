@@ -15,8 +15,8 @@
         class="list"
         (cdkDropListDropped)="drop($event)">
         @for (item of done; track item) {
-          <div class="list-item">
-            <ion-chip [outline]="true" class="example-box" cdkDrag>{{item}}</ion-chip>
+          <div class="list-item" cdkDrag>
+            <ion-text>{{item}}  </ion-text>
           </div>
         }
       </div>
@@ -30,8 +30,8 @@
         class="list"
         (cdkDropListDropped)="drop($event)">
         @for (item of todo; track item) {
-          <div class="list-item">
-            <ion-chip [outline]="true" class="example-box" cdkDrag>{{item}}</ion-chip>
+          <div class="list-item" cdkDrag>
+            <ion-text>{{item}}</ion-text>
           </div>
 
         }
