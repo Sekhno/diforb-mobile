@@ -2,7 +2,7 @@
   <strong>{{ name }}</strong>
   <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
 
-  <div class="ion-padding">
-    <ion-img src="/assets/images/logo.png"></ion-img>
+  <div class="ion-padding image">
+    <ion-img src="/assets/images/logo.png" (ionImgWillLoad)="$event.target.style.opacity = '1'"></ion-img>
   </div>
 </div>

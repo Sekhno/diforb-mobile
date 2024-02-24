@@ -25,3 +25,15 @@
 #container a {
   text-decoration: none;
 }
+
+.image {
+  width: 240px;
+  margin: auto;
+
+  ion-img {
+    opacity: 0;
+    width: auto; height: 240px;
+
+    transition: opacity 0.5s;
+  }
+}
