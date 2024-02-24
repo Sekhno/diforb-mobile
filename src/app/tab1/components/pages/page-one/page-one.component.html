@@ -22,7 +22,8 @@
         <ion-label>
           <ion-nav-link router-direction="forward" [component]="oneLessonComponent">
             <ion-checkbox labelPlacement="end" justify="start"
-                          [disabled]="false">Урок №1</ion-checkbox>
+                          [disabled]="false"
+                          [checked]="!isLessonNotComplete(1)">Урок №1</ion-checkbox>
 
             <ion-text>
               <p class="ion-padding-top">Глагол  <i>to be</i>. Дія у процесі. і так далі...</p>
@@ -35,7 +36,8 @@
         <ion-label>
           <ion-nav-link router-direction="forward" [component]="twoLessonComponent">
             <ion-checkbox labelPlacement="end" justify="start"
-                          [disabled]="isLessonNotComplete(1)">Урок №2</ion-checkbox>
+                          [disabled]="isLessonNotComplete(1)"
+                          [checked]="!isLessonNotComplete(2)">Урок №2</ion-checkbox>
             <ion-text>
               <p class="ion-padding-top">Бла бла бла, бла бла</p>
             </ion-text>
@@ -46,7 +48,68 @@
         <ion-label>
           <ion-nav-link router-direction="forward" [component]="threeLessonComponent">
             <ion-checkbox labelPlacement="end" justify="start"
-                          [disabled]="isLessonNotComplete(2)">Урок №3</ion-checkbox>
+                          [disabled]="isLessonNotComplete(2)"
+                          [checked]="!isLessonNotComplete(3)">Урок №3</ion-checkbox>
+            <ion-text>
+              <p class="ion-padding-top">Бля бля бля, бля бля</p>
+            </ion-text>
+          </ion-nav-link>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-nav-link router-direction="forward" [component]="threeLessonComponent">
+            <ion-checkbox labelPlacement="end" justify="start"
+                          [disabled]="isLessonNotComplete(3)"
+                          [checked]="!isLessonNotComplete(4)">Урок №4</ion-checkbox>
+            <ion-text>
+              <p class="ion-padding-top">Бля бля бля, бля бля</p>
+            </ion-text>
+          </ion-nav-link>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-nav-link router-direction="forward" [component]="threeLessonComponent">
+            <ion-checkbox labelPlacement="end" justify="start"
+                          [disabled]="isLessonNotComplete(4)"
+                          [checked]="!isLessonNotComplete(5)">Урок №5</ion-checkbox>
+            <ion-text>
+              <p class="ion-padding-top">Бля бля бля, бля бля</p>
+            </ion-text>
+          </ion-nav-link>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-nav-link router-direction="forward" [component]="threeLessonComponent">
+            <ion-checkbox labelPlacement="end" justify="start"
+                          [disabled]="isLessonNotComplete(5)"
+                          [checked]="!isLessonNotComplete(6)">Урок №6</ion-checkbox>
+            <ion-text>
+              <p class="ion-padding-top">Бля бля бля, бля бля</p>
+            </ion-text>
+          </ion-nav-link>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-nav-link router-direction="forward" [component]="threeLessonComponent">
+            <ion-checkbox labelPlacement="end" justify="start"
+                          [disabled]="isLessonNotComplete(6)"
+                          [checked]="!isLessonNotComplete(7)">Урок №7</ion-checkbox>
+            <ion-text>
+              <p class="ion-padding-top">Бля бля бля, бля бля</p>
+            </ion-text>
+          </ion-nav-link>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-nav-link router-direction="forward" [component]="threeLessonComponent">
+            <ion-checkbox labelPlacement="end" justify="start"
+                          [disabled]="isLessonNotComplete(7)"
+                          [checked]="!isLessonNotComplete(8)">Урок №8</ion-checkbox>
             <ion-text>
               <p class="ion-padding-top">Бля бля бля, бля бля</p>
             </ion-text>
