@@ -1,0 +1,29 @@
+.image {
+  width: 100px;
+
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.list {
+  width: 104px;
+  height: calc(6 * 104px);
+
+  .list-item {
+    height: 104px;
+    width: 104px;
+    //display: flex;
+    //justify-content: center;
+    box-shadow: 0 0 2px var(--mdc-fab-container-shadow-color);
+  }
+}
+
+.td-done {
+  min-height: 104px;
+  min-width: 104px;
+  vertical-align: top;
+}
+
+table {
+  margin: auto;
+}

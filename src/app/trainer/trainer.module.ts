@@ -8,19 +8,24 @@ import {WordsReorderComponent} from "./componetns/words-reorder/words-reorder.co
 import {NgForOf, NgIf} from "@angular/common";
 import {WordsWriterComponent} from "./componetns/words-writer/words-writer.component";
 import {MatListModule} from "@angular/material/list";
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {ImagesComparisonComponent} from "./componetns/images-comparison/images-comparison.component";
 
 
 const MaterialModules = [
   MatStepperModule,
-  MatListModule
+  MatListModule,
+  DragDropModule
 ]
 
 @NgModule({
   declarations: [
     TrainerComponent,
     WordsReorderComponent,
-    WordsWriterComponent
+    WordsWriterComponent,
+    ImagesComparisonComponent
   ],
   imports: [
     TrainerRoutingModule,
