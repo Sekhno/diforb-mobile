@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ItemReorderEventDetail} from "@ionic/angular";
 
 @Component({
@@ -10,18 +10,15 @@ export class WordsReorderComponent {
   @Input() words: string[] = ['is', 'This', 'grace', 'amazing'];
   @Input() rightOrder: string = 'This is amazing grace';
 
+  @Output() _onComplete = new EventEmitter<boolean>()
+
   rightAnswer = false
 
   constructor() { }
 
   handleReorder(ev: CustomEvent<ItemReorderEventDetail>) {
-    // The `from` and `to` properties contain the index of the item
-    // when the drag started and ended, respectively
-    console.log('Dragged from index', ev.detail.from, 'to', ev.detail.to);
-    // Finish the reorder and position the item in the DOM based on
-    // where the gesture ended. This method can also be called directly
-    // by the reorder group
     ev.detail.complete();
+
     setTimeout(() => {
       let sentence = '';
       const childNodes = (ev.target as HTMLElement).childNodes;
@@ -35,9 +32,10 @@ export class WordsReorderComponent {
       }
 
       this.rightAnswer = sentence.trim() === this.rightOrder;
-      console.log('sentence', sentence)
-    }, 400)
+
+      if (this.rightAnswer) {
+        this._onComplete.emit(true)
+      }
+    }, 300)
   }
-
-
 }

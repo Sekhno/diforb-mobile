@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-words-writer',
@@ -19,19 +19,31 @@ export class WordsWriterComponent  implements OnInit {
     'My sister {{input}} a nurse.'
   ];
 
-  @Input() rightAnswers: string[] = ['is', 'am', 'is', 'are', 'is', 'am', 'is', 'is', 'am', 'is'];
+  @Input() rightAnswers: string[] = ['is', 'am', 'is', 'are', 'is', 'are', 'is', 'is', 'am', 'is'];
+
+  @Output() _onComplete = new EventEmitter<boolean>()
 
   inputs = new Array(this.sentences.length).fill('');
   checked = false;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
-    console.log('WordsWriterComponent -> ngOnInit')
+    console.log('WordsWriterComponent -> ngOnInit');
   }
 
   check() {
     this.checked = true;
+  }
+
+  change() {
+    const isEvery = this.inputs.every((v, i) => this.rightAnswers[i] === v);
+
+    if (isEvery) {
+      this._onComplete.emit(true)
+    }
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TrainerProgressService} from "../../services/trainer-progress.service";
 
 @Component({
@@ -8,11 +8,14 @@ import {TrainerProgressService} from "../../services/trainer-progress.service";
 })
 export class TrainerComponent  implements OnInit {
 
+
   constructor(
     private trainerProgressService: TrainerProgressService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('TrainerComponent');
+  }
 
   onComplete() {
     this.trainerProgressService.addProgress(1, true);
@@ -21,6 +24,5 @@ export class TrainerComponent  implements OnInit {
   selectChange(e: any) {
     console.log(e);
   }
-
 
 }
