@@ -1,0 +1,102 @@
+
+<table>
+  <tr>
+    <td>
+      <div class="image">
+        <ion-img src="/assets/images/thirsty.png"></ion-img>
+      </div>
+    </td>
+    <td rowspan="6" class="td-done">
+      <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[todoList]"
+        class="list"
+        (cdkDropListDropped)="drop($event)">
+        @for (item of done; track item) {
+          <div class="list-item">
+            <ion-chip [outline]="true" class="example-box" cdkDrag>{{item}}</ion-chip>
+          </div>
+        }
+      </div>
+    </td>
+    <td rowspan="6" class="td-done">
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="list"
+        (cdkDropListDropped)="drop($event)">
+        @for (item of todo; track item) {
+          <div class="list-item">
+            <ion-chip [outline]="true" class="example-box" cdkDrag>{{item}}</ion-chip>
+          </div>
+
+        }
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="image">
+        <ion-img src="/assets/images/cold.png"></ion-img>
+      </div>
+
+    </td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td>
+      <div class="image">
+        <ion-img src="/assets/images/hungry.png"></ion-img>
+      </div>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="image">
+        <ion-img src="/assets/images/angry_women.png"></ion-img>
+      </div>
+    </td>
+
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="image">
+        <ion-img src="/assets/images/hot.png"></ion-img>
+      </div>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>
+      <div class="image">
+        <ion-img src="/assets/images/scared.png"></ion-img>
+      </div>
+    </td>
+    <td></td>
+  </tr>
+
+</table>
+
+
+<!--<div class="example-container">-->
+<!--  <h2>Done</h2>-->
+
+<!--  <div-->
+<!--    cdkDropList-->
+<!--    #doneList="cdkDropList"-->
+<!--    [cdkDropListData]="done"-->
+<!--    [cdkDropListConnectedTo]="[todoList]"-->
+<!--    class="example-list"-->
+<!--    (cdkDropListDropped)="drop($event)">-->
+<!--    @for (item of done; track item) {-->
+<!--      <ion-chip [outline]="true" class="example-box" cdkDrag>{{item}}</ion-chip>-->
+<!--    }-->
+<!--  </div>-->
+<!--</div>-->

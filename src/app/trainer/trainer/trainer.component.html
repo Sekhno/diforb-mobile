@@ -7,29 +7,33 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content>
 <!--  <ion-button (click)="onComplete()">Completed</ion-button>-->
   <mat-vertical-stepper [linear]="true" #stepper [animationDuration]="'400'">
     <mat-step [editable]="false">
-      <ng-template matStepLabel> Приведіть в порядок речення </ng-template>
-      <div class="ion-padding-top">
-        <app-words-reorder (_onComplete)="stepper.next()"></app-words-reorder>
+      <ng-template matStepLabel> Дайте визначення малюнкам </ng-template>
+      <div>
+        <app-images-comparison (_onComplete)="stepper.next()"></app-images-comparison>
       </div>
     </mat-step>
     <mat-step [editable]="false">
       <ng-template matStepLabel> Вставте пропущені слова </ng-template>
       <div>
-        <app-words-writer (_onComplete)="stepper.next(); onComplete()"></app-words-writer>
+        <app-words-writer (_onComplete)="stepper.next() "></app-words-writer>
       </div>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Сюрприз</ng-template>
-      <ion-text>
-        <p>Тепер Ви можете перейти до наступного уроку</p>
-      </ion-text>
-      <div>
-        <ion-button routerLink="/tabs/tab1">Повернутися</ion-button>
+      <ng-template matStepLabel> Приведіть в порядок речення </ng-template>
+      <div class="ion-padding-top">
+        <app-words-reorder (_onComplete)="stepper.next(); onComplete()"></app-words-reorder>
       </div>
+<!--      <ng-template matStepLabel>Сюрприз</ng-template>-->
+<!--      <ion-text>-->
+<!--        <p>Тепер Ви можете перейти до наступного уроку</p>-->
+<!--      </ion-text>-->
+<!--      <div>-->
+<!--        <ion-button routerLink="/tabs/tab1">Повернутися</ion-button>-->
+<!--      </div>-->
     </mat-step>
   </mat-vertical-stepper>
 
