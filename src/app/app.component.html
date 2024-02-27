@@ -1,4 +1,13 @@
-<div *ngIf="(auth.isAuthenticated$ | async) !== false; else app" class="login">
+<div *ngIf="(auth.isAuthenticated$ | async) === false; else app" class="welcome">
+  <ion-img src="/assets/images/depth_1.png"></ion-img>
+
+  <ion-text>
+    <h1 class="ion-text-center">Learn English for free</h1>
+
+    <p class="ion-text-center ion-padding">
+      Get started with personalized learning paths, interactive exercises, and progress tracking. It's fun and effective.
+    </p>
+  </ion-text>
   <app-login-button></app-login-button>
 </div>
 

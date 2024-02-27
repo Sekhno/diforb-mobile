@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { Browser } from '@capacitor/browser';
-import { mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login-button',
-  template: `<ion-button (click)="login()">Login</ion-button>`,
+  template: `<ion-button class="ion-padding" (click)="login()">Get Started</ion-button>`,
+  styles: ['ion-button { width: 100% }']
 })
 export class LoginButtonComponent {
   constructor(public auth: AuthService) {}
