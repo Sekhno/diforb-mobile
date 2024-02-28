@@ -34,10 +34,10 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <div>
+        <div class="flex flex-column space-between start">
           <h5><b>English for beginners</b></h5>
           <p>Start learning</p>
-          <ion-button routerLink="/courses/course_1">Start</ion-button>
+          <ion-button [routerLink]="['/courses', 'beginners']">Start</ion-button>
         </div>
       </ion-col>
       <ion-col size="auto">
@@ -53,7 +53,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <div>
+        <div class="flex flex-column space-between start">
           <h5><b>Pre Intermediate English</b></h5>
           <p>Start learning</p>
           <ion-button routerLink="/courses/course_2">Start</ion-button>
@@ -70,7 +70,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <div>
+        <div class="flex flex-column space-between start">
           <h5><b>Intermediate English</b></h5>
           <p>Start learning</p>
           <ion-button routerLink="/courses/course_3">Start</ion-button>

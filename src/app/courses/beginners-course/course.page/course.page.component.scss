@@ -1,0 +1,28 @@
+h2 {
+  margin-bottom: 2rem;
+}
+
+.unit {
+  display: flex;
+  margin-bottom: 1rem;
+
+  .desc {
+    flex-grow: 1;
+  }
+
+  .figure {
+    width: 140px; height: 90px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+
+    ion-img {
+      width: 100%; height: auto;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+}

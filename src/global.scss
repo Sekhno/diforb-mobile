@@ -27,6 +27,7 @@
 
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 @import "theme/material-variables.scss";
+@import "theme/common.scss";
 
 html, body {
   font-family: "Inter", sans-serif;
@@ -36,6 +37,14 @@ html, body {
   font-variation-settings:
     "slnt" 0;
 
-  color: black;
+  color: #121417;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; padding: 0;
+}
+
+.sub-color {
+  color: #61788A;
 }
 
