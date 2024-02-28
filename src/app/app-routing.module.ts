@@ -11,10 +11,14 @@ const routes: Routes = [
   //   path: '',
   //   loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   // },
-  // {
-  //   path: 'trainer',
-  //   loadChildren: () => import('./trainer/trainer.module').then( m => m.TrainerModule)
-  // }
+  {
+    path: 'trainer',
+    loadChildren: () => import('./trainer/trainer.module').then( m => m.TrainerModule)
+  },
+  {
+    path: 'courses',
+    loadChildren: () => import('./courses/courses.module').then( m => m.CoursesModule)
+  }
 ];
 @NgModule({
   imports: [
