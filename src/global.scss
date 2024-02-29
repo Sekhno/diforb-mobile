@@ -28,6 +28,7 @@
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 @import "theme/material-variables.scss";
 @import "theme/common.scss";
+@import "theme/ionic.scss";
 
 html, body {
   font-family: "Inter", sans-serif;
@@ -48,3 +49,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #61788A;
 }
 
+.w {
+  &-full {
+    width: 100%;
+  }
+}
