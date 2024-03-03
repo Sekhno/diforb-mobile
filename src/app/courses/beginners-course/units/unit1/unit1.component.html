@@ -180,7 +180,7 @@
           <h4 class="ion-padding-bottom">Зробити правильний порядок слів</h4>
           <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
         </ion-text>
-        <app-words-reorder [sentences]="rightSentences" [rightAnswers]="rightSentences"
+        <app-words-reorder [sentences]="rightSentences" [rightAnswers]="rightSentences" [images]="images"
                            (_onComplete)="currentExc = 3"
         ></app-words-reorder>
       </ng-container>
@@ -204,7 +204,7 @@
           </div>
 
           <a routerLink="unit2">
-            <ion-button class="w-full">Next Unit</ion-button>
+            <ion-button class="w-full ion-margin-top">Next Unit</ion-button>
           </a>
 
         </ion-text>
