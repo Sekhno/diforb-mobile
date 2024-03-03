@@ -99,6 +99,10 @@
     </ion-row>
   </ion-grid>
 
+  <ion-text>
+    <p>*Артикль a/an ставлять перед іменником в однині, перед множиною не ставлять</p>
+  </ion-text>
+
   <div class="figure">
     <ion-grid class="ion-no-padding">
       <ion-row>
@@ -137,11 +141,56 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-
-    <div class="ion-padding">
-      <ion-button class="w-full">Start exercises</ion-button>
-    </div>
-
   </div>
 
+  <div class="ion-padding">
+    <ion-button class="w-full" id="exercises_1">Start exercises</ion-button>
+  </div>
 </ion-content>
+
+<ion-modal trigger="exercises_1">
+  <ng-template>
+    <ion-header class="ion-no-border ion-padding">
+      <ion-toolbar>
+        <ion-buttons slot="start" (click)="modal.dismiss()">
+          <ion-icon name="close" size="large"></ion-icon>
+        </ion-buttons>
+<!--        <ion-title>Welcome</ion-title>-->
+<!--        <ion-buttons slot="end">-->
+<!--          <ion-button [strong]="true">Confirm</ion-button>-->
+<!--        </ion-buttons>-->
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+
+      <ng-container *ngIf="currentExc === 1">
+        <ion-text>
+          <h4 class="ion-padding-bottom">Встав правильну форму дієслова</h4>
+          <h6 class="ion-padding-bottom">(am / is / are)</h6>
+        </ion-text>
+        <app-words-writer [sentences]="sentences" [rightAnswers]="rightAnswers"
+                          (_onComplete)="currentExc = 2"
+        ></app-words-writer>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 2">
+        <ion-text>
+          <h4 class="ion-padding-bottom">Зробити правильний порядок слів</h4>
+          <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
+        </ion-text>
+        <app-words-reorder [sentences]="rightSentences" [rightAnswers]="rightSentences"
+                           (_onComplete)="currentExc = 3"
+        ></app-words-reorder>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 3">
+        <ion-text>
+          <h4 class="ion-padding-bottom">Надрукувати переклад</h4>
+          <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
+
+          <p>Coming soon</p>
+        </ion-text>
+      </ng-container>
+    </ion-content>
+  </ng-template>
+</ion-modal>
