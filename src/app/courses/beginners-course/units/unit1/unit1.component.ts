@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {rightAnswers, rightSentences, sentences} from "./examples";
+import {images, rightAnswers, rightSentences, sentences, sentencesForTranslate} from "./examples";
 import {IonModal} from "@ionic/angular";
 
 @Component({
@@ -15,6 +15,8 @@ export class Unit1Component  implements OnInit {
   sentences = sentences;
   rightAnswers = rightAnswers;
   rightSentences = rightSentences;
+  sentencesForTranslate = sentencesForTranslate;
+  images = images;
 
   constructor() { }
 
