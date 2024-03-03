@@ -10,6 +10,7 @@ import {randomWords} from "../../../utils/random";
 export class WordsReorderComponent implements OnChanges{
   @Input() sentences: string[] = [];
   @Input() rightAnswers: string[] = [];
+  @Input() images: string[] = [];
 
   @Output() _onComplete = new EventEmitter<boolean>();
 
