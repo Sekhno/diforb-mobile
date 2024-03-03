@@ -4,14 +4,14 @@ import {TrainerRoutingModule} from "./trainer-routing.module";
 import {IonicModule} from "@ionic/angular";
 import {MatStepperModule} from '@angular/material/stepper';
 import {RouterLink} from "@angular/router";
-import {WordsReorderComponent} from "./componetns/words-reorder/words-reorder.component";
+import {WordsReorderComponent} from "../components/words-reorder/words-reorder.component";
 import {NgForOf, NgIf} from "@angular/common";
-import {WordsWriterComponent} from "./componetns/words-writer/words-writer.component";
+import {WordsWriterComponent} from "../components/words-writer/words-writer.component";
 import {MatListModule} from "@angular/material/list";
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ImagesComparisonComponent} from "./componetns/images-comparison/images-comparison.component";
+import {ImagesComparisonComponent} from "../components/images-comparison/images-comparison.component";
 
 
 const MaterialModules = [
@@ -23,9 +23,12 @@ const MaterialModules = [
 @NgModule({
   declarations: [
     TrainerComponent,
-    WordsReorderComponent,
-    WordsWriterComponent,
-    ImagesComparisonComponent
+    // WordsReorderComponent,
+    // WordsWriterComponent,
+    // ImagesComparisonComponent
+  ],
+  exports: [
+    // WordsWriterComponent
   ],
   imports: [
     TrainerRoutingModule,
