@@ -50,9 +50,11 @@
       В англійських реченнях чіткий порядок слів в усіх типах речень
     </p>
   </ion-text>
+
   <div class="figure">
     <ion-img src="/assets/images/level_1/unit_01.png"></ion-img>
   </div>
+
   <ion-text>
     <h5 class="ion-padding-top">Affirmative (ствердження)</h5>
   </ion-text>
@@ -186,9 +188,25 @@
       <ng-container *ngIf="currentExc === 3">
         <ion-text>
           <h4 class="ion-padding-bottom">Надрукувати переклад</h4>
-          <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
 
-          <p>Coming soon</p>
+          <app-words-translate [sentences]="sentencesForTranslate" [rightAnswers]="rightSentences" [images]="images"
+                               (_onComplete)="currentExc = 4"
+          ></app-words-translate>
+        </ion-text>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 4">
+        <ion-text>
+          <h4 class="ion-padding-bottom">Вітаємо Вас з пройденою вправою</h4>
+
+          <div class="figure">
+            <ion-img src="/assets/images/congratulations_1.png"></ion-img>
+          </div>
+
+          <a routerLink="unit2">
+            <ion-button class="w-full">Next Unit</ion-button>
+          </a>
+
         </ion-text>
       </ng-container>
     </ion-content>

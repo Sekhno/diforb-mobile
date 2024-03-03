@@ -1,3 +1,29 @@
+export const sentencesForTranslate = [
+  'Я солдат',
+  'Він адвокат',
+  'Вона ветеринар',
+  'Ми пілоти',
+  'Вони будівельники',
+  'Ти поліцейський',
+  'Вона продавець-консультант',
+  'Вона медсестра',
+  'Він перукар',
+  'Ми прибиральники'
+];
+
+export const images = [
+  'i_am_a_soldier.png',
+  'he_is_a_layer.png',
+  'she_is_a_vet.png',
+  'we_are_pilots.png',
+  'they_are_builders.png',
+  'police_officer.png',
+  'shop_assistant.png',
+  'she_is_a_nurse.png',
+  'he_is_a_hairdresser.png',
+  'we_are_cleaners.png'
+]
+
 export const rightSentences = [
   'I am a soldier',
   'He is a lawyer',
