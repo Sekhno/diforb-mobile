@@ -11,6 +11,7 @@ export class Unit1Component  implements OnInit {
   @ViewChild(IonModal) modal!: IonModal;
 
   currentExc = 1;
+  progress = 0;
 
   sentences = sentences;
   rightAnswers = rightAnswers;
