@@ -9,8 +9,11 @@
 
 <ion-content class="ion-padding">
   <ion-text>
-    <h1 class="ion-margin-top ion-margin-bottom"> To be or not to be</h1>
-    <h6>
+    <h1 class="ion-margin-top ion-margin-bottom ion-text-center"> <b>To be or not to be</b> </h1>
+    <div class="figure">
+      <ion-img src="/assets/images/level_1/unit_001.png"></ion-img>
+    </div>
+    <h6 class="ion-margin-top">
       Жодне речення в англійській мові не будується без дієслова.
       Навіть якщо дії в реченні немає, все одно потрібно вжити дієслово.
       Таку роль відіграє дієслово <ion-text color="primary">to be</ion-text>.
@@ -21,39 +24,25 @@
       Потрібно сказати -
       <ion-grid class="ion-text-center sub-color">
         <ion-row>
-          <ion-col>
-            He <ion-text color="primary">is</ion-text>  me friend
-          </ion-col>
-          <ion-col>
-            Він <ion-text color="primary">Є</ion-text> мій друг
-          </ion-col>
+          <ion-col> He <ion-text color="primary">is</ion-text> me friend </ion-col>
+          <ion-col> Він <ion-text color="primary">Є</ion-text> мій друг </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col>
-            I <ion-text color="primary">am</ion-text> happy
-          </ion-col>
-          <ion-col>
-            Я <ion-text color="primary">Є</ion-text> щасливий
-          </ion-col>
+          <ion-col> I <ion-text color="primary">am</ion-text> happy </ion-col>
+          <ion-col> Я <ion-text color="primary">Є</ion-text> щасливий </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col>
-            I <ion-text color="primary">am</ion-text> not an animal, I <ion-text color="primary">am</ion-text> a human
-          </ion-col>
-          <ion-col>
-            Я не тварина, я людина
-          </ion-col>
+          <ion-col> I <ion-text color="primary">am</ion-text> not an animal, I <ion-text color="primary">am</ion-text> a human </ion-col>
+          <ion-col> Я не тварина, я людина </ion-col>
         </ion-row>
       </ion-grid>
     </p>
-    <p>
-      В англійських реченнях чіткий порядок слів в усіх типах речень
-    </p>
+    <p> В англійських реченнях чіткий порядок слів в усіх типах речень </p>
   </ion-text>
 
-  <div class="figure">
-    <ion-img src="/assets/images/level_1/unit_01.png"></ion-img>
-  </div>
+<!--  <div class="figure">-->
+<!--    <ion-img src="/assets/images/level_1/unit_01.png"></ion-img>-->
+<!--  </div>-->
 
   <ion-text>
     <h5 class="ion-padding-top">Affirmative (ствердження)</h5>
@@ -257,12 +246,9 @@
         <ion-buttons slot="start" (click)="modal.dismiss()">
           <ion-icon name="close" size="large"></ion-icon>
         </ion-buttons>
-<!--        <ion-title>Welcome</ion-title>-->
-<!--        <ion-buttons slot="end">-->
-<!--          <ion-button [strong]="true">Confirm</ion-button>-->
-<!--        </ion-buttons>-->
       </ion-toolbar>
     </ion-header>
+
     <ion-content class="ion-padding">
       <div class="ion-text-center">
         <ion-text><b>{{progress}}%</b></ion-text>
@@ -270,36 +256,40 @@
       <ion-progress-bar class="ion-margin-bottom" [value]="0.01*progress"></ion-progress-bar>
 
       <ng-container *ngIf="currentExc === 1">
+        <app-vocabulary></app-vocabulary>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 2">
         <ion-text>
           <h4 class="ion-padding-bottom">Встав правильну форму дієслова</h4>
           <h6 class="ion-padding-bottom">(am / is / are)</h6>
         </ion-text>
         <app-words-writer [sentences]="sentences" [rightAnswers]="rightAnswers"
-                          (_onComplete)="currentExc = 2; progress = 33"
+                          (_onComplete)="currentExc = 3; progress = 50"
         ></app-words-writer>
       </ng-container>
 
-      <ng-container *ngIf="currentExc === 2">
+      <ng-container *ngIf="currentExc === 3">
         <ion-text>
           <h4 class="ion-padding-bottom">Зробити правильний порядок слів</h4>
           <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
         </ion-text>
         <app-words-reorder [sentences]="rightSentences" [rightAnswers]="rightSentences" [images]="images"
-                           (_onComplete)="currentExc = 3; progress = 66"
+                           (_onComplete)="currentExc = 4; progress = 75"
         ></app-words-reorder>
       </ng-container>
 
-      <ng-container *ngIf="currentExc === 3">
+      <ng-container *ngIf="currentExc === 4">
         <ion-text>
           <h4 class="ion-padding-bottom">Надрукувати переклад</h4>
 
           <app-words-translate [sentences]="sentencesForTranslate" [rightAnswers]="rightSentences" [images]="images"
-                               (_onComplete)="currentExc = 4; progress = 100"
+                               (_onComplete)="currentExc = 5; progress = 100"
           ></app-words-translate>
         </ion-text>
       </ng-container>
 
-      <ng-container *ngIf="currentExc === 4">
+      <ng-container *ngIf="currentExc === 5">
         <ion-text>
           <h4 class="ion-padding-bottom ion-text-center">Вітаємо Вас з пройденою вправою</h4>
 
