@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {NativeAudio} from '@capacitor-community/native-audio'
+import {Howl, Howler} from 'howler';
 
 declare const AudioContext: any;
 declare const webkitAudioContext: any;
@@ -16,20 +16,14 @@ export class AudioProvider {
 
   constructor(
     public http: HttpClient,
-    nativeAudio: NativeAudio
   ) {}
 
   play() {
-    NativeAudio.preload({
-      assetId: "fire",
-      assetPath: "/assets/sounds/units/unit_1/soldier.mp3",
-      audioChannelNum: 1,
-      isUrl: false
-    }).then(() => {
-      NativeAudio.play({assetId: "fire"}).then(() => {
-        console.log('audio is playing');
-      })
-    })
+    const sound = new Howl({
+      src: ['./assets/sounds/units/unit_1/soldier.mp3']
+    });
+
+    sound.play();
 
   }
 
