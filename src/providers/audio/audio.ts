@@ -20,6 +20,7 @@ export class AudioProvider {
 
   play() {
     const sound = new Howl({
+      html5: true,
       src: ['./assets/sounds/units/unit_1/soldier.mp3']
     });
 
