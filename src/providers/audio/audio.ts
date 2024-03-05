@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {NativeAudio} from '@capacitor-community/native-audio'
+
 declare const AudioContext: any;
 declare const webkitAudioContext: any;
 
@@ -13,6 +15,15 @@ export class AudioProvider {
   private GAIN: any = null;
 
   constructor(public http: HttpClient) {}
+
+  play() {
+    NativeAudio.preload({
+      assetId: "fire",
+      assetPath: "/assets/sounds/units/unit_1/soldier.mp3",
+      audioChannelNum: 1,
+      isUrl: false
+    }).then();
+  }
 
   loadSound(track: string): void {
     this.http.get(track, { responseType: "arraybuffer" })
