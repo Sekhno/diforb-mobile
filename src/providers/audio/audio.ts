@@ -14,7 +14,10 @@ export class AudioProvider {
   private CONTEXT: any = new (AudioContext || webkitAudioContext)();
   private GAIN: any = null;
 
-  constructor(public http: HttpClient) {}
+  constructor(
+    public http: HttpClient,
+    nativeAudio: NativeAudio
+  ) {}
 
   play() {
     NativeAudio.preload({
@@ -22,7 +25,12 @@ export class AudioProvider {
       assetPath: "/assets/sounds/units/unit_1/soldier.mp3",
       audioChannelNum: 1,
       isUrl: false
-    }).then();
+    }).then(() => {
+      NativeAudio.play({assetId: "fire"}).then(() => {
+        console.log('audio is playing');
+      })
+    })
+
   }
 
   loadSound(track: string): void {
