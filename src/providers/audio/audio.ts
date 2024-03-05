@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Howl, Howler} from 'howler';
+import { Media, MediaObject } from '@ionic-native/media/ngx';
 
 declare const AudioContext: any;
 declare const webkitAudioContext: any;
@@ -16,17 +17,12 @@ export class AudioProvider {
 
   constructor(
     public http: HttpClient,
+    private media: Media
   ) {}
 
   play() {
-    const sound = new Howl({
-      html5: true,
-      src: ['./assets/sounds/units/unit_1/soldier.mp3']
-    });
-
-    sound.play();
-    // ok
-
+    const file: MediaObject = this.media.create('/assets/sounds/units/unit_1/soldier.mp3');
+    file.play();
   }
 
   loadSound(track: string): void {
