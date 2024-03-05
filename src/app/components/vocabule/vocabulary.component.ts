@@ -16,7 +16,7 @@ export class VocabularyComponent {
   ) { }
 
   play(url: string) {
-    this.audioProvider.loadSound(`/assets/${url}`);
+    this.audioProvider.play();
   }
 
 }
