@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Howl, Howler} from 'howler';
 import { Media, MediaObject } from '@ionic-native/media/ngx';
 
 declare const AudioContext: any;

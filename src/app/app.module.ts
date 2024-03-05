@@ -19,6 +19,7 @@ import {TrainerProgressService} from "./services/trainer-progress.service";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {CommonModule} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { Media } from '@ionic-native/media/ngx';
 
 const app = initializeApp(environment.firebaseConfig);
 
@@ -44,6 +45,7 @@ const app = initializeApp(environment.firebaseConfig);
     }),
   ],
   providers: [
+    Media,
     AudioProvider,
     TrainerProgressService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
