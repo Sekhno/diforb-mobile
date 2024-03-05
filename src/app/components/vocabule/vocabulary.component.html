@@ -1,0 +1,20 @@
+<ion-content>
+  <ng-container *ngFor="let voc of vocabulary; let i = index">
+    <ng-container *ngIf="i === currentExc">
+      <ion-text class="ion-text-center">
+        <h1 class="ion-margin-bottom ion-text-uppercase"><b>{{voc.word}}</b></h1>
+        <p (touchstart)="play(voc.sound)"><ion-icon name="musical-notes-outline" size="large" ></ion-icon></p>
+      </ion-text>
+
+      <div class="figure">
+        <ion-img src="{{voc.image}}" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
+      </div>
+
+      <ion-text>
+        <h2 class="ion-text-uppercase ion-margin-top ion-margin-bottom ion-text-center"><b>{{voc.translation}}</b></h2>
+      </ion-text>
+      <ion-button class="w-full ion-margin-top" (click)="currentExc = currentExc + 1">Далі</ion-button>
+    </ng-container>
+  </ng-container>
+
+</ion-content>

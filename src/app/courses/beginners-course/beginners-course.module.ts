@@ -13,6 +13,7 @@ import {MatStepperModule} from "@angular/material/stepper";
 import {MatListModule} from "@angular/material/list";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {WordsTranslateComponent} from "../../components/words-translate/words-translate.component";
+import {VocabularyComponent} from "../../components/vocabule/vocabulary.component";
 
 const MaterialModules = [
   MatStepperModule,
@@ -28,7 +29,8 @@ const MaterialModules = [
     WordsWriterComponent,
     WordsReorderComponent,
     ImagesComparisonComponent,
-    WordsTranslateComponent
+    WordsTranslateComponent,
+    VocabularyComponent
   ],
   imports: [
     ...MaterialModules,
