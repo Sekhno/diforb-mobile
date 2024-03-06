@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {
   affirmative,
-  images,
+  images, negative,
   rightAnswers,
   rightSentences,
   sentences,
@@ -23,14 +23,10 @@ export class Unit1Component  implements OnInit {
   currentExc = 1;
   progress = 0;
 
-  sentences = sentences;
-  rightAnswers = rightAnswers;
-  rightSentences = rightSentences;
-  sentencesForTranslate = sentencesForTranslate;
-  images = images;
 
   vocabulary = vocabulary;
   affirmative = affirmative;
+  negative = negative;
 
 
 

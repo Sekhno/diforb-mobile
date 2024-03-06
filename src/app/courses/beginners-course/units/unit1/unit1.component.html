@@ -265,7 +265,7 @@
 
       <ng-container *ngIf="currentExc === 2">
         <ion-text class="ion-text-center">
-          <h4 class="ion-padding-bottom">Встав правильну форму дієслова</h4>
+          <h1 class="ion-padding-bottom">Встав правильну форму дієслова</h1>
           <h6 class="ion-padding-bottom">(am / is / are)</h6>
         </ion-text>
         <app-words-writer [examples]="affirmative"
@@ -275,7 +275,7 @@
 
       <ng-container *ngIf="currentExc === 3">
         <ion-text class="ion-text-center">
-          <h4 class="ion-padding-bottom">Зробити правильний порядок слів</h4>
+          <h1 class="ion-padding-bottom">Зробити правильний порядок слів</h1>
           <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
         </ion-text>
         <app-words-reorder [examples]="affirmative"
@@ -285,20 +285,43 @@
 
       <ng-container *ngIf="currentExc === 4">
         <ion-text class="ion-text-center">
-          <h4 class="ion-padding-bottom">Надрукувати переклад</h4>
-
-          <app-words-translate [examples]="affirmative"
-                               (_onComplete)="currentExc = 5; progress = 100"
-          ></app-words-translate>
+          <h1 class="ion-padding-bottom">Надрукувати переклад</h1>
         </ion-text>
+
+        <app-words-translate [examples]="affirmative"
+                             (_onComplete)="currentTeo = 3; modal.dismiss(); currentExc = 5;"
+        ></app-words-translate>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 5">
         <ion-text class="ion-text-center">
-          <h1 class="ion-padding-bottom ion-text-center">Next</h1>
-
-
+          <h1 class="ion-padding-bottom">Встав правильну форму дієслова</h1>
+          <h6 class="ion-padding-bottom">(`m not / isn`t / aren`t)</h6>
         </ion-text>
+        <app-words-writer [examples]="negative"
+                          (_onComplete)="currentExc = 6;"
+        ></app-words-writer>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 6">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Зробити правильний порядок слів</h1>
+          <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
+        </ion-text>
+        <app-words-reorder [examples]="negative"
+                           (_onComplete)="currentExc = 7;"
+        ></app-words-reorder>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 7">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Надрукувати переклад</h1>
+          <h6 class="ion-padding-bottom">Використайте коротку форму запису</h6>
+        </ion-text>
+
+        <app-words-translate [examples]="negative"
+                             (_onComplete)="currentTeo = 4; modal.dismiss(); currentExc = 8;"
+        ></app-words-translate>
       </ng-container>
 
 <!--      <ng-container *ngIf="currentExc === 5">-->
