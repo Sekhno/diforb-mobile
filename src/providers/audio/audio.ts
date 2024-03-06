@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Media, MediaObject } from '@ionic-native/media/ngx';
+import { Preferences } from '@capacitor/preferences';
 
 declare const AudioContext: any;
 declare const webkitAudioContext: any;
@@ -15,14 +15,9 @@ export class AudioProvider {
   private GAIN: any = null;
 
   constructor(
-    public http: HttpClient,
-    private media: Media
+    public http: HttpClient
   ) {}
 
-  play() {
-    const file: MediaObject = this.media.create('/assets/sounds/units/unit_1/soldier.mp3');
-    file.play();
-  }
 
   loadSound(track: string): void {
     this.http.get(track, { responseType: "arraybuffer" })

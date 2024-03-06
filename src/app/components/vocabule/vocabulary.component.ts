@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {AudioProvider} from "../../../providers/audio/audio";
-import {vocabulary} from "../../courses/beginners-course/units/unit1/examples";
 
 @Component({
   selector: 'app-vocabulary',
@@ -8,7 +7,9 @@ import {vocabulary} from "../../courses/beginners-course/units/unit1/examples";
   styleUrls: ['./vocabulary.component.scss'],
 })
 export class VocabularyComponent {
-  vocabulary = vocabulary;
+  @Input() vocabulary = []  as {word: string; translation: string, sound: string, image: string}[];
+
+  @Output() _onComplete = new EventEmitter<boolean>();
   currentExc = 0;
 
   constructor(
@@ -16,7 +17,13 @@ export class VocabularyComponent {
   ) { }
 
   play(url: string) {
-    this.audioProvider.play();
+    this.audioProvider.loadSound(`/assets/${url}`);
+  }
+
+  check() {
+    if (this.currentExc === this.vocabulary.length - 1) {
+      this._onComplete.emit(true);
+    }
   }
 
 }

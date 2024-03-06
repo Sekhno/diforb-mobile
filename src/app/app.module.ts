@@ -12,14 +12,12 @@ import {AudioProvider} from "../providers/audio/audio";
 
 import { initializeApp } from "firebase/app";
 import {environment} from "../environments/environment";
-import config from '../../capacitor.config';
 import {LoginButtonComponent} from "./components/login-button.component";
 import { domain, clientId, callbackUri } from './auth.config';
 import {TrainerProgressService} from "./services/trainer-progress.service";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {CommonModule} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { Media } from '@ionic-native/media/ngx';
 
 const app = initializeApp(environment.firebaseConfig);
 
@@ -45,7 +43,6 @@ const app = initializeApp(environment.firebaseConfig);
     }),
   ],
   providers: [
-    Media,
     AudioProvider,
     TrainerProgressService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

@@ -1,16 +1,15 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {ItemReorderEventDetail} from "@ionic/angular";
 import {randomWords} from "../../../utils/random";
+import {ExampleType} from "../../courses/beginners-course/units/unit1/examples";
 
 @Component({
   selector: 'app-words-reorder',
   templateUrl: './words-reorder.component.html',
   styleUrls: ['./words-reorder.component.scss'],
 })
-export class WordsReorderComponent implements OnChanges{
-  @Input() sentences: string[] = [];
-  @Input() rightAnswers: string[] = [];
-  @Input() images: string[] = [];
+export class WordsReorderComponent implements OnChanges {
+  @Input() examples: ExampleType[] = []
 
   @Output() _onComplete = new EventEmitter<boolean>();
 
@@ -35,9 +34,9 @@ export class WordsReorderComponent implements OnChanges{
       }
 
 
-      if (sentence.trim() === this.rightAnswers[this.currentExc]) {
+      if (sentence.trim() === this.examples[this.currentExc].sentence) {
         this.currentExc++;
-        if (this.currentExc === this.sentences.length) {
+        if (this.currentExc === this.examples.length) {
           this._onComplete.emit(true);
         }
       }
@@ -45,6 +44,6 @@ export class WordsReorderComponent implements OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.words = this.sentences.map(sentence => randomWords(sentence));
+    this.words = this.examples.map(exc => randomWords(exc.sentence));
   }
 }
