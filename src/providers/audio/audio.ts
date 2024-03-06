@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Preferences } from '@capacitor/preferences';
+
 declare const AudioContext: any;
 declare const webkitAudioContext: any;
 
@@ -12,7 +14,10 @@ export class AudioProvider {
   private CONTEXT: any = new (AudioContext || webkitAudioContext)();
   private GAIN: any = null;
 
-  constructor(public http: HttpClient) {}
+  constructor(
+    public http: HttpClient
+  ) {}
+
 
   loadSound(track: string): void {
     this.http.get(track, { responseType: "arraybuffer" })

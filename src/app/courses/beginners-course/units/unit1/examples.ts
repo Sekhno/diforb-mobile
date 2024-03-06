@@ -1,3 +1,114 @@
+export type ExampleType = Record< 'sentence' | 'example' | 'missed' | 'translate' | 'image', string >
+
+export const affirmative = [
+  {
+    sentence: 'I am a soldier',
+    example: 'I {{input}} a soldier',
+    missed: 'am',
+    translate: 'Я солдат',
+    image: '/assets/images/units/unit_1/soldier.png'
+  },
+  {
+    sentence: 'He is a lawyer',
+    example: 'He {{input}} a lawyer',
+    missed: 'is',
+    translate: 'Він адвокат',
+    image: '/assets/images/units/unit_1/lawyer.png'
+  },
+  {
+    sentence: 'She is a vet',
+    example: 'She {{input}} a vet',
+    missed: 'is',
+    translate: 'Вона ветеринар',
+    image: '/assets/images/units/unit_1/vet.png'
+  },
+  {
+    sentence: 'We are pilots',
+    example: 'We {{input}} pilots',
+    missed: 'are',
+    translate: 'Ми пілоти',
+    image: '/assets/images/units/unit_1/pilot.png'
+  },
+  {
+    sentence: 'They are builders',
+    example: 'They {{input}} builders',
+    missed: 'are',
+    translate: 'Вони будівельники',
+    image: '/assets/images/units/unit_1/builder.png'
+  },
+  {
+    sentence: 'You are a police officer',
+    example: 'You {{input}} a police officer',
+    missed: 'are',
+    translate: 'Ти поліцейський',
+    image: '/assets/images/units/unit_1/police_officer.png'
+  },
+  {
+    sentence: 'She is a shop assistant',
+    example: 'She {{input}} a shop assistant',
+    missed: 'is',
+    translate: 'Вона продавець-консультант',
+    image: '/assets/images/units/unit_1/shop_assistant.png'
+  },
+  {
+    sentence: 'She is a nurse',
+    example: 'She {{input}} a nurse',
+    missed: 'is',
+    translate: 'Вона медсестра',
+    image: '/assets/images/units/unit_1/nurse.png'
+  },
+  {
+    sentence: 'He is a hairdresser',
+    example: 'He {{input}} a hairdresser',
+    missed: 'is',
+    translate: 'Він перукар',
+    image: '/assets/images/units/unit_1/hairdresser.png'
+  },
+  {
+    sentence: 'We are cleaners',
+    example: 'We {{input}} cleaners',
+    missed: 'are',
+    translate: 'Ми прибиральники',
+    image: '/assets/images/units/unit_1/cleaner.png'
+  }
+] as ExampleType[]
+
+export const negative = [
+
+] as ExampleType[]
+
+export const question = [
+
+] as ExampleType[]
+
+export const rightSentences = [
+  'I am a soldier',
+  'He is a lawyer',
+  'She is a vet',
+  'We are pilots',
+  'They are builders',
+  'You are a police officer',
+  'She is a shop assistant',
+  'She is a nurse',
+  'He is a hairdresser',
+  'We are cleaners'
+]
+
+export const sentences = [
+  'I {{input}} a soldier.',
+  'He {{input}} a lawyer',
+  'She {{input}} a vet',
+  'We {{input}} pilots',
+  'They {{input}} builders',
+  'You {{input}} a police officer',
+  'She {{input}} a shop assistant',
+  'She {{input}} a nurse',
+  'He {{input}} a hairdresser',
+  'We {{input}} cleaners'
+];
+
+export const rightAnswers = ['am', 'is', 'is', 'are', 'are', 'are', 'is', 'is', 'is', 'are'];
+
 export const sentencesForTranslate = [
   'Я солдат',
   'Він адвокат',
@@ -121,7 +232,7 @@ export const vocabulary = [
     sound: 'sounds/units/unit_1/they.mp3',
     image: '/assets/images/units/unit_1/they.png'
   }
-] as const;
+];
 
 export const sounds = [
   'sounds/units/unit_1/soldier.mp3',
@@ -141,30 +252,4 @@ export const sounds = [
   'sounds/units/unit_1/they.mp3'
 ];
 
-export const rightSentences = [
-  'I am a soldier',
-  'He is a lawyer',
-  'She is a vet',
-  'We are pilots',
-  'They are builders',
-  'You are a police officer',
-  'She is a shop assistant',
-  'She is a nurse',
-  'He is a hairdresser',
-  'We are cleaners'
-]
 
-export const sentences = [
-  'I {{input}} a soldier.',
-  'He {{input}} a lawyer',
-  'She {{input}} a vet',
-  'We {{input}} pilots',
-  'They {{input}} builders',
-  'You {{input}} a police officer',
-  'She {{input}} a shop assistant',
-  'She {{input}} a nurse',
-  'He {{input}} a hairdresser',
-  'We {{input}} cleaners'
-];
-
-export const rightAnswers = ['am', 'is', 'is', 'are', 'are', 'are', 'is', 'is', 'is', 'are'];

@@ -12,7 +12,6 @@ import {AudioProvider} from "../providers/audio/audio";
 
 import { initializeApp } from "firebase/app";
 import {environment} from "../environments/environment";
-import config from '../../capacitor.config';
 import {LoginButtonComponent} from "./components/login-button.component";
 import { domain, clientId, callbackUri } from './auth.config';
 import {TrainerProgressService} from "./services/trainer-progress.service";

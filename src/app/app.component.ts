@@ -4,6 +4,7 @@ import { mergeMap } from 'rxjs/operators';
 import { App } from '@capacitor/app';
 import { Browser } from '@capacitor/browser';
 import { callbackUri } from './auth.config';
+import {InfiniteScrollCustomEvent} from "@ionic/angular";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,6 @@ export class AppComponent {
   constructor(public auth: AuthService, private ngZone: NgZone) {
     this.initializeApp();
   }
-
   initializeApp() {
     App.addListener('appUrlOpen', ({ url }) => {
       // Must run inside an NgZone for Angular to pick up the changes

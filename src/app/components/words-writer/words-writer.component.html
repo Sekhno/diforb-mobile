@@ -1,17 +1,8 @@
 <div>
-    <section *ngFor="let sentence of sentences; let i = index"
-             [ngClass]="{error: checked && inputs[i] !== rightAnswers[i]}">
+    <section *ngFor="let exc of examples; let i = index"
+             [ngClass]="{error: checked && inputs[i] !== exc.sentence}">
 
-<!--    @if (checked) {-->
-<!--      @if (inputs[i] === rightAnswers[i]) {-->
-<!--        <ion-icon class="ion-padding-end" name="chevron-down-circle-outline" color="success"></ion-icon>-->
-<!--      }-->
-<!--      @else {-->
-<!--        <ion-icon class="ion-padding-end" name="close-circle-outline" color="danger"></ion-icon>-->
-<!--      }-->
-<!--    }-->
-
-    <ng-container *ngFor="let word of sentence.split(' '); let n = index">
+    <ng-container *ngFor="let word of exc.example.split(' '); let n = index">
       @if (word === '{{input}}') {
         <ion-input class="input" [(ngModel)]="inputs[i]" (ngModelChange)="change()"></ion-input>
       }
@@ -19,7 +10,7 @@
         <span>{{word}}</span>
       }
 
-      <span *ngIf="n !== sentence.split(' ').length - 1">&nbsp;</span>
+      <span *ngIf="n !== exc.example.split(' ').length - 1">&nbsp;</span>
     </ng-container>
   </section>
 </div>

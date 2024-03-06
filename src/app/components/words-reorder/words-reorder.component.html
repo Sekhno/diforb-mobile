@@ -1,7 +1,7 @@
 <ng-container *ngFor="let s of words; let i = index">
   <ng-container *ngIf="currentExc === i">
     <div class="figure">
-      <ion-img src="/assets/images/{{images[i]}}" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
+      <ion-img src="{{examples[i].image}}" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
     </div>
     <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
       <div *ngFor="let item of s" class="ion-text-center item">

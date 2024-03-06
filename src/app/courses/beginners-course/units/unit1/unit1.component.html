@@ -8,238 +8,240 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-text>
-    <h1 class="ion-margin-top ion-margin-bottom ion-text-center"> <b>To be or not to be</b> </h1>
+  <ng-container *ngIf="currentTeo === 1">
+    <ion-text>
+      <h1 class="ion-margin-top ion-margin-bottom ion-text-center"> <b>To be or not to be</b> </h1>
+      <div class="figure">
+        <ion-img src="/assets/images/level_1/unit_001.png"></ion-img>
+      </div>
+      <h6 class="ion-margin-top">
+        Жодне речення в англійській мові не будується без дієслова.
+        Навіть якщо дії в реченні немає, все одно потрібно вжити дієслово.
+        Таку роль відіграє дієслово <ion-text color="primary">to be</ion-text>.
+      </h6>
+      <p><ion-text color="primary">To be</ion-text> - це початкова форма. Воно відмінюється відповідно до осіб.</p>
+      <p>
+        На відміну від української мови, ми не можемо просто сказати  <span class="sub-color">He my friend</span>. <br>
+        Потрібно сказати -
+        <ion-grid class="ion-text-center sub-color ion-margin-top ion-margin-bottom">
+          <ion-row>
+            <ion-col> He <ion-text color="primary">is</ion-text> me friend </ion-col>
+            <ion-col> Він <ion-text color="primary">Є</ion-text> мій друг </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col> I <ion-text color="primary">am</ion-text> happy </ion-col>
+            <ion-col> Я <ion-text color="primary">Є</ion-text> щасливий </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col> I <ion-text color="primary">am</ion-text> not an animal, I <ion-text color="primary">am</ion-text> a human </ion-col>
+            <ion-col> Я не тварина, я людина </ion-col>
+          </ion-row>
+        </ion-grid>
+      </p>
+      <p> В англійських реченнях чіткий порядок слів в усіх типах речень </p>
+      <p>
+        *Артикль a/an ставлять перед іменником в однині, перед множиною не ставлять,
+        а ставлять коли слово починається з приголосної
+      </p>
+    </ion-text>
+
     <div class="figure">
-      <ion-img src="/assets/images/level_1/unit_001.png"></ion-img>
-    </div>
-    <h6 class="ion-margin-top">
-      Жодне речення в англійській мові не будується без дієслова.
-      Навіть якщо дії в реченні немає, все одно потрібно вжити дієслово.
-      Таку роль відіграє дієслово <ion-text color="primary">to be</ion-text>.
-    </h6>
-    <p><ion-text color="primary">To be</ion-text> - це початкова форма. Воно відмінюється відповідно до осіб.</p>
-    <p>
-      На відміну від української мови, ми не можемо просто сказати  <span class="sub-color">He my friend</span>. <br>
-      Потрібно сказати -
-      <ion-grid class="ion-text-center sub-color">
+      <ion-grid class="ion-no-padding">
         <ion-row>
-          <ion-col> He <ion-text color="primary">is</ion-text> me friend </ion-col>
-          <ion-col> Він <ion-text color="primary">Є</ion-text> мій друг </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col> I <ion-text color="primary">am</ion-text> happy </ion-col>
-          <ion-col> Я <ion-text color="primary">Є</ion-text> щасливий </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col> I <ion-text color="primary">am</ion-text> not an animal, I <ion-text color="primary">am</ion-text> a human </ion-col>
-          <ion-col> Я не тварина, я людина </ion-col>
+          <ion-col>
+            <div class="wi">
+              <ion-img src="/assets/images/i_am_a_soldier.png"></ion-img>
+            </div>
+          </ion-col>
+          <ion-col>
+            <ion-grid class="ion-no-padding">
+              <ion-row>
+                <ion-col>
+                  <div class="wi">
+                    <ion-img src="/assets/images/he_is_a_layer.png"></ion-img>
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <div class="wi">
+                    <ion-img src="/assets/images/she_is_a_vet.png"></ion-img>
+                  </div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <div class="wi">
+                    <ion-img src="/assets/images/we_are_pilots.png"></ion-img>
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <div class="wi">
+                    <ion-img src="/assets/images/they_are_builders.png"></ion-img>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
         </ion-row>
       </ion-grid>
-    </p>
-    <p> В англійських реченнях чіткий порядок слів в усіх типах речень </p>
-  </ion-text>
+    </div>
+  </ng-container>
 
-<!--  <div class="figure">-->
-<!--    <ion-img src="/assets/images/level_1/unit_01.png"></ion-img>-->
-<!--  </div>-->
+  <ng-container *ngIf="currentTeo === 2">
+    <ion-text class="ion-text-center">
+      <h1 class="ion-padding-top ion-padding-bottom">Affirmative (ствердження)</h1>
 
-  <ion-text>
-    <h5 class="ion-padding-top">Affirmative (ствердження)</h5>
-  </ion-text>
+      <ion-grid class="ion-padding-top ion-padding-bottom">
+        <ion-row>
+          <ion-col><b>Long forms</b></ion-col>
+          <ion-col><b>Short forms</b></ion-col>
+        </ion-row>
 
-  <ion-grid class="ion-text-center ion-padding-top ion-padding-bottom">
-    <ion-row>
-      <ion-col><b>Long forms</b></ion-col>
-      <ion-col><b>Short forms</b></ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>I am</ion-col>
+          <ion-col>I'm</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>I am</ion-col>
-      <ion-col>I'm</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>You are</ion-col>
+          <ion-col>You're</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>You are</ion-col>
-      <ion-col>You're</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>He is</ion-col>
+          <ion-col>He's</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>He is</ion-col>
-      <ion-col>He's</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>She is</ion-col>
+          <ion-col>She's</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>She is</ion-col>
-      <ion-col>She's</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>It is</ion-col>
+          <ion-col>It's</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>It is</ion-col>
-      <ion-col>It's</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>We are</ion-col>
+          <ion-col>We're</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>We are</ion-col>
-      <ion-col>We're</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>They are</ion-col>
+          <ion-col>They're</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-text>
+  </ng-container>
 
-    <ion-row>
-      <ion-col>They are</ion-col>
-      <ion-col>They're</ion-col>
-    </ion-row>
-  </ion-grid>
+  <ng-container *ngIf="currentTeo === 3">
+    <ion-text class="ion-text-center">
+      <h1 class="ion-padding-top">Negative (заперечення)</h1>
 
-  <ion-text>
-    <h5 class="ion-padding-top">Negative (заперечення)</h5>
-  </ion-text>
+      <ion-grid class="ion-padding-top ion-padding-bottom">
+        <ion-row>
+          <ion-col><b>Long forms</b></ion-col>
+          <ion-col><b>Short forms</b></ion-col>
+        </ion-row>
 
-  <ion-grid class="ion-text-center ion-padding-top ion-padding-bottom">
-    <ion-row>
-      <ion-col><b>Long forms</b></ion-col>
-      <ion-col><b>Short forms</b></ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>I am not</ion-col>
+          <ion-col>I'm not</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>I am not</ion-col>
-      <ion-col>I'm not</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>You are not</ion-col>
+          <ion-col>You aren`t </ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>You are not</ion-col>
-      <ion-col>You aren`t </ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>He is not</ion-col>
+          <ion-col>He isn`t</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>He is not</ion-col>
-      <ion-col>He isn`t</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>She is not</ion-col>
+          <ion-col>She isn't</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>She is not</ion-col>
-      <ion-col>She isn't</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>It is not</ion-col>
+          <ion-col>It isn't</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>It is not</ion-col>
-      <ion-col>It isn't</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>We are not</ion-col>
+          <ion-col>We aren't</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>We are not</ion-col>
-      <ion-col>We aren't</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>They are not</ion-col>
+          <ion-col>They aren't</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-text>
+  </ng-container>
 
-    <ion-row>
-      <ion-col>They are not</ion-col>
-      <ion-col>They aren't</ion-col>
-    </ion-row>
-  </ion-grid>
+  <ng-container *ngIf="currentTeo === 4">
+    <ion-text class="ion-text-center">
+      <h1 class="ion-padding-top">Interrogative (питання)</h1>
+      <p>В запитаннях на перше місце обов'язково виносимо Am, is або are.</p>
 
-  <ion-text>
-    <h5 class="ion-padding-top">Interrogative (питання)</h5>
-    <p>В запитаннях на перше місце обов'язково виносимо Am, is або are.</p>
-  </ion-text>
+      <ion-grid class="ion-padding-top ion-padding-bottom">
+        <ion-row>
+          <ion-col>Am I?</ion-col>
+          <ion-col>Yes, I am</ion-col>
+          <ion-col>No, I'm not</ion-col>
+        </ion-row>
 
-  <ion-grid class="ion-text-center ion-padding-top ion-padding-bottom">
-    <ion-row>
-      <ion-col>Am I?</ion-col>
-      <ion-col>Yes, I am</ion-col>
-      <ion-col>No, I'm not</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>Are you?</ion-col>
+          <ion-col>Yes, you are</ion-col>
+          <ion-col>No, you aren't</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>Are you?</ion-col>
-      <ion-col>Yes, you are</ion-col>
-      <ion-col>No, you aren't</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>Is he?</ion-col>
+          <ion-col>Yes, he is</ion-col>
+          <ion-col>No, he isn't</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>Is he?</ion-col>
-      <ion-col>Yes, he is</ion-col>
-      <ion-col>No, he isn't</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>Is she?</ion-col>
+          <ion-col>Yes, she is</ion-col>
+          <ion-col>No, she isn't</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>Is she?</ion-col>
-      <ion-col>Yes, she is</ion-col>
-      <ion-col>No, she isn't</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>Is it?</ion-col>
+          <ion-col>Yes, it is</ion-col>
+          <ion-col>No, it isn't</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>Is it?</ion-col>
-      <ion-col>Yes, it is</ion-col>
-      <ion-col>No, it isn't</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>Are we?</ion-col>
+          <ion-col>Yes, we are</ion-col>
+          <ion-col>No, we aren't</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>Are we?</ion-col>
-      <ion-col>Yes, we are</ion-col>
-      <ion-col>No, we aren't</ion-col>
-    </ion-row>
+        <ion-row>
+          <ion-col>Are they?</ion-col>
+          <ion-col>Yes, they are</ion-col>
+          <ion-col>No, they aren't</ion-col>
+        </ion-row>
 
-    <ion-row>
-      <ion-col>Are they?</ion-col>
-      <ion-col>Yes, they are</ion-col>
-      <ion-col>No, they aren't</ion-col>
-    </ion-row>
+      </ion-grid>
+    </ion-text>
+  </ng-container>
 
-  </ion-grid>
-
-  <ion-text>
-    <p>
-      *Артикль a/an ставлять перед іменником в однині, перед множиною не ставлять,
-      а ставлять коли слово починається з приголосної
-    </p>
-    <p></p>
-  </ion-text>
-
-  <div class="figure">
-    <ion-grid class="ion-no-padding">
-      <ion-row>
-        <ion-col>
-          <div class="wi">
-            <ion-img src="/assets/images/i_am_a_soldier.png"></ion-img>
-          </div>
-        </ion-col>
-        <ion-col>
-          <ion-grid class="ion-no-padding">
-            <ion-row>
-              <ion-col>
-                <div class="wi">
-                  <ion-img src="/assets/images/he_is_a_layer.png"></ion-img>
-                </div>
-              </ion-col>
-              <ion-col>
-                <div class="wi">
-                  <ion-img src="/assets/images/she_is_a_vet.png"></ion-img>
-                </div>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <div class="wi">
-                  <ion-img src="/assets/images/we_are_pilots.png"></ion-img>
-                </div>
-              </ion-col>
-              <ion-col>
-                <div class="wi">
-                  <ion-img src="/assets/images/they_are_builders.png"></ion-img>
-                </div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
 
   <div class="ion-padding">
-    <ion-button class="w-full" id="exercises_1">Start exercises</ion-button>
+    <ion-button class="w-full" id="exc">Далі</ion-button>
   </div>
 </ion-content>
 
-<ion-modal trigger="exercises_1">
+
+<ion-modal trigger="exc">
   <ng-template>
     <ion-header class="ion-no-border ion-padding">
       <ion-toolbar>
@@ -250,59 +252,68 @@
     </ion-header>
 
     <ion-content class="ion-padding">
-      <div class="ion-text-center">
-        <ion-text><b>{{progress}}%</b></ion-text>
-      </div>
-      <ion-progress-bar class="ion-margin-bottom" [value]="0.01*progress"></ion-progress-bar>
+<!--      <div class="ion-text-center">-->
+<!--        <ion-text><b>{{progress}}%</b></ion-text>-->
+<!--      </div>-->
+<!--      <ion-progress-bar class="ion-margin-bottom" [value]="0.01*progress"></ion-progress-bar>-->
 
       <ng-container *ngIf="currentExc === 1">
-        <app-vocabulary></app-vocabulary>
+        <app-vocabulary [vocabulary]="vocabulary"
+                        (_onComplete)="currentTeo = 2; modal.dismiss(); currentExc = 2;"
+        ></app-vocabulary>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 2">
-        <ion-text>
+        <ion-text class="ion-text-center">
           <h4 class="ion-padding-bottom">Встав правильну форму дієслова</h4>
           <h6 class="ion-padding-bottom">(am / is / are)</h6>
         </ion-text>
-        <app-words-writer [sentences]="sentences" [rightAnswers]="rightAnswers"
-                          (_onComplete)="currentExc = 3; progress = 50"
+        <app-words-writer [examples]="affirmative"
+                          (_onComplete)="currentExc = 3;"
         ></app-words-writer>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 3">
-        <ion-text>
+        <ion-text class="ion-text-center">
           <h4 class="ion-padding-bottom">Зробити правильний порядок слів</h4>
           <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
         </ion-text>
-        <app-words-reorder [sentences]="rightSentences" [rightAnswers]="rightSentences" [images]="images"
-                           (_onComplete)="currentExc = 4; progress = 75"
+        <app-words-reorder [examples]="affirmative"
+                           (_onComplete)="currentExc = 4;"
         ></app-words-reorder>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 4">
-        <ion-text>
+        <ion-text class="ion-text-center">
           <h4 class="ion-padding-bottom">Надрукувати переклад</h4>
 
-          <app-words-translate [sentences]="sentencesForTranslate" [rightAnswers]="rightSentences" [images]="images"
+          <app-words-translate [examples]="affirmative"
                                (_onComplete)="currentExc = 5; progress = 100"
           ></app-words-translate>
         </ion-text>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 5">
-        <ion-text>
-          <h4 class="ion-padding-bottom ion-text-center">Вітаємо Вас з пройденою вправою</h4>
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom ion-text-center">Next</h1>
 
-          <div class="figure">
-            <ion-img src="/assets/images/congratulations_1.png"></ion-img>
-          </div>
-
-          <a routerLink="unit2">
-            <ion-button class="w-full ion-margin-top">Next Unit</ion-button>
-          </a>
 
         </ion-text>
       </ng-container>
+
+<!--      <ng-container *ngIf="currentExc === 5">-->
+<!--        <ion-text class="ion-text-center">-->
+<!--          <h4 class="ion-padding-bottom ion-text-center">Вітаємо Вас з пройденою вправою</h4>-->
+
+<!--          <div class="figure">-->
+<!--            <ion-img src="/assets/images/congratulations_1.png"></ion-img>-->
+<!--          </div>-->
+
+<!--          <a routerLink="unit2">-->
+<!--            <ion-button class="w-full ion-margin-top">Next Unit</ion-button>-->
+<!--          </a>-->
+<!--        </ion-text>-->
+<!--      </ng-container>-->
     </ion-content>
   </ng-template>
 </ion-modal>

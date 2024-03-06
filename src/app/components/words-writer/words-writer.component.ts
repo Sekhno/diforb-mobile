@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {ExampleType} from "../../courses/beginners-course/units/unit1/examples";
 
 @Component({
   selector: 'app-words-writer',
@@ -7,21 +8,17 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angula
 
 })
 export class WordsWriterComponent  implements OnChanges {
-  @Input() sentences: string[] = [];
-  @Input() rightAnswers: string[] = [];
+  @Input() examples: ExampleType[] = []
 
   @Output() _onComplete = new EventEmitter<boolean>()
 
-  inputs = new Array(this.sentences.length).fill('');
+  inputs = new Array(this.examples.length).fill('');
   checked = false;
 
-  constructor() {
-
-  }
+  constructor() {}
 
   ngOnChanges() {
-    this.inputs = new Array(this.sentences.length).fill('');
-    console.log(this.sentences, this.rightAnswers, this.inputs)
+    this.inputs = new Array(this.examples.length).fill('');
   }
 
   check() {
@@ -29,12 +26,10 @@ export class WordsWriterComponent  implements OnChanges {
   }
 
   change() {
-    console.log('change', this.inputs);
-    const isEvery = this.inputs.every((v, i) => this.rightAnswers[i] === v);
+    const isEvery = this.inputs.every((v, i) => this.examples[i].missed === v);
 
     if (isEvery) {
       this._onComplete.emit(true)
     }
   }
-
 }

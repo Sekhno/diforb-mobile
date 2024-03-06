@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ExampleType} from "../../courses/beginners-course/units/unit1/examples";
 
 @Component({
   selector: 'app-words-translate',
@@ -6,9 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./words-translate.component.scss'],
 })
 export class WordsTranslateComponent {
-  @Input() sentences: string[] = [];
-  @Input() rightAnswers: string[] = [];
-  @Input() images: string[] = [];
+  @Input() examples: ExampleType[] = [];
 
   @Output() _onComplete = new EventEmitter<boolean>();
 
@@ -18,9 +17,9 @@ export class WordsTranslateComponent {
   constructor() { }
 
   change(index: number) {
-    if (this.answers[index] === this.rightAnswers[index]) {
+    if (this.answers[index] === this.examples[index].sentence) {
       this.currentExc++;
-      if (this.currentExc === this.sentences.length) {
+      if (this.currentExc === this.examples.length) {
         this._onComplete.emit(true);
       }
     }
