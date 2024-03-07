@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {AudioProvider} from "../../../providers/audio/audio";
+import {NativeAudio} from "@capacitor-community/native-audio";
+import {Capacitor} from "@capacitor/core";
 
 @Component({
   selector: 'app-vocabulary',
@@ -13,11 +14,43 @@ export class VocabularyComponent {
   currentExc = 0;
 
   constructor(
-    private audioProvider: AudioProvider
-  ) { }
 
-  play(url: string) {
-    this.audioProvider.loadSound(`/assets/${url}`);
+  ) {
+
+  }
+
+  async play(url: string) {
+    try {
+      if (Capacitor.getPlatform() === 'ios') {
+        await NativeAudio.preload({
+          assetId: url,
+          assetPath: 'sounds/'+url,
+          audioChannelNum: 1,
+          isUrl: false
+        });
+
+        await NativeAudio.play({
+          assetId: url,
+          // time: 6.0 - seek time
+        });
+      } else {
+        await NativeAudio.preload({
+          assetId: url,
+          assetPath: url,
+          audioChannelNum: 1,
+          isUrl: false
+        });
+
+        await NativeAudio.play({
+          assetId: url,
+          // time: 6.0 - seek time
+        });
+      }
+    } catch (e) {
+      console.log(e);
+    }
+
+
   }
 
   check() {
