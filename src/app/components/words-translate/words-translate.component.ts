@@ -17,6 +17,8 @@ export class WordsTranslateComponent {
   constructor() { }
 
   change(index: number) {
+    console.log(this.answers[index]);
+    console.log(this.examples[index].sentence)
     if (this.answers[index] === this.examples[index].sentence) {
       this.currentExc++;
       if (this.currentExc === this.examples.length) {
