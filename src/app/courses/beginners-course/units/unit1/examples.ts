@@ -74,7 +74,69 @@ export const affirmative = [
 ] as ExampleType[]
 
 export const negative = [
-
+  {
+    sentence: 'They aren\'t soldiers',
+    example: 'They {{input}} soldiers',
+    missed: 'aren\'t',
+    translate: 'Вони не солдати',
+    image: '/assets/images/units/unit_1/soldier.png'
+  },
+  {
+    sentence: 'You aren\'t a vet',
+    example: 'You {{input}} a vet',
+    missed: 'aren\'t',
+    translate: 'Ти не ветеринар',
+    image: '/assets/images/units/unit_1/vet.png'
+  },
+  {
+    sentence: 'He isn\'t a pilot',
+    example: 'He {{input}} a pilot',
+    missed: 'isn\'t',
+    translate: 'Він не пілот',
+    image: '/assets/images/units/unit_1/pilot.png'
+  },
+  {
+    sentence: 'He isn\'t a builder',
+    example: 'He {{input}} a builder',
+    missed: 'isn\'t',
+    translate: 'Він не будівельник',
+    image: '/assets/images/units/unit_1/builder.png'
+  },
+  {
+    sentence: 'She isn\'t a police officer.',
+    example: 'She {{input}} a police officer.',
+    missed: 'isn\'t',
+    translate: 'Вона не поліцейська',
+    image: '/assets/images/units/unit_1/police_officer.png'
+  },
+  {
+    sentence: 'We aren\'t shop assistants',
+    example: 'We {{input}} shop assistants',
+    missed: 'aren\'t',
+    translate: 'Ми не продавці-консультанти',
+    image: '/assets/images/units/unit_1/shop_assistant.png'
+  },
+  {
+    sentence: 'She isn\'t a nurse',
+    example: 'She isn\'t a nurse',
+    missed: 'isn\'t',
+    translate: 'Вона не медсестра',
+    image: '/assets/images/units/unit_1/nurse.png'
+  },
+  {
+    sentence: 'I\'m not a hairdresser.',
+    example: 'I{{input}} a hairdresser',
+    missed: '\`m not',
+    translate: 'Я не перукар',
+    image: '/assets/images/units/unit_1/hairdresser.png'
+  },
+  {
+    sentence: 'They aren\'t cleaners',
+    example: 'They {{input}} cleaners.',
+    missed: 'aren\'t',
+    translate: 'Вони не прибиральники',
+    image: '/assets/images/units/unit_1/cleaner.png'
+  }
 ] as ExampleType[]
 
 export const question = [
