@@ -4,7 +4,6 @@ import { mergeMap } from 'rxjs/operators';
 import { App } from '@capacitor/app';
 import { Browser } from '@capacitor/browser';
 import { callbackUri } from './auth.config';
-import {InfiniteScrollCustomEvent} from "@ionic/angular";
 
 @Component({
   selector: 'app-root',
@@ -14,6 +13,7 @@ import {InfiniteScrollCustomEvent} from "@ionic/angular";
 export class AppComponent {
   constructor(public auth: AuthService, private ngZone: NgZone) {
     this.initializeApp();
+
   }
   initializeApp() {
     App.addListener('appUrlOpen', ({ url }) => {
