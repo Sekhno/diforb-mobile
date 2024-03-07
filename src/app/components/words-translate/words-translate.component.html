@@ -1,11 +1,11 @@
 <ng-container *ngFor="let s of examples; let i = index">
   <ng-container *ngIf="currentExc === i">
-    <ion-text>
-      <h1 class="ion-text-center"><b>{{s.translate}}</b></h1>
+    <ion-text class="ion-margin-bottom">
+      <h1 class="ion-text-center ion-text-uppercase"><b>{{s.translate}}</b></h1>
     </ion-text>
 
     <div class="figure">
-      <ion-img src="{{s.image}}"></ion-img>
+      <ion-img src="{{s.image}}" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
     </div>
 
     <ion-input class="ion-text-center ion-margin-top" placeholder="Введіть переклад" [(ngModel)]="answers[i]"

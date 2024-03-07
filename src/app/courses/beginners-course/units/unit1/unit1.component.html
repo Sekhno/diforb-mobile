@@ -44,46 +44,6 @@
         а ставлять коли слово починається з приголосної
       </p>
     </ion-text>
-
-    <div class="figure">
-      <ion-grid class="ion-no-padding">
-        <ion-row>
-          <ion-col>
-            <div class="wi">
-              <ion-img src="/assets/images/i_am_a_soldier.png"></ion-img>
-            </div>
-          </ion-col>
-          <ion-col>
-            <ion-grid class="ion-no-padding">
-              <ion-row>
-                <ion-col>
-                  <div class="wi">
-                    <ion-img src="/assets/images/he_is_a_layer.png"></ion-img>
-                  </div>
-                </ion-col>
-                <ion-col>
-                  <div class="wi">
-                    <ion-img src="/assets/images/she_is_a_vet.png"></ion-img>
-                  </div>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col>
-                  <div class="wi">
-                    <ion-img src="/assets/images/we_are_pilots.png"></ion-img>
-                  </div>
-                </ion-col>
-                <ion-col>
-                  <div class="wi">
-                    <ion-img src="/assets/images/they_are_builders.png"></ion-img>
-                  </div>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
   </ng-container>
 
   <ng-container *ngIf="currentTeo === 2">
@@ -185,7 +145,7 @@
   <ng-container *ngIf="currentTeo === 4">
     <ion-text class="ion-text-center">
       <h1 class="ion-padding-top">Interrogative (питання)</h1>
-      <p>В запитаннях на перше місце обов'язково виносимо Am, is або are.</p>
+      <p>В запитаннях на перше місце обов'язково виносимо Am, Is або Are.</p>
 
       <ion-grid class="ion-padding-top ion-padding-bottom">
         <ion-row>
@@ -234,12 +194,10 @@
     </ion-text>
   </ng-container>
 
-
   <div class="ion-padding">
     <ion-button class="w-full" id="exc">Далі</ion-button>
   </div>
 </ion-content>
-
 
 <ion-modal trigger="exc">
   <ng-template>
@@ -322,6 +280,12 @@
         <app-words-translate [examples]="negative"
                              (_onComplete)="currentTeo = 4; modal.dismiss(); currentExc = 8;"
         ></app-words-translate>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 8">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Далі буде</h1>
+        </ion-text>
       </ng-container>
 
 <!--      <ng-container *ngIf="currentExc === 5">-->
