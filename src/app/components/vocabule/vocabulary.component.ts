@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {AudioProvider} from "../../../providers/audio/audio";
-import {Media} from "@ionic-native/media/ngx";
 
 @Component({
   selector: 'app-vocabulary',
@@ -14,15 +13,11 @@ export class VocabularyComponent {
   currentExc = 0;
 
   constructor(
-    private audioProvider: AudioProvider,
-    private media: Media
+    private audioProvider: AudioProvider
   ) { }
 
   play(url: string) {
-    // this.audioProvider.loadSound(`/assets/${url}`);
-    const curr_playing_file = this.media.create(`/assets/${url}`);
-
-    curr_playing_file.play();
+    this.audioProvider.loadSound(`/assets/${url}`);
   }
 
   check() {
