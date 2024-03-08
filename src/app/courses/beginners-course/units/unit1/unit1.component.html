@@ -284,23 +284,49 @@
 
       <ng-container *ngIf="currentExc === 8">
         <ion-text class="ion-text-center">
-          <h1 class="ion-padding-bottom">Далі буде</h1>
+          <h1 class="ion-padding-bottom">Вдрукуйте правильну форму дієслова</h1>
+          <h6 class="ion-padding-bottom">Am / Is / Are</h6>
         </ion-text>
+
+        <app-words-writer [examples]="question"
+                          (_onComplete)="currentExc = 9;"
+        ></app-words-writer>
       </ng-container>
 
-<!--      <ng-container *ngIf="currentExc === 5">-->
-<!--        <ion-text class="ion-text-center">-->
-<!--          <h4 class="ion-padding-bottom ion-text-center">Вітаємо Вас з пройденою вправою</h4>-->
+      <ng-container *ngIf="currentExc === 9">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Підібрати правильні короткі відповіді</h1>
+        </ion-text>
 
-<!--          <div class="figure">-->
-<!--            <ion-img src="/assets/images/congratulations_1.png"></ion-img>-->
-<!--          </div>-->
+        <app-selection-answer [examples]="question"
+                              (_onComplete)="currentExc = 10;"
+        ></app-selection-answer>
+      </ng-container>
 
-<!--          <a routerLink="unit2">-->
-<!--            <ion-button class="w-full ion-margin-top">Next Unit</ion-button>-->
-<!--          </a>-->
-<!--        </ion-text>-->
-<!--      </ng-container>-->
+      <ng-container *ngIf="currentExc === 10">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Поставте слова у правильному порядку</h1>
+        </ion-text>
+
+        <app-words-reorder [examples]="question"
+                           (_onComplete)="currentExc = 11;"
+        ></app-words-reorder>
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 11">
+        <ion-text class="ion-text-center">
+          <h4 class="ion-padding-bottom ion-text-center">Вітаємо Вас з пройденою вправою</h4>
+
+          <div class="figure">
+            <ion-img src="/assets/images/congratulations_1.png"></ion-img>
+          </div>
+
+          <a routerLink="unit2">
+            <ion-button class="w-full ion-margin-top">Next Unit</ion-button>
+          </a>
+        </ion-text>
+      </ng-container>
     </ion-content>
   </ng-template>
 </ion-modal>

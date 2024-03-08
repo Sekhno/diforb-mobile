@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {NativeAudio} from "@capacitor-community/native-audio";
 import {Capacitor} from "@capacitor/core";
 
@@ -7,50 +7,46 @@ import {Capacitor} from "@capacitor/core";
   templateUrl: './vocabulary.component.html',
   styleUrls: ['./vocabulary.component.scss'],
 })
-export class VocabularyComponent {
-  @Input() vocabulary = []  as {word: string; translation: string, sound: string, image: string}[];
+export class VocabularyComponent implements OnChanges {
+  @Input() vocabulary = [] as { word: string; translation: string, sound: string, image: string }[];
 
   @Output() _onComplete = new EventEmitter<boolean>();
   currentExc = 0;
 
-  constructor(
+  constructor() {
+  }
 
-  ) {
+  ngOnChanges(): void {
+    if (this.vocabulary && this.vocabulary.length > 0) {
+      this.preloadSounds();
+    }
+  }
 
+  private preloadSounds() {
+    this.vocabulary.forEach(({sound}) => {
+      if (Capacitor.getPlatform() === 'ios') {
+        NativeAudio.preload({
+          assetId: sound,
+          assetPath: 'sounds/'+sound,
+          audioChannelNum: 1,
+          isUrl: false
+        }).then();
+      } else {
+        NativeAudio.preload({
+          assetId: sound,
+          assetPath: sound,
+          audioChannelNum: 1,
+          isUrl: false
+        }).then();
+      }
+    });
   }
 
   async play(url: string) {
-    try {
-      if (Capacitor.getPlatform() === 'ios') {
-        await NativeAudio.preload({
-          assetId: url,
-          assetPath: 'sounds/'+url,
-          audioChannelNum: 1,
-          isUrl: false
-        });
-
-        await NativeAudio.play({
-          assetId: url,
-          // time: 6.0 - seek time
-        });
-      } else {
-        await NativeAudio.preload({
-          assetId: url,
-          assetPath: url,
-          audioChannelNum: 1,
-          isUrl: false
-        });
-
-        await NativeAudio.play({
-          assetId: url,
-          // time: 6.0 - seek time
-        });
-      }
-    } catch (e) {
-      console.log(e);
-    }
-
-
+    await NativeAudio.play({
+      assetId: url,
+      // time: 6.0 - seek time
+    });
   }
 
   check() {

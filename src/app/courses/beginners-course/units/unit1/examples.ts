@@ -1,4 +1,4 @@
-export type ExampleType = Record< 'sentence' | 'example' | 'missed' | 'translate' | 'image', string >
+export type ExampleType = Record< 'sentence' | 'example' | 'missed' | 'translate' | 'image' | 'answer', string >
 
 export const affirmative = [
   {
@@ -140,7 +140,65 @@ export const negative = [
 ] as ExampleType[]
 
 export const question = [
-
+  {
+    sentence: 'Are you a pilot?',
+    example: '{{input}} you a pilot?',
+    answer: "Yes, I am",
+    missed: 'Are',
+    image: '/assets/images/units/unit_1/pilot.png'
+  },
+  {
+    sentence: 'Is he a builder?',
+    example: '{{input}} he a builder?',
+    answer: "No, he isn't",
+    missed: 'Is',
+    image: '/assets/images/units/unit_1/builder.png'
+  },
+  {
+    sentence: 'Is she a hairdresser?',
+    example: '{{input}} she a hairdresser?',
+    answer: "Yes, she is",
+    missed: 'Is',
+    image: '/assets/images/units/unit_1/hairdresser.png'
+  },
+  {
+    sentence: 'Are they cleaners?',
+    example: '{{input}} they cleaners?',
+    answer: "No, they aren't",
+    missed: 'Are',
+    image: '/assets/images/units/unit_1/cleaner.png'
+  },
+  {
+    sentence: 'Are we soldiers?',
+    example: '{{input}} we soldiers?',
+    answer: "Yes, you are",
+    missed: 'Are',
+    image: '/assets/images/units/unit_1/soldier.png'
+  },
+  {
+    sentence: 'Are you a police officer?',
+    example: '{{input}} you a police officer?',
+    missed: 'Are',
+    image: '/assets/images/units/unit_1/police_officer.png'
+  },
+  {
+    sentence: 'Is she a lawyer?',
+    example: '{{input}} she a lawyer?',
+    missed: 'Is',
+    image: '/assets/images/units/unit_1/lawyer.png'
+  },
+  {
+    sentence: 'Is he a shop assistant?',
+    example: '{{input}} he a shop assistant?',
+    missed: 'Is',
+    image: '/assets/images/units/unit_1/shop_assistant.png'
+  },
+  {
+    sentence: 'Are they nurses?',
+    example: '{{input}} they nurses?',
+    missed: 'Are',
+    image: '/assets/images/units/unit_1/nurse.png'
+  }
 ] as ExampleType[]
 
 export const rightSentences = [
@@ -294,24 +352,6 @@ export const vocabulary = [
     sound: 'units/unit_1/they.mp3',
     image: '/assets/images/units/unit_1/they.png'
   }
-];
-
-export const sounds = [
-  'sounds/units/unit_1/soldier.mp3',
-  'sounds/units/unit_1/hairdresser.mp3',
-  'sounds/units/unit_1/lawyer.mp3',
-  'sounds/units/unit_1/police_officer.mp3',
-  'sounds/units/unit_1/pilot.mp3',
-  'sounds/units/unit_1/shop_assistant.mp3',
-  'sounds/units/unit_1/cleaner.mp3',
-  'sounds/units/unit_1/builder.mp3',
-  'sounds/units/unit_1/i.mp3',
-  'sounds/units/unit_1/you.mp3',
-  'sounds/units/unit_1/he.mp3',
-  'sounds/units/unit_1/she.mp3',
-  'sounds/units/unit_1/it.mp3',
-  'sounds/units/unit_1/we.mp3',
-  'sounds/units/unit_1/they.mp3'
 ];
 
 
