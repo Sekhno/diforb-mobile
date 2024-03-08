@@ -14,6 +14,7 @@ import {MatListModule} from "@angular/material/list";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {WordsTranslateComponent} from "../../components/words-translate/words-translate.component";
 import {VocabularyComponent} from "../../components/vocabule/vocabulary.component";
+import {SelectionAnswerComponent} from "../../components/selection-answer/selection-answer.component";
 
 const MaterialModules = [
   MatStepperModule,
@@ -30,7 +31,8 @@ const MaterialModules = [
     WordsReorderComponent,
     ImagesComparisonComponent,
     WordsTranslateComponent,
-    VocabularyComponent
+    VocabularyComponent,
+    SelectionAnswerComponent
   ],
   imports: [
     ...MaterialModules,

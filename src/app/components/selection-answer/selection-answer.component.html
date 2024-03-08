@@ -1,0 +1,11 @@
+<ion-list>
+  <ng-container *ngFor="let v of questions; let i = index">
+    <ion-item>
+      <ion-select label="{{v.sentence}}" label-placement="floating" [(ngModel)]="values[i]" (ionChange)="onChange()">
+        <ion-select-option
+          *ngFor="let a of answers" [value]="a"
+        >{{a}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ng-container>
+</ion-list>
