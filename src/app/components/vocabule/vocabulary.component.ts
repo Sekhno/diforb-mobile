@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnDestroy, Output} from '@angular/core';
 import {NativeAudio} from "@capacitor-community/native-audio";
 import {Capacitor} from "@capacitor/core";
 
@@ -7,7 +7,7 @@ import {Capacitor} from "@capacitor/core";
   templateUrl: './vocabulary.component.html',
   styleUrls: ['./vocabulary.component.scss'],
 })
-export class VocabularyComponent implements OnChanges {
+export class VocabularyComponent implements OnChanges, OnDestroy {
   @Input() vocabulary = [] as { word: string; translation: string, sound: string, image: string }[];
 
   @Output() _onComplete = new EventEmitter<boolean>();
@@ -20,6 +20,10 @@ export class VocabularyComponent implements OnChanges {
     if (this.vocabulary && this.vocabulary.length > 0) {
       this.preloadSounds();
     }
+  }
+
+  ngOnDestroy(): void {
+    this.unloadSounds();
   }
 
   private preloadSounds() {
@@ -42,6 +46,12 @@ export class VocabularyComponent implements OnChanges {
     });
   }
 
+  private unloadSounds() {
+    this.vocabulary.forEach(({sound}) => {
+      NativeAudio.unload({assetId: sound}).then();
+    });
+  }
+
   async play(url: string) {
     await NativeAudio.play({
       assetId: url,
@@ -54,5 +64,7 @@ export class VocabularyComponent implements OnChanges {
       this._onComplete.emit(true);
     }
   }
+
+
 
 }
