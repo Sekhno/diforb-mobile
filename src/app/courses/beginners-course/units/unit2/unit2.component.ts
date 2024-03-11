@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {IonModal} from "@ionic/angular";
+import {affirmative, vocabulary} from "./examples";
 
 @Component({
   selector: 'app-unit2',
@@ -6,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./unit2.component.scss'],
 })
 export class Unit2Component {
-  currentTeo = 1;
+  @ViewChild(IonModal) modal!: IonModal;
+
+  currentTeo = 1
+  currentExc = 1;
+  progress = 0;
+
+  vocabulary = vocabulary;
+  affirmative = affirmative;
 
   constructor() { }
 

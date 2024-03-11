@@ -9,6 +9,7 @@ import {Capacitor} from "@capacitor/core";
 })
 export class VocabularyComponent implements OnChanges, OnDestroy {
   @Input() vocabulary = [] as { word: string; translation: string, sound: string, image: string }[];
+  @Input() mood: 'landscape' | 'portrait' | 'square' = 'square';
 
   @Output() _onComplete = new EventEmitter<boolean>();
   currentExc = 0;

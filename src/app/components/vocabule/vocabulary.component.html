@@ -7,7 +7,7 @@
         ><ion-icon name="musical-notes-outline" size="large" ></ion-icon> </p>
       </ion-text>
 
-      <div class="figure">
+      <div [ngClass]="{'figure-square': mood === 'square', 'figure-landscape': mood === 'landscape'}">
         <ion-img src="{{voc.image}}" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
       </div>
 

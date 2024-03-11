@@ -10,20 +10,99 @@
 <ion-content class="ion-padding">
   <ng-container *ngIf="currentTeo === 1">
     <ion-text>
-      <h1>Have got - мати</h1>
-
+      <h1 class=" ion-text-center">Have got - <i>мати</i></h1>
       <p>
-        Цу дуже часто вживане діэслово в англійській мові.
-        Зверніть увагу - в українській мові ми можемо сказати двома способами, що у нас щось є - Я маю, У мене є.
-        <br> В англійській мові немає конструкції У мене є. Єдиний можливий варіант сказати Я маю, Ти маєш, Він має і т.д.
-        Будуючи речення в англійській мові важливо дотримуватись чіткого порядку слів в кожному типі речень.
-        <br>Погнали розбиратись
-        <br>Off we go!
+        Це дуже часто вживане діэслово в англійській мові.
+        Зверніть увагу - в українській мові ми можемо сказати двома способами, що у нас щось є - <i>Я маю, У мене є</i>.
+        <br><br> В англійській мові немає конструкції <i>У мене є</i>.
+        Єдиний можливий варіант сказати <i>Я маю, Ти маєш, Він має</i> і т.д.
+        <br>Будуючи речення в англійській мові важливо дотримуватись чіткого порядку слів в кожному типі речень.
       </p>
+      <h6 class="ion-text-center ion-margin-bottom">Погнали розбиратись</h6>
 
-      <div class="figure">
-        <ion-img src="/assets/images/level_1/unit_002.png"></ion-img>
+      <div class="figure-landscape full-width">
+        <ion-img src="/assets/images/level_1/unit_002.png" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
       </div>
     </ion-text>
   </ng-container>
+
+  <ng-container *ngIf="currentTeo === 2">
+    <ion-text class="ion-text-center">
+      <h1 class="ion-padding-top ion-padding-bottom">Affirmative (ствердження)</h1>
+
+      <ion-grid class="ion-padding-top ion-padding-bottom">
+        <ion-row>
+          <ion-col><b>Long forms</b></ion-col>
+          <ion-col><b>Short forms</b></ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>I have got</ion-col>
+          <ion-col>I'm</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>You have got</ion-col>
+          <ion-col>You've got</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>He has got</ion-col>
+          <ion-col>He's got</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>She has got</ion-col>
+          <ion-col>She's got</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>It has got</ion-col>
+          <ion-col>It's got</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>We have got</ion-col>
+          <ion-col>We've got</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>They have got</ion-col>
+          <ion-col>They've got</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-text>
+  </ng-container>
+
+  <ion-button class="w-full ion-margin-top" id="exc">Off we go!</ion-button>
 </ion-content>
+
+<ion-modal trigger="exc">
+  <ng-template>
+    <ion-header class="ion-no-border ion-padding">
+      <ion-toolbar>
+        <ion-buttons slot="start" (click)="modal.dismiss()">
+          <ion-icon name="close" size="large"></ion-icon>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <ng-container *ngIf="currentExc === 1">
+        <app-vocabulary mood="landscape" [vocabulary]="vocabulary"
+                        (_onComplete)="currentTeo = 2; modal.dismiss(); currentExc = 2;"
+        ></app-vocabulary>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 2">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Вдрукуйте правильну форму дієслова</h1>
+          <h6 class="ion-padding-bottom">(have got / has got)</h6>
+        </ion-text>
+        <app-words-writer [examples]="affirmative"
+                          (_onComplete)="currentExc = 3;"
+        ></app-words-writer>
+      </ng-container>
+    </ion-content>
+  </ng-template>
+</ion-modal>
