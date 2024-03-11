@@ -1,4 +1,4 @@
-export type ExampleType = Record< 'sentence' | 'example' | 'missed' | 'translate' | 'image' | 'answer', string >
+import { ExampleType } from 'src/models/types';
 
 export const affirmative = [
   {

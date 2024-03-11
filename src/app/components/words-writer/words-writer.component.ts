@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
-import {ExampleType} from "../../courses/beginners-course/units/unit1/examples";
+import {ExampleType} from "src/models/types";
 
 @Component({
   selector: 'app-words-writer',

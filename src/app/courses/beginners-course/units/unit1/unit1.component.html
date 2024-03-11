@@ -215,6 +215,18 @@
 <!--      </div>-->
 <!--      <ion-progress-bar class="ion-margin-bottom" [value]="0.01*progress"></ion-progress-bar>-->
 
+      <ion-text class="ion-text-center">
+        <h4 class="ion-padding-bottom ion-text-center">Вітаємо Вас з пройденою вправою</h4>
+
+        <div class="figure">
+          <ion-img src="/assets/images/congratulations_1.png"></ion-img>
+        </div>
+
+        <a routerLink="unit2">
+          <ion-button class="w-full ion-margin-top">Next Unit</ion-button>
+        </a>
+      </ion-text>
+
       <ng-container *ngIf="currentExc === 1">
         <app-vocabulary [vocabulary]="vocabulary"
                         (_onComplete)="currentTeo = 2; modal.dismiss(); currentExc = 2;"

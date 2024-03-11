@@ -28,21 +28,14 @@ export class VocabularyComponent implements OnChanges, OnDestroy {
 
   private preloadSounds() {
     this.vocabulary.forEach(({sound}) => {
-      if (Capacitor.getPlatform() === 'ios') {
-        NativeAudio.preload({
-          assetId: sound,
-          assetPath: 'sounds/'+sound,
-          audioChannelNum: 1,
-          isUrl: false
-        }).then();
-      } else {
-        NativeAudio.preload({
-          assetId: sound,
-          assetPath: sound,
-          audioChannelNum: 1,
-          isUrl: false
-        }).then();
-      }
+      const url = Capacitor.getPlatform() === 'ios' ? 'sounds/'+sound : sound;
+
+      NativeAudio.preload({
+        assetId: sound,
+        assetPath: url,
+        audioChannelNum: 1,
+        isUrl: false
+      }).then();
     });
   }
 
