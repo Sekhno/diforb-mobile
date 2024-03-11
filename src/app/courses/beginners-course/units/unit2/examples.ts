@@ -1,18 +1,6 @@
 import {ExampleType} from "src/models/types";
 
 
-/**
- * I have got a charger.
- * You have got a printer.
- * She has got two laptops.
- * He has got three computers.
- * They have got a router.
- * We have got five memory sticks.
- * She has got headphones
- * He has got earphones.
- * I have got a keyboard.
- * We have got a webcam.
- * */
 export const affirmative = [
   {
     sentence: 'I have got a charger',
@@ -84,7 +72,36 @@ export const affirmative = [
     translate: 'У нас є вебкамера',
     image: '/assets/images/units/unit_2/webcam.png'
   }
-] as ExampleType[]
+] as ExampleType[];
+
+
+/*
+* I haven't got a laptop.
+You haven't got a charger.
+He hasn't got a keyboard.
+She hasn't got earphones.
+We haven't got a memory stick.
+They haven't got a printer.
+He hasn't got a webcam.
+She hasn't got headphones.
+I haven't got earphones.
+He hasn't got a charger.
+* */
+export const negative = [
+  {
+    sentence: "I haven't got a laptop",
+    example: 'I {{input}} a laptop',
+    missed: "haven't got",
+    translate: 'Я не маю ноутбук',
+    image: '/assets/images/units/unit_2/laptop.png'
+  },
+  {
+    sentence: "You haven't got a charger",
+    example: 'You {{input}} a charger',
+    missed: "haven't got",
+
+  }
+] as ExampleType[];
 
 export const vocabulary = [
   {
