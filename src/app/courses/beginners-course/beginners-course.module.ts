@@ -15,6 +15,7 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
 import {WordsTranslateComponent} from "../../components/words-translate/words-translate.component";
 import {VocabularyComponent} from "../../components/vocabule/vocabulary.component";
 import {SelectionAnswerComponent} from "../../components/selection-answer/selection-answer.component";
+import {Unit2Component} from "./units/unit2/unit2.component";
 
 const MaterialModules = [
   MatStepperModule,
@@ -22,17 +23,20 @@ const MaterialModules = [
   DragDropModule
 ]
 
+const Units = [
+  Unit1Component, Unit2Component
+]
+
 @NgModule({
   declarations: [
-
     CoursePageComponent,
-    Unit1Component,
     WordsWriterComponent,
     WordsReorderComponent,
     ImagesComparisonComponent,
     WordsTranslateComponent,
     VocabularyComponent,
-    SelectionAnswerComponent
+    SelectionAnswerComponent,
+    ...Units
   ],
   imports: [
     ...MaterialModules,

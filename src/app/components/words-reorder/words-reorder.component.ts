@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {ItemReorderEventDetail} from "@ionic/angular";
 import {randomWords} from "../../../utils/random";
-import {ExampleType} from "../../courses/beginners-course/units/unit1/examples";
+import {ExampleType} from "src/models/types";
 
 @Component({
   selector: 'app-words-reorder',
