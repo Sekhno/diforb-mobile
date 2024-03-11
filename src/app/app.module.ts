@@ -27,7 +27,7 @@ const app = initializeApp(environment.firebaseConfig);
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot({mode: 'md'}),
     AppRoutingModule,
     HttpClientModule,
     AuthModule.forRoot({
