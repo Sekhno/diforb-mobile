@@ -11,18 +11,16 @@
   <ng-container *ngIf="currentTeo === 1">
     <ion-text>
       <h1 class="ion-margin-top ion-margin-bottom ion-text-center"> <b>To be or not to be</b> </h1>
-      <div class="figure">
-        <ion-img src="/assets/images/level_1/unit_001.png"></ion-img>
-      </div>
       <h6 class="ion-margin-top">
+
+      </h6>
+      <p>
         Жодне речення в англійській мові не будується без дієслова.
         Навіть якщо дії в реченні немає, все одно потрібно вжити дієслово.
-        Таку роль відіграє дієслово <ion-text color="primary">to be</ion-text>.
-      </h6>
-      <p><ion-text color="primary">To be</ion-text> - це початкова форма. Воно відмінюється відповідно до осіб.</p>
-      <p>
-        На відміну від української мови, ми не можемо просто сказати  <span class="sub-color">He my friend</span>. <br>
-        Потрібно сказати -
+        <br><br>Таку роль відіграє дієслово <ion-text color="primary">to be</ion-text>.
+        <br><br><ion-text color="primary">To be</ion-text> - це початкова форма. Воно відмінюється відповідно до осіб.
+        <br>На відміну від української мови, ми не можемо просто сказати  <span class="sub-color">He my friend</span>.
+        <br>Потрібно сказати -
         <ion-grid class="ion-text-center sub-color ion-margin-top ion-margin-bottom">
           <ion-row>
             <ion-col> He <ion-text color="primary">is</ion-text> me friend </ion-col>
@@ -37,13 +35,17 @@
             <ion-col> Я не тварина, я людина </ion-col>
           </ion-row>
         </ion-grid>
-      </p>
-      <p> В англійських реченнях чіткий порядок слів в усіх типах речень </p>
-      <p>
-        *Артикль a/an ставлять перед іменником в однині, перед множиною не ставлять,
+        <br>В англійських реченнях чіткий порядок слів в усіх типах речень
+        <br>*Артикль a/an ставлять перед іменником в однині, перед множиною не ставлять,
         а ставлять коли слово починається з приголосної
       </p>
+
+      <div class="figure-landscape full-width">
+        <ion-img src="/assets/images/level_1/unit_001.png" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
+      </div>
     </ion-text>
+
+
   </ng-container>
 
   <ng-container *ngIf="currentTeo === 2">
@@ -194,9 +196,7 @@
     </ion-text>
   </ng-container>
 
-  <div class="ion-padding">
-    <ion-button class="w-full" id="exc">Далі</ion-button>
-  </div>
+  <ion-button class="w-full ion-margin-top" id="exc">Off we go!</ion-button>
 </ion-content>
 
 <ion-modal trigger="exc">

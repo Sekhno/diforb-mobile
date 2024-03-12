@@ -9,7 +9,8 @@ import {ExampleType} from "src/models/types";
   styleUrls: ['./words-reorder.component.scss'],
 })
 export class WordsReorderComponent implements OnChanges {
-  @Input() examples: ExampleType[] = []
+  @Input() examples: ExampleType[] = [];
+  @Input() mood: 'landscape' | 'portrait' | 'square' = 'square';
 
   @Output() _onComplete = new EventEmitter<boolean>();
 

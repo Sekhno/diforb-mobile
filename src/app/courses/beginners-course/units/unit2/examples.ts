@@ -1,18 +1,6 @@
 import {ExampleType} from "src/models/types";
 
 
-/**
- * I have got a charger.
- * You have got a printer.
- * She has got two laptops.
- * He has got three computers.
- * They have got a router.
- * We have got five memory sticks.
- * She has got headphones
- * He has got earphones.
- * I have got a keyboard.
- * We have got a webcam.
- * */
 export const affirmative = [
   {
     sentence: 'I have got a charger',
@@ -84,7 +72,153 @@ export const affirmative = [
     translate: 'У нас є вебкамера',
     image: '/assets/images/units/unit_2/webcam.png'
   }
-] as ExampleType[]
+] as ExampleType[];
+
+export const negative = [
+  {
+    sentence: "I haven't got a laptop",
+    example: 'I {{input}} a laptop',
+    missed: "haven't got",
+    translate: 'Я не маю ноутбук',
+    image: '/assets/images/units/unit_2/laptop.png'
+  },
+  {
+    sentence: "You haven't got a charger",
+    example: 'You {{input}} a charger',
+    missed: "haven't got",
+    translate: 'Ти не маєш зарядний пристрій',
+    image: '/assets/images/units/unit_2/charger.png'
+  },
+  {
+    sentence: "He hasn't got a keyboard",
+    example: 'He {{input}} a keyboard',
+    missed: "hasn't got",
+    translate: 'Він не має клавіатура',
+    image: '/assets/images/units/unit_2/keyboard.png'
+  },
+  {
+    sentence: "She hasn't got earphones",
+    example: 'She {{input}} earphones',
+    missed: "hasn't got",
+    translate: 'Вона не має навушники',
+    image: '/assets/images/units/unit_2/earphones.png'
+  },
+  {
+    sentence: "We haven't got a memory stick",
+    example: 'We {{input}} a memory stick',
+    missed: "haven't got",
+    translate: 'Ми не маємо флешку',
+    image: '/assets/images/units/unit_2/memory_stick.png'
+  },
+  {
+    sentence: "They haven't got a printer",
+    example: 'They {{input}} a printer',
+    missed: "haven't got",
+    translate: 'Вони не мають прінтер',
+    image: '/assets/images/units/unit_2/printer.png'
+  },
+  {
+    sentence: "He hasn't got a webcam",
+    example: 'He {{input}} a webcam',
+    missed: "hasn't got",
+    translate: 'Він не має вебкамера',
+    image: '/assets/images/units/unit_2/webcam.png'
+  },
+  {
+    sentence: "She hasn't got headphones",
+    example: 'She {{input}} headphones',
+    missed: "hasn't got",
+    translate: 'Вона не має навушники',
+    image: '/assets/images/units/unit_2/headphones.png'
+  },
+  {
+    sentence: "I haven't got earphones",
+    example: 'I {{input}} earphones',
+    missed: "haven't got",
+    translate: 'Я не маю навушники',
+    image: '/assets/images/units/unit_2/earphones.png'
+  },
+  {
+    sentence: "He hasn't got a charger",
+    example: 'He {{input}} a charger',
+    missed: "hasn't got",
+    translate: 'Він не має зарядний пристрій',
+    image: '/assets/images/units/unit_2/charger.png'
+  }
+] as ExampleType[];
+
+export const question = [
+  {
+    sentence: 'Have you got a charger?',
+    example: '{{input}} you got a charger?',
+    answer: "Yes, I have",
+    missed: 'Have',
+    image: '/assets/images/units/unit_2/charger.png'
+  },
+  {
+    sentence: 'Has he got a memory stick?',
+    example: '{{input}} he got a memory stick?',
+    answer: "Yes, he has",
+    missed: 'Has',
+    image: '/assets/images/units/unit_2/memory_stick.png'
+  },
+  {
+    sentence: 'Has she got headphones?',
+    example: '{{input}} she got headphones?',
+    answer: "Yes, she has",
+    missed: 'Has',
+    image: '/assets/images/units/unit_2/headphones.png'
+  },
+  {
+    sentence: 'Has he got a computer?',
+    example: '{{input}} he got a computer?',
+    answer: "Yes, he has",
+    missed: 'Has',
+    image: '/assets/images/units/unit_2/computer.png'
+  },
+  {
+    sentence: 'Have we got a printer?',
+    example: '{{input}} we got a printer?',
+    answer: "Yes, we have",
+    missed: 'Have',
+    image: '/assets/images/units/unit_2/printer.png'
+  },
+  {
+    sentence: 'Have they got a webcam?',
+    example: '{{input}} they got a webcam?',
+    answer: "Yes, they have",
+    missed: 'Have',
+    image: '/assets/images/units/unit_2/webcam.png'
+  },
+  {
+    sentence: 'Have you got a keyboard?',
+    example: '{{input}} you got a keyboard?',
+    answer: "Yes, you have",
+    missed: 'Have',
+    image: '/assets/images/units/unit_2/keyboard.png'
+  },
+  {
+    sentence: 'Have you got earphones?',
+    example: '{{input}} you got earphones?',
+    answer: "Yes, I have",
+    missed: 'Have',
+    image: '/assets/images/units/unit_2/earphones.png'
+  },
+  {
+    sentence: 'Has she got a laptop?',
+    example: '{{input}} she got a laptop?',
+    answer: "Yes, she has",
+    missed: 'Has',
+    image: '/assets/images/units/unit_2/laptop.png'
+  },
+  {
+    sentence: 'Has he got a router?',
+    example: '{{input}} he got a router?',
+    answer: "Yes, he has",
+    missed: 'Has',
+    image: '/assets/images/units/unit_2/router.png'
+  }
+] as ExampleType[];
 
 export const vocabulary = [
   {
