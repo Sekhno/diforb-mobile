@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+
   <ng-container *ngIf="currentTeo === 1">
     <ion-text>
       <h1 class=" ion-text-center">Have got - <i>мати</i></h1>
@@ -129,45 +130,31 @@
 
       <ion-grid class="ion-padding-top ion-padding-bottom">
         <ion-row>
-          <ion-col>Am I?</ion-col>
-          <ion-col>Yes, I am</ion-col>
-          <ion-col>No, I'm not</ion-col>
+          <ion-col>Have I got?</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col>Are you?</ion-col>
-          <ion-col>Yes, you are</ion-col>
-          <ion-col>No, you aren't</ion-col>
+          <ion-col>Have you got?</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col>Is he?</ion-col>
-          <ion-col>Yes, he is</ion-col>
-          <ion-col>No, he isn't</ion-col>
+          <ion-col>Has he got?</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col>Is she?</ion-col>
-          <ion-col>Yes, she is</ion-col>
-          <ion-col>No, she isn't</ion-col>
+          <ion-col>Has she got?</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col>Is it?</ion-col>
-          <ion-col>Yes, it is</ion-col>
-          <ion-col>No, it isn't</ion-col>
+          <ion-col>Has it got?</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col>Are we?</ion-col>
-          <ion-col>Yes, we are</ion-col>
-          <ion-col>No, we aren't</ion-col>
+          <ion-col>Have we got?</ion-col>
         </ion-row>
 
         <ion-row>
-          <ion-col>Are they?</ion-col>
-          <ion-col>Yes, they are</ion-col>
-          <ion-col>No, they aren't</ion-col>
+          <ion-col>Have they got?</ion-col>
         </ion-row>
 
       </ion-grid>
@@ -217,6 +204,7 @@
       <ng-container *ngIf="currentExc === 4">
         <ion-text class="ion-text-center">
           <h1 class="ion-padding-bottom">Надрукувати переклад</h1>
+          <h6 class="ion-padding-bottom">Використовуй коротку форму запису</h6>
         </ion-text>
 
         <app-words-translate [examples]="affirmative"
@@ -225,7 +213,75 @@
       </ng-container>
 
       <ng-container *ngIf="currentExc === 5">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Встав правильну форму дієслова</h1>
+          <h6 class="ion-padding-bottom">(haven't got / hasn't got)</h6>
+        </ion-text>
+        <app-words-writer [examples]="negative"
+                          (_onComplete)="currentExc = 6;"
+        ></app-words-writer>
+      </ng-container>
 
+      <ng-container *ngIf="currentExc === 6">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Зробити правильний порядок слів</h1>
+          <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
+        </ion-text>
+        <app-words-reorder [examples]="negative"
+                           (_onComplete)="currentExc = 7;"
+        ></app-words-reorder>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 7">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Надрукувати переклад</h1>
+        </ion-text>
+        <app-words-translate [examples]="negative"
+                             (_onComplete)="currentTeo = 4; modal.dismiss(); currentExc = 8;"
+        ></app-words-translate>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 8">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Встав правильну форму</h1>
+          <h6 class="ion-padding-bottom">(Have or Has)</h6>
+        </ion-text>
+        <app-words-writer [examples]="question"
+                          (_onComplete)="currentExc = 9;"
+        ></app-words-writer>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 9">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Зробити правильний порядок слів</h1>
+          <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
+        </ion-text>
+        <app-words-reorder [examples]="question"
+                           (_onComplete)="currentExc = 10;"
+        ></app-words-reorder>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 10">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Надрукувати переклад</h1>
+        </ion-text>
+        <app-words-translate [examples]="question"
+                             (_onComplete)="currentExc = 11;"
+        ></app-words-translate>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 11">
+        <ion-text class="ion-text-center">
+          <h4 class="ion-padding-bottom ion-text-center">Вітаємо Вас з пройденою вправою</h4>
+
+          <div class="figure">
+            <ion-img src="/assets/images/congratulations_1.png"></ion-img>
+          </div>
+
+          <a routerLink="unit3">
+            <ion-button class="w-full ion-margin-top">Next Unit</ion-button>
+          </a>
+        </ion-text>
       </ng-container>
     </ion-content>
   </ng-template>
