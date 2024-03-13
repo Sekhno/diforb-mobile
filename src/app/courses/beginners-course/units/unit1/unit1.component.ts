@@ -29,19 +29,19 @@ export class Unit1Component  implements OnInit {
   negative = negative;
   question = question;
 
-
-
   constructor() { }
 
   ngOnInit() {
     console.log('Unit1Component ngOnInit() called.');
 
-    // setLevel('unit_1', '3').then(() => {
-    //   console.log('Level set to 3.')
-    // })
 
-    checkLevel('unit_1').then(level => {
-      console.log('Level is:', level);
+
+
+  }
+
+  finish() {
+    setLevel('level', '1').then(() => {
+      console.log('Level set to 1.')
     })
   }
 

@@ -196,7 +196,7 @@
           <h1 class="ion-padding-bottom">Зробити правильний порядок слів</h1>
           <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
         </ion-text>
-        <app-words-reorder [examples]="affirmative"
+        <app-words-reorder [examples]="affirmative" mood="landscape"
                            (_onComplete)="currentExc = 4;"
         ></app-words-reorder>
       </ng-container>
@@ -207,7 +207,7 @@
           <h6 class="ion-padding-bottom">Використовуй коротку форму запису</h6>
         </ion-text>
 
-        <app-words-translate [examples]="affirmative"
+        <app-words-translate [examples]="affirmative" mood="landscape"
                              (_onComplete)="currentTeo = 3; modal.dismiss(); currentExc = 5;"
         ></app-words-translate>
       </ng-container>
@@ -227,7 +227,7 @@
           <h1 class="ion-padding-bottom">Зробити правильний порядок слів</h1>
           <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
         </ion-text>
-        <app-words-reorder [examples]="negative"
+        <app-words-reorder [examples]="negative" mood="landscape"
                            (_onComplete)="currentExc = 7;"
         ></app-words-reorder>
       </ng-container>
@@ -235,8 +235,9 @@
       <ng-container *ngIf="currentExc === 7">
         <ion-text class="ion-text-center">
           <h1 class="ion-padding-bottom">Надрукувати переклад</h1>
+          <h6 class="ion-padding-bottom">Використовуйте скорочену форму запису</h6>
         </ion-text>
-        <app-words-translate [examples]="negative"
+        <app-words-translate [examples]="negative" mood="landscape"
                              (_onComplete)="currentTeo = 4; modal.dismiss(); currentExc = 8;"
         ></app-words-translate>
       </ng-container>
@@ -256,7 +257,7 @@
           <h1 class="ion-padding-bottom">Зробити правильний порядок слів</h1>
           <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
         </ion-text>
-        <app-words-reorder [examples]="question"
+        <app-words-reorder [examples]="question" mood="landscape"
                            (_onComplete)="currentExc = 10;"
         ></app-words-reorder>
       </ng-container>
@@ -264,9 +265,10 @@
       <ng-container *ngIf="currentExc === 10">
         <ion-text class="ion-text-center">
           <h1 class="ion-padding-bottom">Надрукувати переклад</h1>
+          <h6 class="ion-padding-bottom">Використовуйте довгу форму запису</h6>
         </ion-text>
-        <app-words-translate [examples]="question"
-                             (_onComplete)="currentExc = 11;"
+        <app-words-translate [examples]="question" mood="landscape"
+                             (_onComplete)="currentExc = 11; finish()"
         ></app-words-translate>
       </ng-container>
 

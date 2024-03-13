@@ -3,6 +3,7 @@ import {NgModule} from "@angular/core";
 import {CoursePageComponent} from "./course.page/course.page.component";
 import {Unit1Component} from "./units/unit1/unit1.component";
 import {Unit2Component} from "./units/unit2/unit2.component";
+import {Unit3Component} from "./units/unit3/unit3.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'unit2',
     component: Unit2Component
+  },
+  {
+    path: 'unit3',
+    component: Unit3Component
   }
 ];
 

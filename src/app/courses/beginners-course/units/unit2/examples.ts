@@ -153,6 +153,7 @@ export const question = [
     example: '{{input}} you got a charger?',
     answer: "Yes, I have",
     missed: 'Have',
+    translate: 'У тебе є зарядний пристрій?',
     image: '/assets/images/units/unit_2/charger.png'
   },
   {
@@ -160,6 +161,7 @@ export const question = [
     example: '{{input}} he got a memory stick?',
     answer: "Yes, he has",
     missed: 'Has',
+    translate: 'У нього є флешка?',
     image: '/assets/images/units/unit_2/memory_stick.png'
   },
   {
@@ -167,6 +169,7 @@ export const question = [
     example: '{{input}} she got headphones?',
     answer: "Yes, she has",
     missed: 'Has',
+    translate: 'У неї є навушники?',
     image: '/assets/images/units/unit_2/headphones.png'
   },
   {
@@ -174,6 +177,7 @@ export const question = [
     example: '{{input}} he got a computer?',
     answer: "Yes, he has",
     missed: 'Has',
+    translate: 'У нього є компьютер?',
     image: '/assets/images/units/unit_2/computer.png'
   },
   {
@@ -181,6 +185,7 @@ export const question = [
     example: '{{input}} we got a printer?',
     answer: "Yes, we have",
     missed: 'Have',
+    translate: 'У нас є прінтер?',
     image: '/assets/images/units/unit_2/printer.png'
   },
   {
@@ -188,6 +193,7 @@ export const question = [
     example: '{{input}} they got a webcam?',
     answer: "Yes, they have",
     missed: 'Have',
+    translate: 'У них є вебкамера?',
     image: '/assets/images/units/unit_2/webcam.png'
   },
   {
@@ -195,6 +201,7 @@ export const question = [
     example: '{{input}} you got a keyboard?',
     answer: "Yes, you have",
     missed: 'Have',
+    translate: 'У тебе є клавіатура?',
     image: '/assets/images/units/unit_2/keyboard.png'
   },
   {
@@ -202,6 +209,7 @@ export const question = [
     example: '{{input}} you got earphones?',
     answer: "Yes, I have",
     missed: 'Have',
+    translate: 'У тебе є навушники?',
     image: '/assets/images/units/unit_2/earphones.png'
   },
   {
@@ -209,6 +217,7 @@ export const question = [
     example: '{{input}} she got a laptop?',
     answer: "Yes, she has",
     missed: 'Has',
+    translate: 'У неї є ноутбук?',
     image: '/assets/images/units/unit_2/laptop.png'
   },
   {
@@ -216,6 +225,7 @@ export const question = [
     example: '{{input}} he got a router?',
     answer: "Yes, he has",
     missed: 'Has',
+    translate: 'У нього є роутер?',
     image: '/assets/images/units/unit_2/router.png'
   }
 ] as ExampleType[];
