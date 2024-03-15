@@ -9,7 +9,7 @@ import {
   vocabulary
 } from "./examples";
 import {IonModal} from "@ionic/angular";
-import {checkLevel, setLevel} from "../../../../../providers/storage/storage";
+import {checkLevel, setLevel} from "src/providers/storage/storage";
 
 @Component({
   selector: 'app-unit1',

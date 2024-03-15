@@ -2,6 +2,8 @@
 
 import { Preferences } from '@capacitor/preferences';
 
+export const LEVELS = 30;
+
 
 export const setLevel = async (key: string, value: string) => {
   await Preferences.set({
