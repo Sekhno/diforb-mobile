@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {checkLevel} from "../../../../providers/storage/storage";
 
 @Component({
   selector: 'app-course.page',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursePageComponent  implements OnInit {
 
+  progress = 0;
+
   constructor() { }
 
-  ngOnInit() {}
+  async ngOnInit() {
+    this.progress = JSON.parse(await checkLevel('level') || '0');
+
+    console.log('this.progress', this.progress)
+  }
 
 }

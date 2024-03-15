@@ -1,10 +1,10 @@
 <ng-container *ngFor="let s of examples; let i = index">
   <ng-container *ngIf="currentExc === i">
-    <ion-text class="ion-margin-bottom">
-      <h1 class="ion-text-center ion-text-uppercase"><b>{{s.translate}}</b></h1>
+    <ion-text>
+      <h1 class="ion-text-center ion-text-uppercase ion-margin-bottom"><b>{{s.translate}}</b></h1>
     </ion-text>
 
-    <div class="figure">
+    <div [ngClass]="{'figure-square': mood === 'square', 'figure-landscape': mood === 'landscape'}">
       <ion-img src="{{s.image}}" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
     </div>
 

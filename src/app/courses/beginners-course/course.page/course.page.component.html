@@ -25,7 +25,7 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row *ngIf="progress >= 1">
       <ion-col>
         <ion-progress-bar color="dark" value="1"></ion-progress-bar>
       </ion-col>
@@ -46,6 +46,11 @@
         </div>
       </ion-col>
     </ion-row>
+    <ion-row *ngIf="progress >= 2">
+      <ion-col>
+        <ion-progress-bar color="dark" value="1"></ion-progress-bar>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 
   <ion-grid>
@@ -60,6 +65,11 @@
         <div class="figure">
           <ion-img src="/assets/images/level_1/unit_03.png" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
         </div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="progress >= 3">
+      <ion-col>
+        <ion-progress-bar color="dark" value="1"></ion-progress-bar>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -78,6 +88,11 @@
         </div>
       </ion-col>
     </ion-row>
+    <ion-row *ngIf="progress >= 4">
+      <ion-col>
+        <ion-progress-bar color="dark" value="1"></ion-progress-bar>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 
   <ion-grid>
@@ -92,6 +107,11 @@
         <div class="figure">
           <ion-img src="/assets/images/level_1/unit_05.png" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
         </div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="progress >= 5">
+      <ion-col>
+        <ion-progress-bar color="dark" value="1"></ion-progress-bar>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -110,6 +130,11 @@
         </div>
       </ion-col>
     </ion-row>
+    <ion-row *ngIf="progress >= 6">
+      <ion-col>
+        <ion-progress-bar color="dark" value="1"></ion-progress-bar>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 
   <ion-grid>
@@ -124,6 +149,11 @@
         <div class="figure">
           <ion-img src="/assets/images/level_1/unit_07.png" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
         </div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="progress >= 7">
+      <ion-col>
+        <ion-progress-bar color="dark" value="1"></ion-progress-bar>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -142,6 +172,11 @@
         </div>
       </ion-col>
     </ion-row>
+    <ion-row *ngIf="progress >= 8">
+      <ion-col>
+        <ion-progress-bar color="dark" value="1"></ion-progress-bar>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 
   <ion-grid>
@@ -156,6 +191,11 @@
         <div class="figure">
           <ion-img src="/assets/images/level_1/unit_09.png" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
         </div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="progress >= 9">
+      <ion-col>
+        <ion-progress-bar color="dark" value="1"></ion-progress-bar>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -174,11 +214,16 @@
         </div>
       </ion-col>
     </ion-row>
+    <ion-row *ngIf="progress >= 10">
+      <ion-col>
+        <ion-progress-bar color="dark" value="1"></ion-progress-bar>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
 
 <ion-footer class="ion-padding ion-text-center ion-no-border">
-  <a routerLink="unit1">
-    <ion-button class="w-full">Start Learning</ion-button>
+  <a [routerLink]="['unit' + (progress+1)]">
+    <ion-button class="w-full"> {{progress ? 'Continue' : 'Start Learning'}}</ion-button>
   </a>
 </ion-footer>

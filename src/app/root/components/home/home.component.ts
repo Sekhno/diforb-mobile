@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {checkLevel, LEVELS} from "../../../../providers/storage/storage";
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent  implements OnInit {
 
+  progress = 0;
+
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    checkLevel('level').then((value) => {
+      if (!value) throw Error();
+
+      this.progress = ((parseInt(value)) / LEVELS * 100);
+    })
+  }
 
 }

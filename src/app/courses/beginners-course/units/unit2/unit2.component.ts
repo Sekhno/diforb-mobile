@@ -1,6 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {IonModal} from "@ionic/angular";
 import {affirmative, negative, question, vocabulary} from "./examples";
+import {setLevel} from "../../../../../providers/storage/storage";
 
 @Component({
   selector: 'app-unit2',
@@ -10,8 +11,8 @@ import {affirmative, negative, question, vocabulary} from "./examples";
 export class Unit2Component {
   @ViewChild(IonModal) modal!: IonModal;
 
-  currentTeo = 4
-  currentExc = 5;
+  currentTeo = 1
+  currentExc = 1;
   progress = 0;
 
   vocabulary = vocabulary;
@@ -20,5 +21,11 @@ export class Unit2Component {
   question = question;
 
   constructor() { }
+
+  finish() {
+    setLevel('level', '2').then(() => {
+      console.log('Level set to 2.')
+    })
+  }
 
 }

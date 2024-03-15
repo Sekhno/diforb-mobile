@@ -8,6 +8,7 @@ import {ExampleType} from "src/models/types";
 })
 export class WordsTranslateComponent {
   @Input() examples: ExampleType[] = [];
+  @Input() mood: 'landscape' | 'portrait' | 'square' = 'square';
 
   @Output() _onComplete = new EventEmitter<boolean>();
 
