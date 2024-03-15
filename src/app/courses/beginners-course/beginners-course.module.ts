@@ -16,6 +16,7 @@ import {WordsTranslateComponent} from "../../components/words-translate/words-tr
 import {VocabularyComponent} from "../../components/vocabule/vocabulary.component";
 import {SelectionAnswerComponent} from "../../components/selection-answer/selection-answer.component";
 import {Unit2Component} from "./units/unit2/unit2.component";
+import {Unit3Component} from "./units/unit3/unit3.component";
 
 const MaterialModules = [
   MatStepperModule,
@@ -24,7 +25,7 @@ const MaterialModules = [
 ]
 
 const Units = [
-  Unit1Component, Unit2Component
+  Unit1Component, Unit2Component, Unit3Component
 ]
 
 @NgModule({

@@ -50,7 +50,7 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <ion-progress-bar color="dark" value=".25"></ion-progress-bar>
+        <ion-progress-bar color="dark" [value]="progress > 100 ? 1 : progress / 100"></ion-progress-bar>
       </ion-col>
     </ion-row>
   </ion-grid>
