@@ -1,6 +1,5 @@
 <div>
-    <section *ngFor="let exc of examples; let i = index"
-             [ngClass]="{error: checked && inputs[i] !== exc.missed}">
+    <section *ngFor="let exc of examples; let i = index" [ngClass]="{error: checked && inputs[i] !== exc.missed}">
 
     <ng-container *ngFor="let word of exc.example.split(' '); let n = index">
       @if (word === '{{input}}') {
