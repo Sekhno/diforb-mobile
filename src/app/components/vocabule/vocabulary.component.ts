@@ -54,7 +54,7 @@ export class VocabularyComponent implements OnChanges, OnDestroy {
   }
 
   check() {
-    if (this.currentExc === this.vocabulary.length - 1) {
+    if (this.currentExc === this.vocabulary.length) {
       this._onComplete.emit(true);
     }
   }
