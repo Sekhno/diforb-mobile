@@ -6,3 +6,136 @@
     <ion-title>Unit 3</ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-content class="ion-padding">
+
+  <ng-container *ngIf="currentTeo === 1">
+    <h1 class=" ion-text-center">Can <i>(вміти, могти)</i> </h1>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp; Дієслово can передає здатність або нездатність щось робити.
+      Воно вживається для вираження можливості, здатності, нездатності, дозволу, заборони,
+      запитання про можливість, здатність, нездатність.
+      <br><br>&nbsp;&nbsp;&nbsp;&nbsp; З дієсловом <b>CAN</b> взагалі все дуже просто - є дві форми для всіх осіб,
+      вони не змінюються - <b>CAN </b>(вмію) і <b>CAN'T</b> (не вмію).
+      <br>ВСЕ)).
+      <br><br>Тепер справа лише за практикою.
+    </p>
+
+
+    <div class="figure-landscape full-width">
+      <ion-img src="/assets/images/level_1/unit_003.png" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="currentTeo === 2">
+    Affirmative
+
+
+
+
+
+
+
+    <ion-text class="ion-text-center">
+      <h1 class="ion-padding-top ion-padding-bottom">Affirmative (ствердження)</h1>
+
+      <ion-grid class="ion-padding-top ion-padding-bottom">
+        <ion-row>
+          <ion-col>I can</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>You can</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>He can</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>She can</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>It can</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>We can</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>They can</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-text>
+  </ng-container>
+
+  <ng-container *ngIf="currentTeo === 3">
+
+  </ng-container>
+
+  <ng-container *ngIf="currentTeo === 4">
+
+  </ng-container>
+
+  <ion-button class="w-full ion-margin-top" id="exc">Off we go!</ion-button>
+
+</ion-content>
+
+<ion-modal trigger="exc">
+  <ng-template>
+    <ion-header class="ion-no-border ion-padding">
+      <ion-toolbar>
+        <ion-buttons slot="start" (click)="modal.dismiss()">
+          <ion-icon name="close" size="large"></ion-icon>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <ng-container *ngIf="currentExc === 1">
+        <app-vocabulary mood="landscape" [vocabulary]="vocabulary"
+                        (_onComplete)="currentTeo = 2; modal.dismiss(); currentExc = 2;"
+        ></app-vocabulary>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 2">
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 3">
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 4">
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 5">
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 6">
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 7">
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 8">
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 9">
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 10">
+
+      </ng-container>
+
+    </ion-content>
+  </ng-template>
+</ion-modal>
