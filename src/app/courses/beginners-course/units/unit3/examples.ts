@@ -1,16 +1,5 @@
+import {ExampleType} from "src/models/types";
 
-/*
-* read - читати
-write - писати
-cook - готувати
-speak English - розмовляти англійською
-dance - танцювати
-sing - співати
-sleep - спати
-do a hanstand - робити стойку на руках
-swim - плавати
-ride a bike - їздити на велосипеді
-* */
 export const vocabulary = [
   {
     word: 'read',
@@ -72,4 +61,77 @@ export const vocabulary = [
     sound: 'units/unit_3/ride_a_bike.mp3',
     image: '/assets/images/units/unit_3/ride_a_bike.png'
   }
-]
+];
+
+
+/*
+* 1. I can read
+2. You can write.
+3. She can cook.
+4. We can speak English.
+5. They can dance.
+6. He can sing.
+7. I can sleep.
+8.He can do a handstand.
+9. She can swim.
+10.They can ride a bike.
+* */
+export const affirmative = [
+  {
+    sentence: 'I can read',
+    example: 'I {{input}} read',
+    missed: 'can',
+    translate: 'Я можу читати',
+    image: '/assets/images/units/unit_3/read.png'
+  },
+  {
+    sentence: 'You can write',
+    example: 'You {{input}} write',
+    missed: 'can',
+    translate: 'Ти можеш писати',
+    image: '/assets/images/units/unit_3/write.png'
+  },
+  {
+    sentence: 'She can cook',
+    example: 'She {{input}} cook',
+    missed: 'can',
+    translate: 'Вона може готувати',
+    image: '/assets/images/units/unit_3/cook.png'
+  },
+  {
+    sentence: 'We can speak English',
+    example: 'We {{input}} speak English',
+    missed: 'can',
+    translate: 'Ми можемо розмовляти англійською',
+    image: '/assets/images/units/unit_3/speak_english.png'
+  },
+  {
+    sentence: 'They can dance',
+    example: 'They {{input}} dance',
+    missed: 'can',
+    translate: 'Вони можуть танцювати',
+    image: '/assets/images/units/unit_3/dance.png'
+  },
+  {
+    sentence: 'He can sing',
+    example: 'He {{input}} sing',
+    missed: 'can',
+    translate: 'Він може співати',
+    image: '/assets/images/units/unit_3/sing.png'
+  },
+  {
+    sentence: 'I can sleep',
+    example: 'I {{input}} sleep',
+    missed: 'can',
+    translate: 'Я можу спати',
+    image: '/assets/images/units/unit_3/sleep.png'
+  },
+  {
+    sentence: 'He can do a handstand',
+    example: 'He {{input}} do a handstand',
+    missed: 'can',
+    translate: 'Він може робити стойку на руках',
+    image: '/assets/images/units/unit_3/do_a_handstand.png'
+  }
+
+] as ExampleType[];

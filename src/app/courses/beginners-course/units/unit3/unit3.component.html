@@ -28,14 +28,6 @@
   </ng-container>
 
   <ng-container *ngIf="currentTeo === 2">
-    Affirmative
-
-
-
-
-
-
-
     <ion-text class="ion-text-center">
       <h1 class="ion-padding-top ion-padding-bottom">Affirmative (ствердження)</h1>
 
@@ -101,7 +93,23 @@
       </ng-container>
 
       <ng-container *ngIf="currentExc === 2">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Зробити правильний порядок слів</h1>
+          <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
+          <p>
+            &nbsp;&nbsp; * В усіх типах речень чіткий порядок слів.
+            <br> Коли ми хочемо розповісти, що хтось щось може/ вміє робити, спочатку ставимо ХТО вміє робити,
+            потім дієслово CAN і дію.
+            <br><br> Все! Легше не буває.
 
+            <br> She can dance.
+            <br> He can cook.
+            <br> I can speak English.
+          </p>
+        </ion-text>
+        <app-words-reorder [examples]="affirmative" mood="landscape"
+                           (_onComplete)="currentExc = 3;"
+        ></app-words-reorder>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 3">
