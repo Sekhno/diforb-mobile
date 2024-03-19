@@ -132,6 +132,20 @@ export const affirmative = [
     missed: 'can',
     translate: 'Він може робити стойку на руках',
     image: '/assets/images/units/unit_3/do_a_handstand.png'
+  },
+  {
+    sentence: 'She can swim',
+    example: 'She {{input}} swim',
+    missed: 'can',
+    translate: 'Вона може плавати',
+    image: '/assets/images/units/unit_3/swim.png'
+  },
+  {
+    sentence: 'They can ride a bike',
+    example: 'They {{input}} ride a bike',
+    missed: 'can',
+    translate: 'Вони можуть їздити на велосипеді',
+    image: '/assets/images/units/unit_3/ride_a_bike.png'
   }
 
 ] as ExampleType[];
