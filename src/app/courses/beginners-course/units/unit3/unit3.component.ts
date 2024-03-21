@@ -1,7 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {IonModal} from "@ionic/angular";
 import {setLevel} from "../../../../../providers/storage/storage";
-import {vocabulary, affirmative} from "./examples";
+import {vocabulary, affirmative, negative} from "./examples";
 
 @Component({
   selector: 'app-unit3',
@@ -17,6 +17,7 @@ export class Unit3Component {
 
   readonly vocabulary = vocabulary;
   readonly affirmative = affirmative;
+  readonly negative = negative
 
   constructor() { }
 
