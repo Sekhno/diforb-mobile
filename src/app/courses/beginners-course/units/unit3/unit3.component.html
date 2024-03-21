@@ -64,7 +64,45 @@
   </ng-container>
 
   <ng-container *ngIf="currentTeo === 3">
+    <ion-text class="ion-text-center">
+      <h1 class="ion-padding-top ion-padding-bottom">Negative</h1>
+      <p>
+        Це використовуємо коли хочемо розповісти, щось хто не може або не вміє чогось робити.
+        Тут теж все аж занадто просто.
+        <br>I can't sing - Я не вмію співати
+        <br>He can't swim - Ві не вміє плавати
+      </p>
 
+      <ion-grid class="ion-padding-top ion-padding-bottom">
+        <ion-row>
+          <ion-col>I can't </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>You can't</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>He can't</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>She can't</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>It can't</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>We can't</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>They can't</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-text>
   </ng-container>
 
   <ng-container *ngIf="currentTeo === 4">
@@ -108,12 +146,18 @@
           </p>
         </ion-text>
         <app-words-reorder [examples]="affirmative" mood="landscape"
-                           (_onComplete)="currentExc = 3;"
+                           (_onComplete)="currentTeo = 3; modal.dismiss(); currentExc = 3;"
         ></app-words-reorder>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 3">
-
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Зробити правильний порядок слів</h1>
+          <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
+        </ion-text>
+        <app-words-reorder [examples]="negative" mood="landscape"
+                           (_onComplete)="currentTeo = 4; modal.dismiss(); currentExc = 4;"
+        ></app-words-reorder>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 4">

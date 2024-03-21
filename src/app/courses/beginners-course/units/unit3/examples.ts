@@ -149,3 +149,39 @@ export const affirmative = [
   }
 
 ] as ExampleType[];
+
+
+export const negative = [
+  {
+    sentence: "I can't ride a bike",
+    image: '/assets/images/units/unit_3/ride_a_bike.png'
+  },
+  {
+    sentence: "You can't sing",
+    image: '/assets/images/units/unit_3/sing.png'
+  },
+  {
+    sentence: "He can't dance",
+    image: '/assets/images/units/unit_3/dance.png'
+  },
+  {
+    sentence: "She can't speak English",
+    image: '/assets/images/units/unit_3/speak_english.png'
+  },
+  {
+    sentence: "We can't swim",
+    image: '/assets/images/units/unit_3/swim.png'
+  },
+  {
+    sentence: "They can't write",
+    image: '/assets/images/units/unit_3/write.png'
+  },
+  {
+    sentence: "I can't sleep",
+    image: '/assets/images/units/unit_3/sleep.png'
+  },
+  {
+    sentence: "You can't cook",
+    image: '/assets/images/units/unit_3/cook.png'
+  }
+] as ExampleType[];
