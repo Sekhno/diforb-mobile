@@ -1,4 +1,4 @@
-import {ExampleType} from "src/models/types";
+import {AnswersType, ExampleType} from "src/models/types";
 
 export const vocabulary = [
   {
@@ -63,19 +63,6 @@ export const vocabulary = [
   }
 ];
 
-
-/*
-* 1. I can read
-2. You can write.
-3. She can cook.
-4. We can speak English.
-5. They can dance.
-6. He can sing.
-7. I can sleep.
-8.He can do a handstand.
-9. She can swim.
-10.They can ride a bike.
-* */
 export const affirmative = [
   {
     sentence: 'I can read',
@@ -150,7 +137,6 @@ export const affirmative = [
 
 ] as ExampleType[];
 
-
 export const negative = [
   {
     sentence: "I can't ride a bike",
@@ -185,3 +171,69 @@ export const negative = [
     image: '/assets/images/units/unit_3/cook.png'
   }
 ] as ExampleType[];
+
+/*
+* Can I dance?
+Can you sing?
+Can he swim?
+Can she write?
+Can we sleep?
+Can they cook?
+Can you read?
+Can you do a handstand?
+Can he speak English?
+Can they ride a bike?
+* */
+export const question = [
+  {
+    sentence: 'Can I dance?',
+    answers: [{value: 'Yes, you can', answer: true}, {value: 'Yes, he can', answer: false}, {value: 'Yes, we can', answer: false}],
+    image: '/assets/images/units/unit_3/dance.png'
+  },
+  {
+    sentence: 'Can you sing?',
+    answers: [{value: 'Yes, I can', answer: true}, {value: "No, they can't", answer: false}, {value: 'Yes, he can', answer: false}],
+    image: '/assets/images/units/unit_3/sing.png'
+  },
+  {
+    sentence: 'Can he swim?',
+    answers: [{value: 'Yes, he can', answer: true}, {value: "No, we can't", answer: false}, {value: 'Yes, we can', answer: false}],
+    image: '/assets/images/units/unit_3/swim.png'
+  },
+  {
+    sentence: 'Can she write?',
+    answers: [{value: "No, she can't", answer: true}, {value: "No, they can", answer: false}, {value: "Yes, he can", answer: false}],
+    image: '/assets/images/units/unit_3/write.png'
+  },
+  {
+    sentence: 'Can we sleep?',
+    answers: [{value: "Yes, we can", answer: true}, {value: "Yes, they can", answer: false}, {value: "Yes, I can", answer: false}],
+    image: '/assets/images/units/unit_3/sleep.png'
+  },
+  {
+    sentence: 'Can they cook?',
+    answers: [{value: "No, they can't", answer: true}, {value: "No, we can't", answer: false}, {value: "Yes, you can", answer: false}],
+    image: '/assets/images/units/unit_3/cook.png'
+  },
+  {
+    sentence: 'Can you read?',
+    answers: [{value: "Yes, you can", answer: true}, {value: "No, they can't", answer: false}, {value: "Yes, he can", answer: false}],
+    image: '/assets/images/units/unit_3/read.png'
+  },
+  {
+    sentence: 'Can you do a handstand?',
+    answers: [{value: 'Yes, I can', answer: true}, {value: "No, he can't", answer: false}, {value: 'Yes, she can', answer: false}],
+    image: '/assets/images/units/unit_3/do_a_handstand.png'
+  },
+  {
+    sentence: 'Can he speak English?',
+    answers: [{value: 'Yes, he can', answer: true}, {value: "No, they can't", answer: false}, {value: 'Yes, she can', answer: false}],
+    image: '/assets/images/units/unit_3/speak_english.png'
+  },
+  {
+    sentence: 'Can they ride a bike?',
+    answers: [{value: "No, they can't", answer: true}, {value: "No, we can't", answer: false}, {value: 'Yes, I can', answer: false}],
+    image: '/assets/images/units/unit_3/ride_a_bike.png'
+
+  }
+] as (ExampleType & AnswersType)[];

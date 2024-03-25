@@ -106,6 +106,50 @@
   </ng-container>
 
   <ng-container *ngIf="currentTeo === 4">
+    <ion-text class="ion-text-center">
+      <h1 class="ion-padding-top ion-padding-bottom">Questions</h1>
+      <p>
+        Запитую чи чи хтось щось вміє чи може зробити, потрібно поставити дієслово Can на перше місце.
+      </p>
+
+      <ion-grid class="ion-padding-top ion-padding-bottom">
+        <ion-row>
+          <ion-col> Can I? </ion-col>
+          <ion-col> Yes, you can </ion-col>
+          <ion-col> No, you can't </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Can you? </ion-col>
+          <ion-col> Yes. I can </ion-col>
+          <ion-col> No, I can't </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Can he? </ion-col>
+          <ion-col> Yes, he can </ion-col>
+          <ion-col> No. he can't </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Can she? </ion-col>
+          <ion-col> Yes, she can </ion-col>
+          <ion-col> No, she can't </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Can it? </ion-col>
+          <ion-col> Yes, it can </ion-col>
+          <ion-col> No, it can't </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Can we? </ion-col>
+          <ion-col> Yes, you can </ion-col>
+          <ion-col> No, we can't </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col> Can they? </ion-col>
+          <ion-col> Yes they can </ion-col>
+          <ion-col> No, they can't </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-text>
 
   </ng-container>
 
@@ -161,30 +205,16 @@
       </ng-container>
 
       <ng-container *ngIf="currentExc === 4">
-
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Зробити правильний порядок слів</h1>
+          <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
+        </ion-text>
+        <app-words-reorder [examples]="question" mood="landscape"
+                           (_onComplete)="currentExc = 5"
+        ></app-words-reorder>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 5">
-
-      </ng-container>
-
-      <ng-container *ngIf="currentExc === 6">
-
-      </ng-container>
-
-      <ng-container *ngIf="currentExc === 7">
-
-      </ng-container>
-
-      <ng-container *ngIf="currentExc === 8">
-
-      </ng-container>
-
-      <ng-container *ngIf="currentExc === 9">
-
-      </ng-container>
-
-      <ng-container *ngIf="currentExc === 10">
 
       </ng-container>
 
