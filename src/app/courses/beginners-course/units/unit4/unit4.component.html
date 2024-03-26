@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/courses/beginners"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Unit 4</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ng-container *ngIf="currentTeo === 1">
+
+  </ng-container>
+
+  <ng-container *ngIf="currentTeo === 2">
+
+  </ng-container>
+
+  <ng-container *ngIf="currentTeo === 3">
+
+  </ng-container>
+
+  <ng-container *ngIf="currentTeo === 4">
+
+  </ng-container>
+
+  <ion-button class="w-full ion-margin-top" id="exc">Off we go!</ion-button>
+</ion-content>
+
+<ion-modal trigger="exc">
+  <ng-template>
+    <ion-header class="ion-no-border ion-padding">
+      <ion-toolbar>
+        <ion-buttons slot="start" (click)="modal.dismiss()">
+          <ion-icon name="close" size="large"></ion-icon>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+      <ng-container *ngIf="currentExc === 1">
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 2">
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 3">
+
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 4">
+
+      </ng-container>
+    </ion-content>
+  </ng-template>
+</ion-modal>
