@@ -17,6 +17,7 @@ import {VocabularyComponent} from "../../components/vocabule/vocabulary.componen
 import {SelectionAnswerComponent} from "../../components/selection-answer/selection-answer.component";
 import {Unit2Component} from "./units/unit2/unit2.component";
 import {Unit3Component} from "./units/unit3/unit3.component";
+import {SelectAnswerComponent} from "../../components/select-answer/select-answer.component";
 
 const MaterialModules = [
   MatStepperModule,
@@ -37,6 +38,7 @@ const Units = [
     WordsTranslateComponent,
     VocabularyComponent,
     SelectionAnswerComponent,
+    SelectAnswerComponent,
     ...Units
   ],
   imports: [

@@ -1,10 +1,11 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-images-comparison',
   templateUrl: './images-comparison.component.html',
   styleUrls: ['./images-comparison.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImagesComparisonComponent  implements OnInit {
 

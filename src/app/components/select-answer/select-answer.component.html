@@ -1,0 +1,31 @@
+<div class="container">
+  <div>
+    <ion-text>
+      <div class="header">
+        <div>{{currentExc}} вправ пройдено</div>
+        <div>{{100*(currentExc/(examples.length-1))}}%</div>
+      </div>
+    </ion-text>
+    <ion-progress-bar [value]="currentExc/(examples.length-1)"></ion-progress-bar>
+
+    <ng-container *ngFor="let example of examples; let i = index">
+      <ng-container *ngIf="currentExc === i">
+
+        <div class="example">
+          {{example.sentence}}
+        </div>
+
+        <ion-radio-group [(ngModel)]="userAnswers[i]">
+          <div class="answer" *ngFor="let answer of example.answers; let n = index">
+            <div>{{answer.value}}</div>
+            <ion-radio [value]="n"></ion-radio>
+          </div>
+        </ion-radio-group>
+      </ng-container>
+    </ng-container>
+  </div>
+  <div class="actions">
+    <ion-button class="w-full" (click)="nextExc()">Перевірити</ion-button>
+  </div>
+</div>
+

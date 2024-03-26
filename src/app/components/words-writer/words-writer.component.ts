@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {ExampleType} from "src/models/types";
 
 @Component({
   selector: 'app-words-writer',
   templateUrl: './words-writer.component.html',
   styleUrls: ['./words-writer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 
 })
 export class WordsWriterComponent  implements OnChanges {

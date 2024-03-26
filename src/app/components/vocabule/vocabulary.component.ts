@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnDestroy, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnDestroy, Output} from '@angular/core';
 import {NativeAudio} from "@capacitor-community/native-audio";
 import {Capacitor} from "@capacitor/core";
 
@@ -6,6 +6,7 @@ import {Capacitor} from "@capacitor/core";
   selector: 'app-vocabulary',
   templateUrl: './vocabulary.component.html',
   styleUrls: ['./vocabulary.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VocabularyComponent implements OnChanges, OnDestroy {
   @Input() vocabulary = [] as { word: string; translation: string, sound: string, image: string }[];

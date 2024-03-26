@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, ViewChild} from '@angular/core';
 import {
   affirmative,
   images, negative, question,
@@ -14,7 +14,8 @@ import {checkLevel, setLevel} from "src/providers/storage/storage";
 @Component({
   selector: 'app-unit1',
   templateUrl: './unit1.component.html',
-  styleUrls: ['./unit1.component.scss']
+  styleUrls: ['./unit1.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Unit1Component  implements OnInit {
   @ViewChild(IonModal) modal!: IonModal;
