@@ -213,7 +213,7 @@
 
       <ng-container *ngIf="currentExc === 1">
         <app-vocabulary [vocabulary]="vocabulary"
-                        (_onComplete)="currentTeo = 2; modal.dismiss(); currentExc = 2;"
+                        (_onComplete)="currentTeo = 2; modal.dismiss(); delay(2);"
         ></app-vocabulary>
       </ng-container>
 
@@ -243,7 +243,7 @@
         </ion-text>
 
         <app-words-translate [examples]="affirmative"
-                             (_onComplete)="currentTeo = 3; modal.dismiss(); currentExc = 5;"
+                             (_onComplete)="currentTeo = 3; modal.dismiss(); delay(5)"
         ></app-words-translate>
       </ng-container>
 
@@ -274,7 +274,7 @@
         </ion-text>
 
         <app-words-translate [examples]="negative"
-                             (_onComplete)="currentTeo = 4; modal.dismiss(); currentExc = 8;"
+                             (_onComplete)="currentTeo = 4; modal.dismiss(); delay(8);"
         ></app-words-translate>
       </ng-container>
 
@@ -318,7 +318,7 @@
             <ion-img src="/assets/images/congratulations_1.png"></ion-img>
           </div>
 
-          <a routerLink="unit2">
+          <a routerLink="../unit2">
             <ion-button class="w-full ion-margin-top">Next Unit</ion-button>
           </a>
         </ion-text>
