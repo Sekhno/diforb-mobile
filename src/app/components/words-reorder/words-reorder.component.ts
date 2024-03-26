@@ -1,4 +1,13 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
+import {
+  ChangeDetectionStrategy, ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges
+} from '@angular/core';
 import {ItemReorderEventDetail} from "@ionic/angular";
 import {randomWords} from "../../../utils/random";
 import {ExampleType} from "src/models/types";
@@ -10,6 +19,8 @@ import {ExampleType} from "src/models/types";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WordsReorderComponent implements OnChanges {
+  private readonly _cdr = inject(ChangeDetectorRef);
+
   @Input() examples: ExampleType[] = [];
   @Input() mood: 'landscape' | 'portrait' | 'square' = 'square';
 
@@ -17,8 +28,6 @@ export class WordsReorderComponent implements OnChanges {
 
   words: string[][] = [];
   currentExc = 0;
-
-  constructor() {}
 
   handleReorder(ev: CustomEvent<ItemReorderEventDetail>) {
     ev.detail.complete();
@@ -35,12 +44,14 @@ export class WordsReorderComponent implements OnChanges {
         }
       }
 
-
+      console.log(sentence.trim(), this.examples[this.currentExc].sentence)
+      console.log(sentence.trim() === this.examples[this.currentExc].sentence)
       if (sentence.trim() === this.examples[this.currentExc].sentence) {
         this.currentExc++;
         if (this.currentExc === this.examples.length) {
           this._onComplete.emit(true);
         }
+        this._cdr.markForCheck();
       }
     }, 500)
   }

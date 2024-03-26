@@ -34,16 +34,18 @@ export class Unit1Component  implements OnInit {
 
   ngOnInit() {
     console.log('Unit1Component ngOnInit() called.');
-
-
-
-
   }
 
   finish() {
     setLevel('level', '1').then(() => {
       console.log('Level set to 1.')
     })
+  }
+
+  delay(nextStep: number) {
+    setTimeout(() => {
+      this.currentExc = nextStep;
+    }, 1000)
   }
 
 }
