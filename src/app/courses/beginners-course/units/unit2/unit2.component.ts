@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ViewChild} from '@angular/core';
 import {IonModal} from "@ionic/angular";
 import {affirmative, negative, question, vocabulary} from "./examples";
 import {setLevel} from "../../../../../providers/storage/storage";
@@ -7,6 +7,7 @@ import {setLevel} from "../../../../../providers/storage/storage";
   selector: 'app-unit2',
   templateUrl: './unit2.component.html',
   styleUrls: ['./unit2.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Unit2Component {
   @ViewChild(IonModal) modal!: IonModal;

@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {ExampleType} from "src/models/types";
 
 @Component({
   selector: 'app-selection-answer',
   templateUrl: './selection-answer.component.html',
   styleUrls: ['./selection-answer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectionAnswerComponent implements OnChanges {
 

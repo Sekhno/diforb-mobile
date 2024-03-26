@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {ItemReorderEventDetail} from "@ionic/angular";
 import {randomWords} from "../../../utils/random";
 import {ExampleType} from "src/models/types";
@@ -7,6 +7,7 @@ import {ExampleType} from "src/models/types";
   selector: 'app-words-reorder',
   templateUrl: './words-reorder.component.html',
   styleUrls: ['./words-reorder.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WordsReorderComponent implements OnChanges {
   @Input() examples: ExampleType[] = [];

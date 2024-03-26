@@ -1,4 +1,4 @@
-import { Component, NgZone } from '@angular/core';
+import {ChangeDetectionStrategy, Component, NgZone} from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { mergeMap } from 'rxjs/operators';
 import { App } from '@capacitor/app';
@@ -9,6 +9,7 @@ import { callbackUri } from './auth.config';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   constructor(public auth: AuthService, private ngZone: NgZone) {

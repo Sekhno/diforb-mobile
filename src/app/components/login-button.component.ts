@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-login-button',
   template: `<ion-button class="ion-padding" (click)="login()">Get Started</ion-button>`,
-  styles: ['ion-button { width: 100% }']
+  styles: ['ion-button { width: 100% }'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginButtonComponent {
   constructor(public auth: AuthService) {}

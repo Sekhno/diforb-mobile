@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ExampleType} from "src/models/types";
 
 @Component({
   selector: 'app-words-translate',
   templateUrl: './words-translate.component.html',
   styleUrls: ['./words-translate.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WordsTranslateComponent {
   @Input() examples: ExampleType[] = [];

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {checkLevel, LEVELS} from "../../../../providers/storage/storage";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent  implements OnInit {
 
