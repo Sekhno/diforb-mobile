@@ -1,7 +1,7 @@
 import {
-  ChangeDetectionStrategy,
+  ChangeDetectionStrategy, ChangeDetectorRef,
   Component,
-  EventEmitter,
+  EventEmitter, inject,
   Input,
   Output
 } from '@angular/core';
@@ -14,26 +14,34 @@ import {AnswersType, ExampleType} from "../../../models/types";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectAnswerComponent {
+  private readonly _cdr = inject(ChangeDetectorRef);
   @Input() examples: (ExampleType & AnswersType)[] = [];
 
   @Output() _onComplete = new EventEmitter<boolean>();
 
   currentExc = 0;
   userAnswers: number[] = [];
+  checked = false;
 
   constructor() { }
 
-
-  nextExc() {
+  check() {
     const userAnswer = this.userAnswers[this.currentExc];
     const correctAnswer = this.examples[this.currentExc].answers.findIndex(v => v.answer);
 
     if (userAnswer === correctAnswer) {
-      this.currentExc++;
-      if (this.currentExc === this.examples.length) {
-        this._onComplete.emit(true);
-      }
+      setTimeout(() => {
+        this.checked = false;
+        this.currentExc++;
+        if (this.currentExc === this.examples.length) {
+          this._onComplete.emit(true);
+          console.log('Complete');
+        }
+        this._cdr.markForCheck();
+      }, 1000)
     }
+
+    this.checked = true;
   }
 
 }

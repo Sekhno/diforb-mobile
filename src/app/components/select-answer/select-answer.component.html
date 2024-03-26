@@ -2,11 +2,11 @@
   <div>
     <ion-text>
       <div class="header">
-        <div>{{currentExc}} вправ пройдено</div>
-        <div>{{100*(currentExc/(examples.length-1))}}%</div>
+        <div><b>{{currentExc}} / {{examples.length}}</b></div>
+        <div><b>{{(100*(currentExc/(examples.length))) | number:'1.0-0'}}%</b></div>
       </div>
     </ion-text>
-    <ion-progress-bar [value]="currentExc/(examples.length-1)"></ion-progress-bar>
+    <ion-progress-bar [value]="currentExc/(examples.length)"></ion-progress-bar>
 
     <ng-container *ngFor="let example of examples; let i = index">
       <ng-container *ngIf="currentExc === i">
@@ -15,17 +15,19 @@
           {{example.sentence}}
         </div>
 
-        <ion-radio-group [(ngModel)]="userAnswers[i]">
+        <ion-radio-group [(ngModel)]="userAnswers[i]" (ionChange)="checked = false">
           <div class="answer" *ngFor="let answer of example.answers; let n = index">
             <div>{{answer.value}}</div>
-            <ion-radio [value]="n"></ion-radio>
+            <ion-radio [value]="n"
+                       [color]="checked ? !answer.answer ? 'danger' : 'success' : ''"
+            ></ion-radio>
           </div>
         </ion-radio-group>
       </ng-container>
     </ng-container>
   </div>
   <div class="actions">
-    <ion-button class="w-full" (click)="nextExc()">Перевірити</ion-button>
+    <ion-button class="w-full" (click)="check()">Перевірити</ion-button>
   </div>
 </div>
 

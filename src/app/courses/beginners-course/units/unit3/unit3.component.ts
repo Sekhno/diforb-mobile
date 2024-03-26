@@ -28,4 +28,10 @@ export class Unit3Component {
       console.log('Level set to 3.')
     })
   }
+
+  delay(nextStep: number) {
+    setTimeout(() => {
+      this.currentExc = nextStep;
+    }, 1000)
+  }
 }

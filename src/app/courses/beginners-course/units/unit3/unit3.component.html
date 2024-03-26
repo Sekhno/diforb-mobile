@@ -8,8 +8,6 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <app-select-answer [examples]="question"></app-select-answer>
-
   <ng-container *ngIf="currentTeo === 1">
     <h1 class=" ion-text-center">Can <i>(вміти, могти)</i> </h1>
     <p>
@@ -171,7 +169,7 @@
     <ion-content class="ion-padding">
       <ng-container *ngIf="currentExc === 1">
         <app-vocabulary mood="landscape" [vocabulary]="vocabulary"
-                        (_onComplete)="currentTeo = 2; modal.dismiss(); currentExc = 2;"
+                        (_onComplete)="currentTeo = 2; modal.dismiss(); delay(2);"
         ></app-vocabulary>
       </ng-container>
 
@@ -191,7 +189,7 @@
           </p>
         </ion-text>
         <app-words-reorder [examples]="affirmative" mood="landscape"
-                           (_onComplete)="currentTeo = 3; modal.dismiss(); currentExc = 3;"
+                           (_onComplete)="currentTeo = 3; modal.dismiss(); delay(3);"
         ></app-words-reorder>
       </ng-container>
 
@@ -201,7 +199,7 @@
           <h6 class="ion-padding-bottom">Слова перетягуються по вертикалі</h6>
         </ion-text>
         <app-words-reorder [examples]="negative" mood="landscape"
-                           (_onComplete)="currentTeo = 4; modal.dismiss(); currentExc = 4;"
+                           (_onComplete)="currentTeo = 4; modal.dismiss(); delay(4);"
         ></app-words-reorder>
       </ng-container>
 
@@ -215,8 +213,30 @@
         ></app-words-reorder>
       </ng-container>
 
-      <ng-container *ngIf="currentExc === 5">
 
+
+      <ng-container *ngIf="currentExc === 5">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Підберіть підходящі короткі відповіді</h1>
+        </ion-text>
+
+        <app-select-answer [examples]="question"
+                           (_onComplete)="currentExc = 6; finish()"
+        ></app-select-answer>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 6">
+        <ion-text class="ion-text-center">
+          <h4 class="ion-padding-bottom ion-text-center">Вітаємо Вас з пройденою вправою</h4>
+
+          <div class="figure">
+            <ion-img src="/assets/images/congratulations_1.png"></ion-img>
+          </div>
+
+          <a routerLink="../unit4">
+            <ion-button class="w-full ion-margin-top">Next Unit</ion-button>
+          </a>
+        </ion-text>
       </ng-container>
 
     </ion-content>
