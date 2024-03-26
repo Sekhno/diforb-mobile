@@ -4,6 +4,7 @@ import {CoursePageComponent} from "./course.page/course.page.component";
 import {Unit1Component} from "./units/unit1/unit1.component";
 import {Unit2Component} from "./units/unit2/unit2.component";
 import {Unit3Component} from "./units/unit3/unit3.component";
+import {Unit4Component} from "./units/unit4/unit4.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'unit3',
     component: Unit3Component
+  },
+  {
+    path: 'unit4',
+    component: Unit4Component
   }
 ];
 

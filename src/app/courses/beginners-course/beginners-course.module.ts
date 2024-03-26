@@ -18,6 +18,7 @@ import {SelectionAnswerComponent} from "../../components/selection-answer/select
 import {Unit2Component} from "./units/unit2/unit2.component";
 import {Unit3Component} from "./units/unit3/unit3.component";
 import {SelectAnswerComponent} from "../../components/select-answer/select-answer.component";
+import {Unit4Component} from "./units/unit4/unit4.component";
 
 const MaterialModules = [
   MatStepperModule,
@@ -26,7 +27,7 @@ const MaterialModules = [
 ]
 
 const Units = [
-  Unit1Component, Unit2Component, Unit3Component
+  Unit1Component, Unit2Component, Unit3Component, Unit4Component
 ]
 
 @NgModule({
