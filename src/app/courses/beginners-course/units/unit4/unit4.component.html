@@ -16,6 +16,16 @@
         <br>&nbsp;&nbsp;&nbsp;&nbsp;Якщо предмет один, то вживаємо <b>There is</b>.
         У випадку коли потрібно вказати на наявність більше одного предмета, вживаємо конструкцію <b>There are</b>.
         <br><br>&nbsp;&nbsp;&nbsp;&nbsp;Ось і все) Успіхів у практичних завданнях!
+
+        <br><br>&nbsp;&nbsp;&nbsp;&nbsp; <ion-icon name="alert-circle-outline" color="warning"></ion-icon>
+        Важливо пам'ятати, що в англійських реченнях важливий порядок слів у реченні.
+        <br><br>&nbsp;&nbsp;&nbsp;&nbsp;В реченнях з конструкцією <b>There is, There are</b>
+        на перше місце ставимо <b>There is, There are</b> (Є), потім ЩО є -
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>There is a cinema</b>,
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>There are three churches</b>,
+        <br>і в останню чергу обставину місця, тобто ДЕ це знаходиться -
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>There is an airport in the town</b>.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>There are three churches in the town</b>.
       </p>
 
     </ion-text>
@@ -54,7 +64,9 @@
 
     <ion-content class="ion-padding">
       <ng-container *ngIf="currentExc === 1">
-
+        <app-vocabulary mood="landscape" [vocabulary]="vocabulary"
+                        (_onComplete)="currentTeo = 2; modal.dismiss(); delay(2);"
+        ></app-vocabulary>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 2">

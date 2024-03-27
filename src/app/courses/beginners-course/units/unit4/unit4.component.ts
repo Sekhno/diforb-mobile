@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit, ViewChild} from '@angular/core';
 import {IonModal} from "@ionic/angular";
 import {setLevel} from "../../../../../providers/storage/storage";
+import {vocabulary} from "./examples";
 
 @Component({
   selector: 'app-unit4',
@@ -14,6 +15,8 @@ export class Unit4Component {
   currentTeo = 1
   currentExc = 1;
   progress = 0;
+
+  vocabulary = vocabulary;
 
   finish() {
     setLevel('level', '4').then(() => {

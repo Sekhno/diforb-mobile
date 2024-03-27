@@ -172,18 +172,6 @@ export const negative = [
   }
 ] as ExampleType[];
 
-/*
-* Can I dance?
-Can you sing?
-Can he swim?
-Can she write?
-Can we sleep?
-Can they cook?
-Can you read?
-Can you do a handstand?
-Can he speak English?
-Can they ride a bike?
-* */
 export const question = [
   {
     sentence: 'Can I dance?',
