@@ -13,11 +13,11 @@
     <ion-text>
       <h1 class=" ion-text-center">Have got - <i>мати</i></h1>
       <p>
-        Це дуже часто вживане діэслово в англійській мові.
-        Зверніть увагу - в українській мові ми можемо сказати двома способами, що у нас щось є - <i>Я маю, У мене є</i>.
-        <br><br> В англійській мові немає конструкції <i>У мене є</i>.
-        Єдиний можливий варіант сказати <i>Я маю, Ти маєш, Він має</i> і т.д.
-        <br>Будуючи речення в англійській мові важливо дотримуватись чіткого порядку слів в кожному типі речень.
+        &nbsp;&nbsp;&nbsp;&nbsp;Це дуже часто вживане діэслово в англійській мові.
+        Зверніть увагу - в українській мові ми можемо сказати двома способами, що у нас щось є - <b>Я маю, У мене є</b>.
+        <br><br>&nbsp;&nbsp;&nbsp;&nbsp;В англійській мові немає конструкції <b>У мене є</b>.
+        Єдиний можливий варіант сказати <b>Я маю, Ти маєш, Він має</b> і т.д.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;Будуючи речення в англійській мові важливо дотримуватись чіткого порядку слів в кожному типі речень.
       </p>
       <h6 class="ion-text-center ion-margin-bottom">Погнали розбиратись</h6>
 
@@ -126,7 +126,6 @@
   <ng-container *ngIf="currentTeo === 4">
     <ion-text class="ion-text-center">
       <h1 class="ion-padding-top">Interrogative (питання)</h1>
-<!--      <p>В запитаннях на перше місце обов'язково виносимо Am, Is або Are.</p>-->
 
       <ion-grid class="ion-padding-top ion-padding-bottom">
         <ion-row>
@@ -177,7 +176,7 @@
     <ion-content class="ion-padding">
       <ng-container *ngIf="currentExc === 1">
         <app-vocabulary mood="landscape" [vocabulary]="vocabulary"
-                        (_onComplete)="currentTeo = 2; modal.dismiss(); currentExc = 2;"
+                        (_onComplete)="currentTeo = 2; modal.dismiss(); delay(2);"
         ></app-vocabulary>
       </ng-container>
 
@@ -208,7 +207,7 @@
         </ion-text>
 
         <app-words-translate [examples]="affirmative" mood="landscape"
-                             (_onComplete)="currentTeo = 3; modal.dismiss(); currentExc = 5;"
+                             (_onComplete)="currentTeo = 3; modal.dismiss(); delay(3);"
         ></app-words-translate>
       </ng-container>
 
@@ -238,7 +237,7 @@
           <h6 class="ion-padding-bottom">Використовуйте скорочену форму запису</h6>
         </ion-text>
         <app-words-translate [examples]="negative" mood="landscape"
-                             (_onComplete)="currentTeo = 4; modal.dismiss(); currentExc = 8;"
+                             (_onComplete)="currentTeo = 4; modal.dismiss(); delay(8);"
         ></app-words-translate>
       </ng-container>
 

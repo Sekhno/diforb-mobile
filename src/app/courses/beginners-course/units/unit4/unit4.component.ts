@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, OnInit, ViewChild} from '@angular/co
 import {IonModal} from "@ionic/angular";
 import {setLevel} from "../../../../../providers/storage/storage";
 import {vocabulary} from "./examples";
+import {RootUnit} from "../RootUnitClass";
 
 @Component({
   selector: 'app-unit4',
@@ -9,25 +10,13 @@ import {vocabulary} from "./examples";
   styleUrls: ['./unit4.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Unit4Component {
+export class Unit4Component  extends RootUnit {
   @ViewChild(IonModal) modal!: IonModal;
-
-  currentTeo = 1
-  currentExc = 1;
-  progress = 0;
 
   vocabulary = vocabulary;
 
-  finish() {
-    setLevel('level', '4').then(() => {
-      console.log('Level set to 4.')
-    })
+  constructor() {
+    super();
+    this.unitLevel = '4';
   }
-
-  delay(nextStep: number) {
-    setTimeout(() => {
-      this.currentExc = nextStep;
-    }, 1000)
-  }
-
 }
