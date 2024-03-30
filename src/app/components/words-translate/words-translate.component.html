@@ -1,4 +1,4 @@
-<ion-progress-bar color="dark" [value]="currentExc/examples.length"></ion-progress-bar>
+
 
 <ng-container *ngFor="let s of examples; let i = index">
   <ng-container *ngIf="currentExc === i">
@@ -9,6 +9,8 @@
     <div [ngClass]="{'figure-square': mood === 'square', 'figure-landscape': mood === 'landscape'}">
       <ion-img src="{{s.image}}" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
     </div>
+
+    <ion-progress-bar color="dark" [value]="currentExc/examples.length"></ion-progress-bar>
 
     <ion-input class="ion-text-center ion-margin-top" placeholder="Введіть переклад" [(ngModel)]="answers[i]"
                (ngModelChange)="change(i)"

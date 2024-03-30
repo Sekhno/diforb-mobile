@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit, ViewChild} from '@angular/core';
 import {IonModal} from "@ionic/angular";
 import {setLevel} from "../../../../../providers/storage/storage";
-import {vocabulary} from "./examples";
+import {affirmative, negative, vocabulary, question} from "./examples";
 import {RootUnit} from "../RootUnitClass";
 
 @Component({
@@ -14,6 +14,9 @@ export class Unit4Component  extends RootUnit {
   @ViewChild(IonModal) modal!: IonModal;
 
   vocabulary = vocabulary;
+  affirmative = affirmative;
+  negative = negative;
+  question = question;
 
   constructor() {
     super();
