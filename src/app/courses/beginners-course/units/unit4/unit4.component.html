@@ -26,6 +26,9 @@
         <br>і в останню чергу обставину місця, тобто ДЕ це знаходиться -
         <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>There is an airport in the town</b>.
         <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>There are three churches in the town</b>.
+
+        <br><br>&nbsp;&nbsp;&nbsp;&nbsp;Якщо треба сказати, що чогось немає, використовуємо конструкцію <b>There isn't, There aren't</b>.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;Наприклад <b>There isn't an airport in the town</b>. (В місті немає аеропорту).
       </p>
 
     </ion-text>
@@ -65,20 +68,62 @@
     <ion-content class="ion-padding">
       <ng-container *ngIf="currentExc === 1">
         <app-vocabulary mood="landscape" [vocabulary]="vocabulary"
-                        (_onComplete)="currentTeo = 2; modal.dismiss(); delay(2);"
+                        (_onComplete)="currentExc = 2"
         ></app-vocabulary>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 2">
-
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Affirmative <br> (Розповідні речення)</h1>
+          <h6 class="ion-padding-bottom">Поставте слова в правильному порядку</h6>
+        </ion-text>
+        <app-words-reorder [examples]="affirmative" mood="landscape"
+                           (_onComplete)="currentExc = 3"
+        ></app-words-reorder>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 3">
-
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Встав правильну форму</h1>
+          <h6 class="ion-padding-bottom">(is or are)</h6>
+        </ion-text>
+        <app-words-writer [examples]="affirmative"
+                          (_onComplete)="currentExc = 4;"
+        ></app-words-writer>
       </ng-container>
 
       <ng-container *ngIf="currentExc === 4">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Перекладіть речення</h1>
+          <h6 class="ion-padding-bottom">Використовуйте коротку форму запису <br> <b>There isn't, There aren't</b></h6>
+        </ion-text>
+        <app-words-translate [examples]="negative" mood="landscape"
+                             (_onComplete)="currentExc = 5; "
+        ></app-words-translate>
+      </ng-container>
 
+      <ng-container *ngIf="currentExc === 5">
+        <ion-text class="ion-text-center">
+          <h1 class="ion-padding-bottom">Questions <b>Is there? Are there?</b></h1>
+          <h6 class="ion-padding-bottom">Поставте слова в правильному порядку</h6>
+        </ion-text>
+        <app-words-reorder [examples]="question" mood="landscape"
+                           (_onComplete)="currentExc = 6; finish()"
+        ></app-words-reorder>
+      </ng-container>
+
+      <ng-container *ngIf="currentExc === 6">
+        <ion-text class="ion-text-center">
+          <h4 class="ion-padding-bottom ion-text-center">Вітаємо Вас з пройденою вправою</h4>
+
+          <div class="figure">
+            <ion-img src="/assets/images/congratulations_1.png"></ion-img>
+          </div>
+
+          <a routerLink="../unit5">
+            <ion-button class="w-full ion-margin-top">Next Unit</ion-button>
+          </a>
+        </ion-text>
       </ng-container>
     </ion-content>
   </ng-template>
