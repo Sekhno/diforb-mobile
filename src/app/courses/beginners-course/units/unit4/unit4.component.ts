@@ -10,7 +10,7 @@ import {RootUnit} from "../RootUnitClass";
   styleUrls: ['./unit4.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Unit4Component  extends RootUnit {
+export class Unit4Component extends RootUnit {
   @ViewChild(IonModal) modal!: IonModal;
 
   vocabulary = vocabulary;
