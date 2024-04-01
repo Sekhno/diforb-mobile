@@ -42,5 +42,6 @@
       "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
     }
-  ]
+  ],
+  "parser": "babel-eslint"
 }
