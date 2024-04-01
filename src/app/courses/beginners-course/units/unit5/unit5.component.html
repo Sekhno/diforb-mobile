@@ -8,13 +8,21 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ng-container *ngIf="currentTeo === 1"></ng-container>
+  <ng-container *ngIf="currentTeo === 1">
+    <ion-text></ion-text>
+
+    <div class="figure-landscape full-width">
+      <ion-img src="/assets/images/level_1/unit_005.png" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
+    </div>
+  </ng-container>
 
   <ng-container *ngIf="currentTeo === 2"></ng-container>
 
   <ng-container *ngIf="currentTeo === 3"></ng-container>
 
   <ng-container *ngIf="currentTeo === 4"></ng-container>
+
+  <ion-button class="w-full ion-margin-top" id="exc">Off we go!</ion-button>
 </ion-content>
 
 <ion-modal trigger="exc">
