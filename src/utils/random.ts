@@ -6,6 +6,9 @@ export function randomWords(sentence: string) {
     const j = Math.floor(Math.random() * (i + 1));
     [words[i], words[j]] = [words[j], words[i]];
   }
+  if (sentence === words.join(' ')) {
+    return randomWords(sentence);
+  }
   return words;
 }
 
