@@ -9,10 +9,12 @@
 
 <ion-content class="ion-padding">
   <ng-container *ngIf="currentTeo === 1">
-    <ion-text></ion-text>
+    <ion-text>
+      <h1 class="ion-margin-bottom ion-text-center">I/me, he/him, they/them</h1>
+    </ion-text>
 
     <div class="figure-landscape full-width">
-      <ion-img src="/assets/images/level_1/unit_005.png" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
+      <ion-img src="/assets/images/level_1/unit_005.jpg" (ionImgDidLoad)="$event.target.style.opacity = '1'"></ion-img>
     </div>
   </ng-container>
 
@@ -36,7 +38,11 @@
     </ion-header>
 
     <ion-content class="ion-padding">
-      <ng-container *ngIf="currentExc === 1"></ng-container>
+      <ng-container *ngIf="currentExc === 1">
+        <app-vocabulary mood="square" [vocabulary]="vocabulary"
+                        (_onComplete)="currentExc = 2"
+        ></app-vocabulary>
+      </ng-container>
 
       <ng-container *ngIf="currentExc === 2"></ng-container>
 
