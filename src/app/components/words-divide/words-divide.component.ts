@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {WordsDivideType} from "../../../models/types";
 
@@ -9,6 +9,8 @@ import {WordsDivideType} from "../../../models/types";
 })
 export class WordsDivideComponent implements OnChanges {
   @Input() words: WordsDivideType = {words: [], categories: []};
+
+  @Output() _onComplete = new EventEmitter<boolean>();
 
   categories: {label: string, data: string[]}[] = [];
 
@@ -29,15 +31,19 @@ export class WordsDivideComponent implements OnChanges {
       );
     }
 
-    this.check();
+    console.log('check!');
+    if (this.check()) {
+      console.log('complete!');
+      this._onComplete.emit(true);
+    }
   }
 
   check() {
     const categories = this.words.categories;
 
-    this.categories.every((category, i) => {
+    return this.categories.every((category, i) => {
       const {data} = category;
-      const _data = this.categories[i].data;
+      const _data = categories[i].data;
 
       if (data.length !== _data.length) return false;
 
