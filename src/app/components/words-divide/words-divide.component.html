@@ -5,7 +5,7 @@
     <div
       cdkDropList
       [cdkDropListData]="words.words"
-      class="example-list"
+      class="words-container-list"
       (cdkDropListDropped)="drop($event)">
       @for (item of words.words; track item) {
         <ion-chip [outline]="true" cdkDrag>{{item}}</ion-chip>
