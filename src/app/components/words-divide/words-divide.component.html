@@ -4,10 +4,10 @@
 
     <div
       cdkDropList
-      [cdkDropListData]="words"
+      [cdkDropListData]="words.words"
       class="example-list"
       (cdkDropListDropped)="drop($event)">
-      @for (item of words; track item) {
+      @for (item of words.words; track item) {
         <ion-chip [outline]="true" cdkDrag>{{item}}</ion-chip>
       }
     </div>
@@ -33,32 +33,3 @@
 
 </div>
 
-<!--<div cdkDropListGroup>-->
-<!--  <div class="example-container">-->
-<!--    <h2>Words</h2>-->
-
-<!--    <div-->
-<!--      cdkDropList-->
-<!--      [cdkDropListData]="todo"-->
-<!--      class="example-list"-->
-<!--      (cdkDropListDropped)="drop($event)">-->
-<!--      @for (item of todo; track item) {-->
-<!--        <div class="example-box" cdkDrag>{{item}}</div>-->
-<!--      }-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--  <div class="example-container">-->
-<!--    <h2>Done</h2>-->
-
-<!--    <div-->
-<!--      cdkDropList-->
-<!--      [cdkDropListData]="done"-->
-<!--      class="example-list"-->
-<!--      (cdkDropListDropped)="drop($event)">-->
-<!--      @for (item of done; track item) {-->
-<!--        <div class="example-box" cdkDrag>{{item}}</div>-->
-<!--      }-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->

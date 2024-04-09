@@ -64,16 +64,22 @@ export const vocabulary = [
 ];
 
 
-/*
-* Folder	box	baby
-bag	brush	butterfly
-chair	watch	lady
-pencil sharpener	tomato	fly (муха)
-rubber	dress	strawberry
-video	tomato	city
-* */
 
-export const words = {} as WordsDivideType;
+export const words = {
+  words: [
+    'folder', 'box', 'baby',
+    'bag', 'brush', 'butterfly',
+    'chair', 'watch', 'lady',
+    'pencil sharpener', 'tomato', 'fly',
+    'rubber', 'dress', 'strawberry',
+    'video', 'city'
+  ],
+  categories: [
+    {label: 's', data: ['folder', 'bag', 'chair', 'pencil sharpener', 'rubber', 'video']},
+    {label: 'es', data: ['box', 'brush', 'watch', 'tomato', 'dress']},
+    {label: 'ies', data: ['baby', 'butterfly', 'lady', 'fly', 'strawberry', 'city']}
+  ]
+} as WordsDivideType;
 
 export const affirmative = [] as ExampleType[];
 
