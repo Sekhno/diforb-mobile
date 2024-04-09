@@ -1,0 +1,26 @@
+.words-container {
+  margin-bottom: 1rem;
+  padding-bottom: 4px;
+  border: 1px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.32);
+  border-radius: 12px 12px 0 0;
+
+  &-header {
+    text-align: center;
+
+  }
+}
+
+.category {
+  margin-bottom: 1rem;
+  padding-bottom: 4px;
+  border: 1px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.32);
+  border-radius: 12px 12px 0 0;
+
+  &-header {
+    text-align: center;
+  }
+
+  &-list {
+    min-height: 40px;
+  }
+}

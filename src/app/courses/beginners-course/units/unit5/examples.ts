@@ -1,17 +1,5 @@
-import {AnswersType, ExampleType} from "src/models/types";
+import {AnswersType, ExampleType, WordsDivideType} from "src/models/types";
 
-/*
-Rubber
-Ruler
-Pen
-Pencil
-Pencil sharpener
-Folder
-Bag
-Desk
-Key
-Chair
-* */
 export const vocabulary = [
   {
     word: 'Rubber',
@@ -74,6 +62,18 @@ export const vocabulary = [
     image: '/assets/images/units/unit_5/chair.jpg'
   }
 ];
+
+
+/*
+* Folder	box	baby
+bag	brush	butterfly
+chair	watch	lady
+pencil sharpener	tomato	fly (муха)
+rubber	dress	strawberry
+video	tomato	city
+* */
+
+export const words = {} as WordsDivideType;
 
 export const affirmative = [] as ExampleType[];
 
