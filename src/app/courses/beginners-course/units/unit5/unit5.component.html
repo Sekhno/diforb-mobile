@@ -10,7 +10,35 @@
 <ion-content class="ion-padding">
   <ng-container *ngIf="currentTeo === 1">
     <ion-text>
-      <h1 class="ion-margin-bottom ion-text-center">I/me, he/him, they/them</h1>
+      <h1 class="ion-margin-bottom ion-text-center">Plurals - Part1</h1>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp; Утворити з однини множину в англійській мові дуже просто. Вам точно сподобається і все вийде!
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;Щоб утворити множину більшості іменників достатньо до слова додати закінчення -s
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>one rubber - two rubbers</b>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>one pen - three pens</b>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>one folder - five folders</b>
+        <br><br>&nbsp;&nbsp;&nbsp;&nbsp;Але! Якщо іменник в однині закінчується на <b>-s,-ss, -sh, -ch, -x, -o</b> , додаємо закінчення <b>-es</b>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>one dress - two dresses</b>  (одні сукня - дві сукні)
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>one box - two boxes</b> (одна коробка - дві коробки)
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>one watch - two watches</b> (один годинник - два годинника)
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>one brush - four brushes</b> (одна щітка - чотири щітки)
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>one tomato - eight tomatoes</b> (один помідор - вісім помідорів)
+        <br><br>&nbsp;&nbsp;&nbsp;&nbsp;Є декілька слів, які закінчуються на <b>-о</b>, але мають закінчення <b>-s</b>.
+        Іх просто потрібно запам'ятати
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>radio-radios</b>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>photo - photos</b>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>video-videos</b>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>piano-pianos</b>
+        <br><br>&nbsp;&nbsp;&nbsp;&nbsp;Якщо слово в однині закінчується на <b>-y</b>, а перед нею стоїть приголосна,
+        то в множині <b>-y</b> змінюється на <b>-ies</b>
+        <br><b>one baby-four babies</b> (одне немовля - четверо немовлят)
+        <br><b>one butterfly - six butterflies</b> (один метелик - шість метеликів)
+        <br><br>&nbsp;&nbsp;&nbsp;&nbsp;Але! якщо слово в однині закінчується на <b>-y</b>, а перед нею стоїть голосна,
+        додаємо до слова просто закінчення <b>-s</b>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>one boy - nine boys</b> (один хлопчик - дев'ять хлопчиків)
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>one toy - three toys</b> (одна іграшка - три іграшки)
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;<b>one key - seven keys</b> (один ключ - сім ключів)
+      </p>
     </ion-text>
 
     <div class="figure-landscape full-width">
@@ -39,12 +67,14 @@
 
     <ion-content class="ion-padding">
       <ng-container *ngIf="currentExc === 1">
-        <app-vocabulary mood="square" [vocabulary]="vocabulary"
+        <app-vocabulary mood="landscape" [vocabulary]="vocabulary"
                         (_onComplete)="currentExc = 2"
         ></app-vocabulary>
       </ng-container>
 
-      <ng-container *ngIf="currentExc === 2"></ng-container>
+      <ng-container *ngIf="currentExc === 2">
+        <app-words-divide></app-words-divide>
+      </ng-container>
 
       <ng-container *ngIf="currentExc === 3"></ng-container>
 

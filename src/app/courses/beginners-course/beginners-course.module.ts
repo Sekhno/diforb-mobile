@@ -20,6 +20,7 @@ import {Unit3Component} from "./units/unit3/unit3.component";
 import {SelectAnswerComponent} from "../../components/select-answer/select-answer.component";
 import {Unit4Component} from "./units/unit4/unit4.component";
 import {Unit5Component} from "./units/unit5/unit5.component";
+import {WordsDivideComponent} from "../../components/words-divide/words-divide.component";
 
 const MaterialModules = [
   MatStepperModule,
@@ -38,6 +39,7 @@ const Units = [
     WordsReorderComponent,
     ImagesComparisonComponent,
     WordsTranslateComponent,
+    WordsDivideComponent,
     VocabularyComponent,
     SelectionAnswerComponent,
     SelectAnswerComponent,
