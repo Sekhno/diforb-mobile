@@ -8,7 +8,7 @@
       class="words-container-list"
       (cdkDropListDropped)="drop($event)">
       @for (item of words.words; track item) {
-        <ion-chip [outline]="true" cdkDrag>{{item}}</ion-chip>
+        <ion-chip cdkDrag cdkDragLockAxis="y">{{item}}</ion-chip>
       }
     </div>
   </div>
@@ -23,7 +23,7 @@
              [cdkDropListData]="category.data"
              (cdkDropListDropped)="drop($event)">
           @for (item of category.data; track item) {
-            <ion-chip [outline]="true" cdkDrag>{{item}}</ion-chip>
+            <ion-chip cdkDrag cdkDragLockAxis="y">{{item}}</ion-chip>
           }
         </div>
       </div>
