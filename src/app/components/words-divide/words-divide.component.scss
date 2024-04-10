@@ -8,6 +8,11 @@
     text-align: center;
 
   }
+
+  &-list {
+    min-height: 40px;
+    //border: 1px solid red;
+  }
 }
 
 .category {
@@ -23,5 +28,11 @@
   &-list {
     min-height: 40px;
     //border: 1px solid red;
+  }
+
+  .cdk-drop-list-dragging {
+    background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 2px, transparent 0, transparent 50%);
+    background-size: 12px 12px;
+    background-color: #ffffff;
   }
 }
