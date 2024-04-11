@@ -81,6 +81,33 @@ export const words = {
   ]
 } as WordsDivideType;
 
+/**
+ * rubber - rubbers
+ * ruler - rulers
+ * desk -desks
+ * key-keys
+ * chair - chairs
+ * folder - folders
+ * photo-photos
+ * box-boxes
+ * boy-boys
+ * lady-ladies
+ * baby-babies
+ * tomato-tomatoes
+ * brush-brushes
+ * strawberry-strawberries
+ * */
+export const reorder_words = {
+  singular: [
+    'rubber', 'ruler', 'desk', 'key', 'chair', 'folder', 'photo', 'box',
+    'boys', 'ladies', 'babies', 'tomato', 'brush', 'strawberry'
+  ],
+  plurals: [
+    'rubbers', 'rulers', 'desks', 'keys', 'chairs', 'folders', 'photos', 'boxes',
+    'boys', 'ladies', 'babies', 'tomatoes', 'brushes', 'strawberries'
+  ]
+}
+
 export const affirmative = [] as ExampleType[];
 
 export const negative = [] as ExampleType[];

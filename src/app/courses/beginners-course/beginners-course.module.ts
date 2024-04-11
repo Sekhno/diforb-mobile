@@ -21,6 +21,7 @@ import {SelectAnswerComponent} from "../../components/select-answer/select-answe
 import {Unit4Component} from "./units/unit4/unit4.component";
 import {Unit5Component} from "./units/unit5/unit5.component";
 import {WordsDivideComponent} from "../../components/words-divide/words-divide.component";
+import {LettersReorderComponent} from "../../components/letters-reorder/letters-reorder.component";
 
 const MaterialModules = [
   MatStepperModule,
@@ -36,13 +37,14 @@ const Units = [
   declarations: [
     CoursePageComponent,
     WordsWriterComponent,
-    WordsReorderComponent,
     ImagesComparisonComponent,
+    WordsReorderComponent,
     WordsTranslateComponent,
     WordsDivideComponent,
     VocabularyComponent,
     SelectionAnswerComponent,
     SelectAnswerComponent,
+    LettersReorderComponent,
     ...Units
   ],
   imports: [
