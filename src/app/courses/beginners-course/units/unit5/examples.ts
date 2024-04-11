@@ -100,7 +100,7 @@ export const words = {
 export const reorder_words = {
   singular: [
     'rubber', 'ruler', 'desk', 'key', 'chair', 'folder', 'photo', 'box',
-    'boys', 'ladies', 'babies', 'tomato', 'brush', 'strawberry'
+    'boy', 'lady', 'baby', 'tomato', 'brush', 'strawberry'
   ],
   plurals: [
     'rubbers', 'rulers', 'desks', 'keys', 'chairs', 'folders', 'photos', 'boxes',

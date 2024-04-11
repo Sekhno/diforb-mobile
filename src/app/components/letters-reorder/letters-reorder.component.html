@@ -3,7 +3,7 @@
 @for (word of examples; track $index) {
   @if (currentExample === $index) {
     <div class="figure-landscape full-width">
-      <ion-img [src]="'/assets/images/units/unit_5/' + words.singular[$index] + '.jpg'"
+      <ion-img [src]="'/assets/images/units/'+ imageUrl +'/' + words.singular[$index] + '.jpg'"
                (ionImgDidLoad)="$event.target.style.opacity = '1'"
       ></ion-img>
     </div>

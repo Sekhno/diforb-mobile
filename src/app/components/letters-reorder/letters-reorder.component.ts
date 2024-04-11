@@ -20,6 +20,7 @@ export class LettersReorderComponent implements OnChanges {
   private readonly _cdr = inject(ChangeDetectorRef);
 
   @Input() words: {singular: string[], plurals: string[]} = {singular: [], plurals: []};
+  @Input() imageUrl = ''
 
   @Output() _onComplete = new EventEmitter<boolean>();
 
