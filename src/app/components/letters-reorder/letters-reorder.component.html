@@ -1,3 +1,23 @@
-<p>
-  letters-reorder works!
-</p>
+
+
+@for (word of examples; track $index) {
+  @if (currentExample === $index) {
+    <div class="figure-landscape full-width">
+      <ion-img [src]="'/assets/images/units/unit_5/' + words.singular[$index] + '.jpg'"
+               (ionImgDidLoad)="$event.target.style.opacity = '1'"
+      ></ion-img>
+    </div>
+
+    <ion-list>
+      <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+        @for (letter of word; track $index) {
+          <ion-item>
+            <ion-label> {{letter | uppercase}} </ion-label>
+            <ion-reorder slot="end"></ion-reorder>
+          </ion-item>
+        }
+      </ion-reorder-group>
+    </ion-list>
+  }
+}
+

@@ -74,12 +74,29 @@
 
       <ng-container *ngIf="currentExc === 2">
         <app-words-divide [words]="words"
-                          (_onComplete)="currentExc = 3"></app-words-divide>
+                          (_onComplete)="currentExc = 3"
+        ></app-words-divide>
       </ng-container>
 
-      <ng-container *ngIf="currentExc === 3"></ng-container>
+      <ng-container *ngIf="currentExc === 3">
+        <app-letters-reorder [words]="reorder_words"
+                             (_onComplete)="currentExc = 3"
+        ></app-letters-reorder>
+      </ng-container>
 
-      <ng-container *ngIf="currentExc === 4"></ng-container>
+      <ng-container *ngIf="currentExc === 4">
+        <ion-text class="ion-text-center">
+          <h4 class="ion-padding-bottom ion-text-center">Вітаємо Вас з пройденою вправою</h4>
+
+          <div class="figure">
+            <ion-img src="/assets/images/congratulations_1.png"></ion-img>
+          </div>
+
+          <a routerLink="../unit6">
+            <ion-button class="w-full ion-margin-top">Next Unit</ion-button>
+          </a>
+        </ion-text>
+      </ng-container>
     </ion-content>
   </ng-template>
 </ion-modal>

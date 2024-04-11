@@ -12,6 +12,16 @@ export function randomWords(sentence: string) {
   return words;
 }
 
-// Example usage:
-const sentence = "The quick brown fox jumps over the lazy dog";
-console.log(randomWords(sentence));
+export function randomLetters(word: string) {
+  const letters = word.split('');
+
+  for (let i = letters.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [letters[i], letters[j]] = [letters[j], letters[i]];
+  }
+  if (word === letters.join('')) {
+    return randomLetters(word);
+  }
+  return letters;
+}
+
